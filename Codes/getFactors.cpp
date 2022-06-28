@@ -12,5 +12,5 @@ vector<ll> getfactors(ll n) {
             }
         }
     }
-    rt ans; 
+    return ans; 
 }
