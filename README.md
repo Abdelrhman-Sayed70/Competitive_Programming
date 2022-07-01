@@ -1,2 +1,5 @@
 # Problem_Solving
-![giphy (7)](https://user-images.githubusercontent.com/99830416/176927486-b878ab40-8165-466b-bdaa-b406281914df.gif)
+![giphy](https://user-images.githubusercontent.com/99830416/176927691-fcc18688-1f92-446d-8a30-6229cb013d6b.gif)
+
+
+
