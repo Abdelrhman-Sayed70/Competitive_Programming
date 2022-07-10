@@ -16,7 +16,7 @@ int main() {
     cin >> k;
     int start = 0, end = n - 1;
     bool found = false;
-    while (start != end) {
+    while (start <= end) {
         int mid = (start + end) / 2;
         if (k < v[mid]) {
             end = mid - 1 ;
