@@ -1,0 +1,2 @@
+1- calculate your code complexity (my time) . 
+2- time on codeforces = my time / 1e8  
