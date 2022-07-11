@@ -2,20 +2,19 @@
 using namespace std;
 #define ll long long
 
-void decimal_to_binary(int n) {
-	if (n == 0) { cout << 0; return; }
-	vector<int>v;
+string decimal_to_binary(int n) {
+	string s;
+	if (n == 0) { s = "0"; return s; }
 	while (n) {
-		v.push_back(n % 2);
+		if (n % 2) s += '1';
+		else s += '0';
 		n /= 2;
 	}
-	reverse(v.begin(),v.end());
-	for (int i = 0; i < v.size(); i++) {
-		cout << v[i];
-	}
+	reverse(s.begin(), s.end());
+	return s;
 }
 int main() {
-	int n; 
-	cin >> n; 
-	decimal_to_binary(n);
+	int n;
+	cin >> n;
+	cout << decimal_to_binary(n);
 }
