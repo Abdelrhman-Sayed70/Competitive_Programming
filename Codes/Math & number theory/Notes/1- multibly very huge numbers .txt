@@ -1,0 +1,10 @@
+	- if you multibly any multible of 10 by any numbers >> the last digit in the answer will be 0  
+	10*12*13 =..0
+        20*21*23 =..0	
+
+- if we need only the last digit of multibly of numbers , only multibly last digit of those numbers 
+	101 * 102 * 103 * 104 = 110355024 -> last digit = 4 
+	1 * 2 * 3 * 4 = 24  -> last digit = 4 
+
+
+	  
