@@ -9,10 +9,12 @@ ll gcd(ll a, ll b) {
 }
 ll lcm(ll a, ll b) {
     // lcm(a,b) = (a*b) / gcd(a,b)
-    return a / gcd(a, b) * b ;
+    return a / gcd(a, b) * b;
 }
 int main() {
     // LCM 
     // lcm(1,any number) = number
+    // lcm(0, any number) = 0 
+    // gcd(a,b) * lcm(a,b) = a*b 
     // gcd(a,b)+lcm(a,b)=x when (a=1 and b=x-1) 
 }

@@ -13,11 +13,11 @@ ll multibly(ll a, ll b, ll mod) {
 	return ans;
 }
 ll sub(ll a, ll b, ll mod) {
-	ll ans = ((a % mod) - (b % mod)) % mod;
+	ll ans = ((a % mod) - (b % mod) + mod) % mod;
 	return ans; 
 }
 long long modneg(long long k, long long n)
-{
+{	
 	return ((k % n) + n) % n;
 }
 int main() {

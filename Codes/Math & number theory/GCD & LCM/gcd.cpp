@@ -22,4 +22,5 @@ ll gcd(ll a, ll b) {
 int main() {
     // GCD
     // gcd(0,any number) = number
+    // gcd(1 ,any number) = 1 
 }
