@@ -12,7 +12,7 @@ int main() {
 	while (q--) {
 		int l, r , val ; 
 		cin >> l >> r >> val ;
-		l--, r--;
+		l--, r--; // for zero index 
 		V[l] += val;
 		V[r + 1] -= val;
 	}
