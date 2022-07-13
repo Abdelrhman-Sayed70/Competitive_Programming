@@ -13,5 +13,4 @@ int main() {
 		cin >> n; 
 		cout << isperfectsqaur(n) << "\n";
 	}
-    
 }
