@@ -14,8 +14,7 @@ void count2() {
 }
 int main() {
 	// count is function that count char in string or number in array in range (start ,end)
-	// note that you can change your begin and end range 
-	//											    0   1   2  3 
+	// note that you can change your begin and end range 											    
 	// note end alwayes at position v.size()  v =   1 , 2 , 3 end here 
 	count2();
 }
