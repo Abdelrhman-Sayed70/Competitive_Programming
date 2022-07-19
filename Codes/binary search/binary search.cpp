@@ -14,7 +14,7 @@ int main() {
     int k; 
     cout << "Enter Value you search for : "; 
     cin >> k;
-    int start = 0, end = n - 1;
+    int start = 0, end = n - 1;  // boundries
     bool found = false;
     while (start <= end) {
         int mid = (start + end) / 2;
