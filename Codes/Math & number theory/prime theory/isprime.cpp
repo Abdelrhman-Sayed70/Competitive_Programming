@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 bool isprime(int n) {
     if (n == 2) { return true; }
     if (n == 0 or n == 1 or n % 2 == 0) { return false; }
@@ -7,4 +10,7 @@ bool isprime(int n) {
         }
     }
     return true;
+}
+int main() {
+    // number of prime numbers from 1 to n ~ n / log(n)
 }

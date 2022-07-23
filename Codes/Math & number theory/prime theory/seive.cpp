@@ -18,7 +18,7 @@ void seive() {
     }
 }
 int main() {
-    // seive 
+    // seive (backward thinking)
     // Time complexity : (n *log(log(n)))
     seive() ;
     for (int i = 0; i < n; i++) {
