@@ -12,7 +12,14 @@ ll lcm(ll a, ll b) {
     return a / gcd(a, b) * b;
 }
 int main() {
-    // LCM 
+    // LCM (least common multible)
+    /*
+        List the Multiples of each number 
+        The multiples of 3 are 3, 6, 9, 12, 15, 18, ... etc
+        The multiples of 5 are 5, 10, 15, 20, 25, ... etc
+        least common multible of 3 , 5 is 15
+        15 is multible of both 3 , 5 and the smallest 
+    */
     // lcm(1,any number) = number
     // lcm(0, any number) = 0 
     // gcd(a,b) * lcm(a,b) = a*b 

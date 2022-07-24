@@ -20,7 +20,15 @@ ll gcd(ll a, ll b) {
     return a;
 }
 int main() {
-    // GCD
-    // gcd(0,any number) = number
-    // gcd(1 ,any number) = 1 
+  /*
+
+    GCD(Greatest common devisor) >> The highest number that divides exactly into two or more numbers.
+    the answer will be less than or equal the greatest number 
+
+    gcd(0,any number) = number
+    gcd(1 ,any number) = 1  
+      
+  */
+
+ 
 }
