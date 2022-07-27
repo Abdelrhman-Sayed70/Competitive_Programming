@@ -89,7 +89,7 @@ void stoi_stol() {
 void lower_upper() {
     // to lower & to upper 
 
-        // for char 
+    // for char 
     string s = "aB";
     s[0] = toupper(s[0]);
     s[1] = tolower(s[1]);
