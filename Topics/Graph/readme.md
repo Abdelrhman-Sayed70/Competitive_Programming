@@ -23,3 +23,10 @@
 ![Capture](https://user-images.githubusercontent.com/99830416/181620336-64799c33-80cd-4542-86c8-1b9b5116b06a.PNG)
 
 ![Capture](https://user-images.githubusercontent.com/99830416/181621555-5c91ac7c-9f0a-40d0-9502-ed1beb80d123.PNG)
+
+![Capture](https://user-images.githubusercontent.com/99830416/181623058-94036875-2431-46ba-af09-68f514f75e42.PNG)
+
+## Compairing 
+
+![Capture](https://user-images.githubusercontent.com/99830416/181624931-92e7a648-bd8c-43d7-b4c1-659015861185.PNG)
+
