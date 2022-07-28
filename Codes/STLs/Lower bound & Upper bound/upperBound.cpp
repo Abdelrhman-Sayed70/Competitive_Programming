@@ -10,6 +10,7 @@ upperboundVal return first element greater than n
 */
 ll upperboundVal(vector<int>V, int n) {
     auto upper = upper_bound(V.begin(), V.end(), n); // auto here refere to vector operator
+    if (upper == v.end()) { return -1; }
     return *upper;
 }
 // upperboundIndex return the index of the first element greater than to n (with sorted vector) 0 based
