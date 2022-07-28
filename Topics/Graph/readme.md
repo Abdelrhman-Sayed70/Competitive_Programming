@@ -14,3 +14,12 @@
 
 ![Capture](https://user-images.githubusercontent.com/99830416/181614659-6ee6a2cc-7c94-4760-8ca6-a6240628bc95.PNG)
 
+## Represent Graph 
+
+![Capture](https://user-images.githubusercontent.com/99830416/181616721-73f2643a-2737-482a-a1d5-9b87542d1b41.PNG)
+
+![Capture](https://user-images.githubusercontent.com/99830416/181619990-84a7c326-30bd-4d86-8aaf-b1209cac6162.PNG)
+
+![Capture](https://user-images.githubusercontent.com/99830416/181620336-64799c33-80cd-4542-86c8-1b9b5116b06a.PNG)
+
+![Capture](https://user-images.githubusercontent.com/99830416/181621555-5c91ac7c-9f0a-40d0-9502-ed1beb80d123.PNG)
