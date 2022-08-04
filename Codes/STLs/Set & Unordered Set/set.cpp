@@ -83,6 +83,29 @@ void count() {
 	if (st.count(1)) cout << "YES";
 	else cout << "NO";
 }
+void erase_range() {
+	set<int>st;
+	vector<int>v = { 0 ,1,2,3,4,5,6,7,8 };
+	for (auto i : v) {
+		st.insert(i);
+	}
+	// st.erase(it1,it2) // erase form it1 to it2-1
+}
+void lower_upper_bound() {
+	set<int>st;
+	vector<int>v = { 0 ,1,2,3,4,5,6,7,8 };
+	for (auto& i : v) {
+		st.insert(i);
+	}
+	// 0 1 2 3 
+	set<int>::iterator low, up;
+	low = st.lower_bound(1); // iterate over 1
+	up = st.upper_bound(5);	 // iterate over 6
+	st.erase(low, up); // 0 6 7 8
+	for (auto it : st) {
+		cout << it << " ";
+	}
+}
 int main() {
-	count();
+	lower_upper_bound();
 }
