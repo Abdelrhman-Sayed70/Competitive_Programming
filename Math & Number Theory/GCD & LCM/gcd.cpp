@@ -24,7 +24,7 @@ int main() {
     Def :
     GCD(Greatest common devisor) >> The highest number that divides exactly into two or more numbers.
     the answer will be less than or equal the least number 
-
+    
     prop : 
     -gcd (a, 0) = |a|, 
     -gcd(1 ,any number) = 1  
