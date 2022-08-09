@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+
+vector<int>fib(55);
+void generateFib() {
+	fib[1] = 0;
+	fib[2] = 1;
+	for (int i = 3; i <= 50; i++) {
+		fib[i] = fib[i - 1] + fib[i - 2];
+	}
+}
+void display() {
+	for (int i = 1; i <= 50; i++) {
+		cout << "fib[" << i << "] : " << fib[i] << "\n";
+	}
+}
+int main() {
+	generateFib();
+	display(); 
+}
