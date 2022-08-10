@@ -1,5 +1,6 @@
 # Recursion 
-![1_appBwh6_RtvocVxwqpplHA](https://user-images.githubusercontent.com/99830416/183871311-ea63bb46-8800-4b6d-81bf-0588d925878a.jpeg)
+ ![recursion](https://user-images.githubusercontent.com/99830416/183871978-bc642fad-2e7f-44d3-b098-bc3797b2d8df.png)
+
 
 ## Factorial
  ![factorial-code-animation](https://user-images.githubusercontent.com/99830416/183870408-dc237935-0c42-4e08-b5b8-b3a6fae1cef5.gif)
