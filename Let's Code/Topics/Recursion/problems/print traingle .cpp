@@ -11,16 +11,18 @@ void printTrainglereversed(int n) {
 	cout << "\n";
 	printTrainglereversed(n - 1);
 }
-int n;
-void printTraingleSorted(int sz) {
-	if (sz > n) { return; }
-	for (int i = 1; i <= sz; i++) {
+void printTraingleSorted(int n) {
+	if (n == 0) {
+		return;
+	}
+	printTraingleSorted(n - 1);
+	for (int i = 1; i <= n; i++) {
 		cout << "* ";
 	}
 	cout << "\n";
-	printTraingleSorted(sz + 1);
 }
 int main() {
+	int n ; 
 	cin >> n; 
 	printTraingleSorted(1);
 }
