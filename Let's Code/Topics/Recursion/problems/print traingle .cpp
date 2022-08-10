@@ -22,13 +22,10 @@ void printTraingleSorted(int n) {
 	cout << "\n";
 }
 int main() {
-	int n ; 
-	cin >> n; 
-	printTraingleSorted(1);
+	int n;
+	cin >> n;
+	printTraingleSorted(n);
 }
-
-
-
 /* Reversed
    5
    * * * * *
