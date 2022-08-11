@@ -1,7 +1,7 @@
 # Recursion 
  ![recursion](https://user-images.githubusercontent.com/99830416/183871978-bc642fad-2e7f-44d3-b098-bc3797b2d8df.png)
-
-
+## Call stack 
+![1_E3zTWtEOiDWw7d0n7Vp-mA](https://user-images.githubusercontent.com/99830416/184133961-408372dd-4df3-4e48-9169-41ccc6be1b91.gif)
 ## Factorial
  ![factorial-code-animation](https://user-images.githubusercontent.com/99830416/183870408-dc237935-0c42-4e08-b5b8-b3a6fae1cef5.gif)
 ## Fibonacci  
