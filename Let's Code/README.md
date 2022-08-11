@@ -13,4 +13,18 @@
 - [Al_Azhar](https://sites.google.com/view/azharicpc/training-plans/level-1-training21)
 
 ## Youtube channels
+- [acmASCIC](https://www.youtube.com/c/AcmascisOrg)
+
+- [Mr Algorithms](https://www.youtube.com/channel/UCVHLc9yPGHWMPjpgnSpUItA)
+
+- [Dr.Mostafa saad](https://www.youtube.com/c/ArabicCompetitiveProgramming) 
+
+- [Mohamed Afifi]()
+
+- [WilliamFiset](https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw)
+
+- [Tushar Roy](https://www.youtube.com/user/tusharroy2525)
  
+
+
+
