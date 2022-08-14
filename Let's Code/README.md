@@ -22,7 +22,7 @@
 
 - [Dr.Mostafa saad](https://www.youtube.com/c/ArabicCompetitiveProgramming) 
 
-- [Mohamed Afifi]()
+- [Mohamed Afifi](https://www.youtube.com/channel/UCllIGsPm1NYq5jPu2HzQgIg)
 
 - [WilliamFiset](https://www.youtube.com/channel/UCD8yeTczadqdARzQUp29PJw)
 
