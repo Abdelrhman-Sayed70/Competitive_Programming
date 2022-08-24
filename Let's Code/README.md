@@ -1,6 +1,8 @@
 ## Sites
 - [Codeforces](https://codeforces.com/groups)
 
+- [CSES](https://cses.fi/problemset/)
+
 - [Google Competitions](https://codingcompetitions.withgoogle.com/)
 
 - [ProgVar.Fun](https://progvar.fun/)
