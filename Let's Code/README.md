@@ -3,6 +3,8 @@
 
 - [CSES](https://cses.fi/problemset/)
 
+- [Meta Hacker Cup](https://www.facebook.com/codingcompetitions/hacker-cup)
+
 - [Google Competitions](https://codingcompetitions.withgoogle.com/)
 
 - [ProgVar.Fun](https://progvar.fun/)
