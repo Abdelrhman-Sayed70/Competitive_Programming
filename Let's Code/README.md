@@ -19,6 +19,12 @@
 
 - [Al_Azhar](https://sites.google.com/view/azharicpc/home?authuser=0)
 
+- [Dr.Mostafa Saad](https://docs.google.com/spreadsheets/d/1iJZWP2nS_OB3kCTjq8L6TrJJ4o-5lhxDOyTaocSYc-k/edit?fbclid=IwAR3Dlc7UbjReC4dWEnwEBdbHpd79_xStxn8Pbbz9CMPZzMBcbyNeIgGG4MM#gid=84654839)
+
+- [acmASCIS Level 1 2022](https://codeforces.com/group/lfQa3gTiux/contests)
+
+- [acmASCIC Level 2 2022](https://vjudge.net/group/lvl2training2022combined)
+
 ## Youtube channels
 - [acmASCIC](https://www.youtube.com/c/AcmascisOrg)
 
