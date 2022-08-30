@@ -13,6 +13,8 @@
 
 - [Leet code](https://leetcode.com/)
 
+- [USACO Guide](https://usaco.guide/dashboard/)
+
 
 ## sheets with Materials 
 - [Assuit](https://docs.google.com/spreadsheets/d/1EbbsotAwb0zuuwxyzs8l2qh8twqw-sNcNbAjCK1kXaE/edit?fbclid=IwAR3cJwDwaH4PoUZM3jOf2r0lSK6Aq1AsE9rzjQc5Ww_GnvwDDrcsBdpiBHk#gid=1612285947)
