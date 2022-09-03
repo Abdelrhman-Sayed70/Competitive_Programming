@@ -44,4 +44,4 @@
  
 - [ARS LONGA VITA BREVIS (solve CSES problemset)](https://www.youtube.com/channel/UCFkWVr33NMrcfYZWXOJvKsw)
 
-- [(FANG questions)]()
+- [TECH DOSE (solve FANG questions) ](https://www.youtube.com/c/TECHDOSE4u)
