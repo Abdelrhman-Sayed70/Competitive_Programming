@@ -14,19 +14,7 @@ int main() {
     }
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++) {
-            // 4 cases  
-            if (i == 1 and j == 1) {
-                prefix[i][j] = v[i][j];
-            }
-            else if (i == 1 and j > 1) {
-                prefix[i][j] = prefix[i][j - 1] + v[i][j];
-            }
-            else if (i > 1 and j == 1) {
-                prefix[i][j] = prefix[i - 1][j] + v[i][j];
-            }
-            else if (i > 1 and j > 1) {
-                prefix[i][j] = prefix[i - 1][j] + prefix[i][j - 1] - prefix[i - 1][j - 1] + v[i][j];
-            }
+            prefix[i][j] = prefix[i - 1][j] + prefix[i][j - 1] - prefix[i - 1][j - 1] + v[i][j];
         }
     }
     for (int i = 0; i <= n; i++) {
