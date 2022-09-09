@@ -71,7 +71,6 @@ using namespace std;
 #define el cout << "\n" 
 double pi = 2 * acos(0.0);
 ll mod = 1e9 + 7;
-//**********************
 #pragma region pre  
 void file() {
 #pragma warning(disable : 4996).
@@ -82,6 +81,7 @@ void file() {
     // cout << "Case #" << k << ": ";
 }   
 #pragma endregion 
+//**********************
 void do_it() {
     
 }
