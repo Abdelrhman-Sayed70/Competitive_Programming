@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long 
- 
+
 void front_back() {
 	vector<int>v = { 1,2,3 };
 	cout << v.front() << " " << v.back() << "\n"; // 1 3  
@@ -23,9 +23,9 @@ void initialize_vector() {
 }
 void push_pop() {
 	vector<int>v;
-	int n; cin >> n;  
+	int n; cin >> n;
 	for (int i = 0; i < n; i++) {
-		int in; cin >> in; 
+		int in; cin >> in;
 		v.push_back(in);
 	}
 	while (!v.empty()) {
@@ -81,7 +81,13 @@ vector<ll> subvector(vector<ll> v, int m, int n) {
 		for (auto i : s) { cout << i << " "; } // 2 3 4
 	*/
 }
+void insert() {
+	vector<int>v = { 1,2,3 };
+	//v.insert(address , value)
+	v.insert(v.begin() + 1, 100);
+	for (auto it : v) { cout << it << " "; }
+}
 int main() {
+	insert();
 
-		
 }
