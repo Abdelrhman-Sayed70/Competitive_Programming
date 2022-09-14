@@ -7,8 +7,9 @@ void set_insert_traverse_asc() {
 	set<int>st;
 	vector<int>v = { 2,2 ,1,1,3,3,0 };
 	for (auto i : v) {
-		st.insert(i);
+		st.insert(i); 
 	}
+	// or set<int>st(v.begin(),v.end) 
 	set<int>::iterator it = st.begin();
 	// or : auto it = st.begin();
 	for (it; it != st.end(); it++) {
