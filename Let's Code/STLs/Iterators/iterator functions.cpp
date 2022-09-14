@@ -13,9 +13,11 @@ void advance() {
 	}
 }
 void distance() {
+	// O(n)
 	vector<int>v = { 1,2,3,4,5 };
-	vector<int>::iterator it = v.begin(); // 0
+	vector<int>::iterator it = v.begin(); // 0 
 	vector<int>::iterator it2 = v.end()-1; // 4
+		       //min,max
 	cout << distance(it, it2); // 4-0
 }
 int main() {
