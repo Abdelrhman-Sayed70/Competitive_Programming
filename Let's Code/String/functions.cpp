@@ -59,6 +59,17 @@ void getline() {
     getline(cin, s);
     cout << s;
 }
+void get_line_with_data_Structures() {
+    string s; 
+    int n; cin >> n;  
+    vector<string>v;
+    cin.ignore();
+    while (n--) {
+        getline(cin, s);
+        v.push_back(s);
+    }
+    for (auto it : v) { cout << it << "\n"; }
+}
 void swap() {
     string a = "ab", b = "cd";
     a.swap(b);
@@ -107,5 +118,5 @@ void lower_upper() {
     cout << isupper(ch);
 }
 int main() {
-
+    get_line_with_data_Structures();
 }
