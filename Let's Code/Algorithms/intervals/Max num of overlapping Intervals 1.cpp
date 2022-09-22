@@ -3,7 +3,7 @@ using namespace std;
 #define ll long long 
 
 int main() { 
-	// Maximum number of overlapping Intervals --> (1 2)(2 3) not overlap based 
+    // Maximum number of overlapping Intervals --> (1 2)(2 3) not overlap based 
     int n; cin >> n;
     vector<pair<int, int>>vop;
     while (n--) {
