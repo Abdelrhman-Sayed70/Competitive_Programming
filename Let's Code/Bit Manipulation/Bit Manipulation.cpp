@@ -67,9 +67,26 @@ void exampleXOR() {
     }
     cout << Xor;
 }
-void x_minus_1() {
-    // 16 : 10000
-    // 15 : 01111
+void tow_power_x_minus_1() {
+    //  walk form right and make all zeroes to one till you find one then make the rest equal to 0 
+
+    // (2^1) = 2 = 10 
+    // (2^1)-1 = 1 = 01
+
+    // (2^3) = 8 = 1000
+    // (2^3)-1 = 7 = 0111
+
+    // (2^4) = 16 = 10000
+    // (1^4)-1 = 15 = 01111
+}
+void n_Minus_1(int n) {
+    // walk from right and make all zero bit to one till you find one then make it zero and terminate 
+    // n : 101001000
+    //n-1: 101000111
+
+    // n :100100
+    //n-1:100011
+
 }
 void n_and_n_minus_1() {
     int n = 10;
@@ -117,6 +134,14 @@ int countBit1(int n) {
     }
     return cnt;
 }
+int countBit1_optimized(int n) {
+    int cnt = 0;
+    while (n) {
+        cnt++;
+        n &= (n - 1);
+    }
+    return cnt;
+}
 int countBit0(int n) {
     int cnt = 0;
     while (n) {
@@ -140,6 +165,35 @@ int flipBit(int n, int index) {
 bool ispowerof2(int n) {
     return(n and !(n & n - 1));
 }
-int main() {
-    
+int make_First_bit_One_to_Zero(int n) {
+    return (n & (n - 1));
+}
+int getthelastBit1value(int n) {
+    return (n & ~(n - 1));
+}
+void bitsetfunc(int n) {
+    bitset<32>x(n); // pase constant value between <> refere to the size of the binary rep of n 
+    cout << "Binary rep : " << x.to_string() << "\n";
+    cout << "decimal rep : " << x.to_ullong() << "\n";
+    // update 
+    //idx: 210
+    // 7 : 111 
+    x[0] = 0 ; 
+    cout << x.to_string() << "\n"; // 110  
+}
+void bitMask() {
+    // generate all possible subsequance 
+    // number of subseq = (2 power n ) - 1
+    int n; cin >> n;
+    vector<int>v(n);
+    for (auto& it : v) { cin >> it; }
+    for (int i = 1; i <= (1 << n); i++) {
+        for (int j = 0; j < n; j++) {
+            if (getBit(i, j)) { cout << v[j] << " "; }
+        }
+        cout << "\n";
+    }
+}
+int main() {  
+    bitMask();
 }
