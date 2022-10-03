@@ -187,7 +187,8 @@ void bitMask() {
     int n; cin >> n;
     vector<int>v(n);
     for (auto& it : v) { cin >> it; }
-    for (int i = 1; i <= (1 << n); i++) {
+    cout << "\n" ;
+    for (int i = 1 ; i < (1 << n); i++) {
         for (int j = 0; j < n; j++) {
             if (getBit(i, j)) { cout << v[j] << " "; }
         }
