@@ -21,7 +21,7 @@ void towDVectordeclaration1() {
     }
 }
 void towDVectorDeclaration2() {
-    int n, m; cin >> n >> m; 
+    int n, m; cin >> n >> m;
     vector<vector<int>>v(n, vector<int>(m)); // it is like vector<int>v(n) we use cin  have allocation in memory and all values in it are set to zeroes 
     cout << "Before input\n";
     for (int i = 0; i < n; i++) {
@@ -44,6 +44,23 @@ void towDVectorDeclaration2() {
         cout << "\n";
     }
 }
+void traverse2D_from_up_to_down() {
+    // ROTATE
+    int n, m; cin >> n >> m;
+    vector<vector<int>>v(n, vector<int>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> v[i][j];
+        }
+    }
+    for (int i = 0; i < m; i++) {
+        int cnt = 0;
+        for (int j = 0; j < n; j++) {
+            cout << v[j][i] << " ";
+        }
+        cout << "\n";
+    }
+}
 int main() {
-    towDVectorDeclaration2();
+    traverse2D_from_up_to_down();
 }
