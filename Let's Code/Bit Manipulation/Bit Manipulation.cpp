@@ -182,30 +182,30 @@ void bitset_(int n) {
     cout << x.to_string() << "\n"; // 110  
 }
 void betset_traverse() {
-    int n; cin >> n;  
-    bitset<32>B(n); 
+    int n; cin >> n;
+    bitset<32>B(n);
     for (int i = 0; i < B.size(); i++) {
         cout << B[i];
     }
     cout << "\n";
 }
 void comparing_2_number_in_bainary() {
-    int n, m; 
-    cin >> n >> m; 
+    int n, m;
+    cin >> n >> m;
     bitset<32>B1(n), B2(m);
-    cout << B1.to_string() << "\n" << B2.to_string()<<"\n";
+    cout << B1.to_string() << "\n" << B2.to_string() << "\n";
     int cnt = 0;
     for (int i = 0; i < 32; i++) {
         cnt += (B1[i] != B2[i]);
     }
-    cout << cnt; 
+    cout << cnt;
 }
 void generate_all_number_has_only_ones() {
     // form 1 to 1e18 
     // numbers that has only one is (2^x)-1 such that x from 2 to 63
     vector<ll>v;
     for (int i = 1; i <= 63; i++) {
-        v.push_back((1LL<<i)-1);
+        v.push_back((1LL << i) - 1);
     }
     for (auto it : v) {
         bitset<64>B(it);
@@ -217,10 +217,10 @@ void generate_all_number_has_only_one_zero() {
     // numbers that has only one is (2^x)-1 such that x from 2 to 63
     // numbers that has only one zero come form number has all ones and subtract form it number with power of 2 in some condition
     // ex : 7-2 = 5 -> 101  
-    vector<ll>v ,ans;
+    vector<ll>v, ans;
     for (int i = 1; i <= 63; i++) {
         ll it = (1LL << i) - 1;
-        for (int j = 0; j < i-1; j++) {
+        for (int j = 0; j < i - 1; j++) {
             ll val = it - (1LL << j);
             ans.push_back(it - val);
         }
@@ -244,6 +244,14 @@ void bitMask() {
         cout << "\n";
     }
 }
+void roles() {
+    // a + b = ( a ^ b ) + 2 ( a & b ) 
+    int a, b; cin >> a >> b; 
+    cout << a + b << "\n" << (a ^ b) + 2*(a & b);
+}
+int thepowerof(ll n) {
+    return log(n) / log(2);
+}
 int main() {
-    generate_all_number_has_only_one_zero();
+    roles();
 }
