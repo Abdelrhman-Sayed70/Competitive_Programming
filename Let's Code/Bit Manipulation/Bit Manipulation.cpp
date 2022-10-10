@@ -244,6 +244,14 @@ void bitMask() {
         cout << "\n";
     }
 }
+void andallelement() {
+    ll _and = (1 << 30) - 1;
+    vector<int>v{ 1,2,3,4,5 }; 
+    for (auto it : v) {
+        _and &= it;
+    }
+    cout << _and;
+}
 void roles() {
     // a + b = ( a ^ b ) + 2 ( a & b ) 
     int a, b; cin >> a >> b; 
