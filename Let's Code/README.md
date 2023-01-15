@@ -53,53 +53,8 @@
 
 ## Highlighted posts [Informative]
 
+- [FAANG preparation](https://www.linkedin.com/feed/update/urn:li:activity:7019360001353728000?utm_source=share&utm_medium=member_desktop)
+
 ## Highlighted posts [Roadmaps]
 
 ## Highlighted posts [Stories]
-
-## My template code
-```cpp
-#include<bits/stdc++.h>
-using namespace std;
-#define fastIO ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0) 
-#define ll long long
-#define endl "\n"
-#define vi vector<int> 
-#define vl vector<ll> 
-#define in(v) for(int i=0;i<v.size();i++) cin>>v[i];
-#define out(v) for(int i=0;i<v.size();i++) cout << v[i] << " " ;
-#define sr(V) sort(V.begin(),V.end()) ;
-#define lp(var,n) for (ll var=0;var<n;var++)  
-#define rv(V) reverse(V.begin(), V.end());
-#define rt return 
-#define yes cout <<"YES\n" 
-#define no cout << "NO\n"
-#define el cout << "\n" 
-double pi = 2 * acos(0.0);
-ll mod = 1e9 + 7;
-#pragma region pre  
-void file() {
-#pragma warning(disable : 4996).
-#ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    // cout << "Case #" << k << ": ";
-}   
-#pragma endregion 
-//**********************
-void do_it() {
-    
-}
-//**********************
-int main() {
-    file();
-    fastIO;
-    int t = 1;
-    cin >> t;  
-    for (int i = 1; i <= t; i++) {
-        //cout << "Case #" << i << ": ";
-        do_it();
-    }
-}
-```
