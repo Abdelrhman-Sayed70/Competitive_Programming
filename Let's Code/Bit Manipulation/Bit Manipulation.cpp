@@ -257,6 +257,13 @@ void roles() {
     int a, b; cin >> a >> b; 
     cout << a + b << "\n" << (a ^ b) + 2*(a & b);
 }
+void roles2() {
+    // odd ^ odd = even 
+    // even ^ even = even 
+    // odd ^ even = odd 
+    int a, b;  cin >> a >> b; 
+    cout << (a ^ b);
+}
 int thepowerof(ll n) {
     return log(n) / log(2);
 }
