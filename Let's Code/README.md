@@ -55,6 +55,7 @@
 
 - [FAANG preparation](https://www.linkedin.com/feed/update/urn:li:activity:7019360001353728000?utm_source=share&utm_medium=member_desktop)
 - [FAANG design preparation](https://www.linkedin.com/feed/update/urn:li:activity:7022825844477677569/?origin=SHARED_BY_YOUR_NETWORK)
+- [FAANG algorithms](https://www.linkedin.com/posts/arslanahmad_16-algorithmic-tricks-ugcPost-7020663344462249984-nlvM?utm_source=share&utm_medium=member_desktop)
 
 ## Highlighted posts [Roadmaps]
 
