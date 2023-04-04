@@ -49,3 +49,8 @@ static public int[,] MatrixMultiply(int[,] M1, int[,] M2, int N)
     return ans;
 }
 ```
+
+# Divide & Conquer 
+```cpp
+
+```
