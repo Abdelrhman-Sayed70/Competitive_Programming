@@ -1,5 +1,11 @@
 # Matrix Multiplication
+![image](https://user-images.githubusercontent.com/99830416/230063119-2a5e0598-c499-4dee-9584-84d1cae935fb.png)
+
+# Resources
 - [Matrix Multiplication | Geeks For Geeks](https://practice.geeksforgeeks.org/problems/multiply-2-matrices4144/1)
+
+
+
 # Naive Solution 
 ### `cpp`
 ```cpp
@@ -49,6 +55,8 @@ static public int[,] MatrixMultiply(int[,] M1, int[,] M2, int N)
     return ans;
 }
 ```
+### Complexity
+- O(n^3)
 
 # Divide & Conquer 
 ```cpp
