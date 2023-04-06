@@ -3,7 +3,7 @@
 
 # Resources
 - [Matrix Multiplication | Geeks For Geeks](https://practice.geeksforgeeks.org/problems/multiply-2-matrices4144/1)
-
+- [Matrix Multiplication | Calculator](https://matrix.reshish.com/multiplication.php)
 
 
 # Naive Solution 
