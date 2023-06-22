@@ -100,3 +100,40 @@ string s = "abcdef";
 s.append(3, 'F'); 
 cout << s; //abcdefFFF
 ```
+
+# `Get many lines`
+```cpp
+string s;
+int n; cin >> n;
+vector<string>v;
+cin.ignore();
+while (n--) {
+    getline(cin, s);
+    v.push_back(s);
+}
+for (auto it : v) { cout << it << "\n"; }
+```
+
+# `Lower and Upper`
+
+## Char
+#### Convert char 
+```cpp
+string s = "aB";
+s[0] = toupper(s[0]);
+s[1] = tolower(s[1]);
+cout << s << "\n"; // Ab
+```
+#### Check char
+```cpp
+char ch = 'A';
+cout << isupper(ch); // 1
+```
+
+## String
+```cpp
+string str = "abd";
+transform(str.begin(), str.end(), str.begin(), ::toupper);
+cout << str << "\n";
+```
+
