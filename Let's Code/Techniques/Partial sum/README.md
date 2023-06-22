@@ -1,4 +1,5 @@
 # Partial [Ranged] sum
+## [Karen and Coffee | Codeforces](https://codeforces.com/problemset/problem/816/b)
 
 `Used in range update queries in an efficient way.`
 
