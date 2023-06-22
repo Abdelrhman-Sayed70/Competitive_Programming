@@ -10,20 +10,26 @@ else cout << s.find("ab") << "\n"; // 0
 ```
 
 # `rfind`
-- same as find but returns the index of last occurence of string b in a else return -1
+**same as find but returns the index of last occurence of string b in a else return -1**
 ```cpp
 string s = "ababac";
 if (s.rfind("ab") == -1) { cout << "not found\n"; }
 else { cout << s.rfind("ab") << "\n"; } // 2
 ```
 
-# `stoi` and `stol`
-converts the string to int and ll
+# `Convert string to number`
 ```cpp
 string s = "123";
 int intNum = stoi(s);
 ll llNum = stol(s);
 cout << llNum; 
+```
+
+# `Convert number to string`
+```cpp
+int num = 10;
+string str = to_string(num);
+cout << str;
 ```
 
 # `erase`
