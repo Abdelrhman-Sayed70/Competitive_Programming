@@ -1,9 +1,9 @@
-#include<bits/stdc++.h>
-using namespace std;
-#define ll long long 
+# Can a string be palindrome
+Can you reorder the chars in the string to make it palindrome? 
 
+```cpp
 void can_be_palindrom() {
-	string s; cin >> s; 
+    string s; cin >> s;
     map<char, int>mp;
     for (auto it : s) {
         mp[it]++;
@@ -15,6 +15,4 @@ void can_be_palindrom() {
     if ((s.size() & 1 and cnt != 1) or (s.size() % 2 == 0 and cnt != 0)) { cout << "NO"; }
     else { cout << "YES"; }
 }
-int main() {
-    can_be_palindrom();
-}
+```
