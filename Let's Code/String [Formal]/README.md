@@ -40,6 +40,20 @@ string s;
 s += ch;
 ```
 
+# `Convert char to number`
+```cpp
+char ch = '4';
+int num = ch - '0';
+```
+```cpp
+string s = "123";
+int sum = 0;
+for (auto it : s) {
+    sum += (it - '0');
+}
+cout << sum; // 6
+```
+
 # `erase`
 #### `str.erase(pos)`
 remove from index pos to the end of the string
