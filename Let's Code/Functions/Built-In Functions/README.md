@@ -25,7 +25,7 @@ int mx = *max_element(v.begin(), v.end());
 ```
 
 # `Permutations`
-### Get all permutations
+#### Get all permutations
 ```cpp
 vector<int>v = { 1,2,3 };
 sort(v.begin(), v.end()); // array must be sorted
@@ -35,9 +35,25 @@ do {
 } while (next_permutation(v.begin(), v.end()));
 ```
 
-### Get next permutation
+#### Get next permutation
 ```cpp
 string s = "abc";
 next_permutation(s.begin(), s.end());
 cout << s; // acb
+```
+
+# `Unique`
+#### Get unique elements in a **`Sorted`** array in O(N)
+```cpp
+vector<int>v = { 4,2,4,1,2,3 };
+int n = v.size();
+sort(v.begin(), v.end());
+n = unique(v.begin(), v.end()) - v.begin();
+cout << n; // 4
+```
+#### Remove duplicates in a **`Sorted`** array in O(N)
+```cpp
+vector<int>v = { 4,2,4,1,2,3 };
+sort(v.begin(), v.end());
+v.erase(unique(v.begin(), v.end()), v.end());
 ```
