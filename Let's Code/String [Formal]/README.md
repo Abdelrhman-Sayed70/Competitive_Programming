@@ -19,4 +19,41 @@ if (s.rfind("ab") == -1) { cout << "not found\n"; }
 else { cout << s.rfind("ab") << "\n"; } // 2
 ```
 
+## `stoi` and `stol`
+converts the string to int and ll
+```cpp
+string s = "123";
+int intNum = stoi(s);
+ll llNum = stol(s);
+cout << llNum; 
+```
+
+## `erase`
+#### `str.erase(pos)`
+remove from index pos to the end of the string
+```cpp
+string s = "abcdef";
+s.erase(1);
+cout << s; // "a" 
+```
+#### `str.erase(pos, length)`
+remove from index pos length characters
+```cpp
+string s = "abcdef";
+s.erase(1, 2);
+cout << s; // "adef"
+```
+
 ## `sub_str`
+#### `str.substr(pos)`
+get the string from index pos to the end
+```cpp
+string s = "abcdef";
+string sub = s.substr(2); //cdef
+```
+#### `str.substr(pos, length)`
+get the string from string index length characters
+```cpp
+string s = "abcdef";
+string sub = s.substr(2, 2); // cd
+```
