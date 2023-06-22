@@ -32,6 +32,14 @@ string str = to_string(num);
 cout << str;
 ```
 
+# `Convert char to string`
+```cpp
+char ch; 
+cin >> ch;
+string s;
+s += ch;
+```
+
 # `erase`
 #### `str.erase(pos)`
 remove from index pos to the end of the string
@@ -84,10 +92,11 @@ s.insert(2, 4, 'R');
 cout << s << "\n"; // abRRRRcdef
 ```
 
-# `convert char to strnig`
+# `append`
+#### `str.append(int freq, char ch)`
+append to the end of the string char ch freq times
 ```cpp
-char ch; 
-cin >> ch;
-string s;
-s += ch;
+string s = "abcdef";
+s.append(3, 'F'); 
+cout << s; //abcdefFFF
 ```
