@@ -1,7 +1,10 @@
 # Partial [Ranged] sum
 ## [Karen and Coffee | Codeforces](https://codeforces.com/problemset/problem/816/b)
-
 `Used in range update queries in an efficient way.`
+
+## Description
+**Given an array arr and q queries, for each query you will be given 3 integers l, r, k for each index from l to r add to arr[index] value k**
+
 
 ## In case of array initialized by 0s
 
