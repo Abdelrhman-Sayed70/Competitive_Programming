@@ -2,6 +2,8 @@
 
 # `Prefix Sum`
 
+- Gets sum from the start of the array to the position I
+
 ```c++
 void doIt() {
     int n; cin >> n;
@@ -23,6 +25,8 @@ void doIt() {
 ```
 
 # `Suffix Sum`
+
+- Gets sum from the end of the array to position I
 
 ```c++
 void doIt() {
