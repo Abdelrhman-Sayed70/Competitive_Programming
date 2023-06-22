@@ -23,3 +23,21 @@ vector<int>v = { 1,2,0 };
 int mn = *min_element(v.begin(), v.end());
 int mx = *max_element(v.begin(), v.end());
 ```
+
+# `Permutations`
+### Get all permutations
+```cpp
+vector<int>v = { 1,2,3 };
+sort(v.begin(), v.end()); // array must be sorted
+do {
+    for (auto i : v) { cout << i << " "; }
+    cout << "\n";
+} while (next_permutation(v.begin(), v.end()));
+```
+
+### Get next permutation
+```cpp
+string s = "abc";
+next_permutation(s.begin(), s.end());
+cout << s; // acb
+```
