@@ -1,4 +1,6 @@
 # Prefix & Suffix [Cumulative] Sum
+## [Range sum query | CodeForces](https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/Y)
+
 
 # `Prefix Sum`
 
