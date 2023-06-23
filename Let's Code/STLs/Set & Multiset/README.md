@@ -131,8 +131,22 @@ multiset<int>ms(v.begin(), v.end());
 cout << ms.count(1); // 2
 ```
 
-# `Multiset`
+# `prev & next`
+**used to increment and decrement iterators**
 ```cpp
+vector<int>v = { 0,1,2 };
+set<int>st(v.begin(), v.end());
+cout << *prev(st.end()) << " ";  // 2
+cout << *next(st.begin()); // 1
+```
 
 
+# `Lower & Upper bound`
+```cpp
+vector<int>v = { 0,1,2,3,4,5,6,7,8 };
+set<int>st(v.begin(),v.end());
+set<int>::iterator low, up;
+low = st.lower_bound(1); // get iterator over 1
+up = st.upper_bound(5);	 // get iterator over 6
+cout << *low << " " << *up; // 1 6
 ```
