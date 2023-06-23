@@ -140,6 +140,18 @@ cout << *prev(st.end()) << " ";  // 2
 cout << *next(st.begin()); // 1
 ```
 
+# `Update set`
+**erase then insert updated item**
+```cpp
+vector<int>v = { 0,1,1,2 };
+set<int>st(v.begin(),v.end());
+// replace 1 with 5
+auto it = st.find(1);
+st.erase(it);
+st.insert(5);
+for (auto it : st) cout << it << " "; // 0 2 5
+
+```
 
 # `Lower & Upper bound`
 ```cpp
