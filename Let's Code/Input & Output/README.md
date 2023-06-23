@@ -10,3 +10,4 @@ void FilesIO() {
 #endif
 }
 ```
+`to be able to use files, you should create files near cpp file and pass their names here`
