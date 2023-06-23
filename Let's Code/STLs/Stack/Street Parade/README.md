@@ -1,6 +1,7 @@
 # Street Parade
 ## [STPAR - Street Parade | SPOJ](https://www.spoj.com/problems/STPAR/)
 ## [Cairo | Codeforces](https://codeforces.com/group/T3p02rhrmb/contest/339641/problem/E)
+![image](https://github.com/Abdelrhman-Sayed70/Competitive_Programming/assets/99830416/197f9b45-06db-40f0-9f45-d151c328ffef)
 
 ## Solution
 ```cpp
