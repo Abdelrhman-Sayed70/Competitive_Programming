@@ -1,5 +1,5 @@
-# Stack
-`LIFO: Last In First Out`
+# Stack `LIFO`
+
 # `push`
 ```cpp
 stack<int>st;
