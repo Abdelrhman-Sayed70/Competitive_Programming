@@ -58,6 +58,50 @@ for (it; it != st.rend(); it++) {
 ```
 
 # `find`
+`st.find(val)`
+- return iterator to the first val in the set
+- or return st.end in case of no val in the set
+```cpp
+vector<int>v = { 2,2 ,1,1,3,3,0 };
+set<int>st(v.begin(), v.end());
+cout << (st.find(2) != st.end() ? "Found\n" : "Not Found\n");
+```
+
+# `erase`
+**`st.erase(it)` erase only value at this iterator [how to get the iterator? using find]**
+```cpp
+vector<int>v = { 1,1,2,2,3,3,3,4 };
+multiset<int>ms;
+for (auto it : v) { ms.insert(it); }
+ms.erase(1); // erase all ones
+for (auto it : ms) { cout << it << " "; } // 2 2 3 3 3 4
+cout << "\n";
+```
+
+**`st.erase(val)` erase all elements has this val [In case of multiset]**
+```cpp
+vector<int>v = { 1,1,2,2,3,3,3,4 };
+multiset<int>ms;
+for (auto it : v) { ms.insert(it); }
+ms.erase(ms.find(2)); // erase the first 2
+for (auto it : ms) { cout << it << " "; } // 1 1 2 3 3 3 4
+cout << "\n";
+```
+**Erase min and max element**
+```cpp
+vector<int>v = { 1,2,5,4 };
+set<int>st(v.begin(), v.end());
+st.erase(st.begin()); // erase min element. set: 2 4 5
+st.erase(prev(st.end())); // erase max element. set: 2 4
+for (auto it : st) {
+    cout << it << " ";
+}
+// 2 4
+```
+**Erase range**
+
+
+**Erase while iterating**
 ```cpp
 
 ```
