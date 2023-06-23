@@ -99,10 +99,28 @@ for (auto it : st) {
 // 2 4
 ```
 **Erase range**
-
+```cpp
+set<int>st;
+vector<int>v = { 0,1,2,3,4,5,6,7,8 };
+for (auto i : v) { st.insert(i); }
+auto it1 = st.find(1), it2 = st.find(5);
+st.erase(it1, it2); // erase form it1 to it2-1
+for (auto it : st) { cout << it << " "; } //0 5 6 7 8
+```
 
 **Erase while iterating**
 ```cpp
+// it is hard way and may take run time error so store values you want to erase in vector and erase them after set iteration loop
+vector<int>v = { 1,1,2,2,3,3,3,4 };
+multiset<int>ms;
+for (auto it : v) { ms.insert(it); }
+vector<int>vec;
+for (auto it : ms) {
+	if (it & 1) { vec.push_back(it); }
+}
+for (auto it : vec) { ms.erase(it); }
+for (auto it : ms) { cout << it << " "; }
+cout << "\n";
 
 ```
 
