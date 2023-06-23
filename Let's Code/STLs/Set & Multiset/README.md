@@ -121,7 +121,14 @@ for (auto it : ms) {
 for (auto it : vec) { ms.erase(it); }
 for (auto it : ms) { cout << it << " "; }
 cout << "\n";
+```
 
+# `count`
+**`st.count(val)`**
+```cpp
+vector<int>v = { 1,1,2,2,3,3,3,4 };
+multiset<int>ms(v.begin(), v.end());
+cout << ms.count(1); // 2
 ```
 
 # `Multiset`
