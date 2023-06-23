@@ -67,10 +67,43 @@ v.erase(unique(v.begin(), v.end()), v.end());
 
 # `Sub-vector`
 ```cpp
+vector<ll> subvector(vector<ll> v, int m, int n) {
+    // m : first index  ,  n : last index // 0 based
+    auto first = v.begin() + m;
+    auto last = v.begin() + n + 1;
+    vector<ll> vector(first, last);
+    return vector;
+}
+void doIt() {
+    vector<ll>v = { 1,2,3,4,5 };
+    vector<ll>s = subvector(v, 1, 3);
+    for (auto it : s) {
+        cout << it << " ";
+    }
+    // 2 3 4
+}
+```
 
+# `Insert`
+`v.insert(address, value)`
+```cpp
+vector<int>v = { 1,2,3 };
+v.insert(v.begin() + 3, 1);
+for (auto it : v) { cout << it << " "; }
+// 1 2 3 1 
 ```
 
 # `Clear & Empty`
 ```cpp
+vector<int>v = { 1,2,3 };
+cout << v.empty() << "\n"; // 0
 
+v.clear();
+cout << v.size() << "\n"; // 0
+
+v.resize(3, -1);
+for (auto it : v) {
+    cout << it << " ";
+}
+// -1 -1 -1
 ```
