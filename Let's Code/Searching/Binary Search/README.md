@@ -33,7 +33,7 @@ void doIt() {
 - `Lower bound` return iterator iterates over first element >= val
 - `Upper bound` return iterator iterates over first element > val
 - if they does not give value in the array the iterator will point to v.end().
-- **pay attention** accessing value of this iterator throw `run time error` so first check if the iterator doesn't point to v.end()
+- **pay attention** accessing value of this iterator throw `run time error` so first check if the iterator doesn't point to `v.end()`
 
 ```cpp
 vector<int>v = { 1,2,3,4,5 };
