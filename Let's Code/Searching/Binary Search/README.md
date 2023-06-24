@@ -26,3 +26,8 @@ void doIt() {
     cout << (found ? "Yes" : "No");
 }
 ```
+
+## `Lower & Upper bound`
+```cpp
+
+```
