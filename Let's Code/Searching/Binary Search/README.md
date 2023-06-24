@@ -28,11 +28,11 @@ void doIt() {
 ```
 
 ## `Lower & Upper bound`
-`Remember: array must be sorted`
-### Lower bound
-- return iterator iterate over first element >= val
-### Upper bound
-- return iterator iterates over first element > val
+- Remember: array must be `SORTED`
+- `Lower bound` return iterator iterates over first element >= val
+- `Upper bound` return iterator iterates over first element > val
+- if they does not give value in the array the iterator will point to v.end().
+- **pay attention** accessing value of this iterator throw `run time error` so first check if the iterator doesn't point to v.end()
 
 ```cpp
 vector<int>v = { 1,2,3,4,5 };
@@ -48,7 +48,6 @@ index = upper - v.begin(); // 3
 cout << val << " " << index;
 ```
 
-**No val**
 ```cpp
 vector<int>v = { 1,2,3,4,5 };
 int val, index;
@@ -58,6 +57,17 @@ auto upper = upper_bound(v.begin(), v.end(), 5); // iterator points to v.end() a
 
 cout << "ok"; // will print ok
 ```
-```cpp
 
+```cpp
+vector<int>v = { 1,2,3,4,5 };
+int val = -1, index = -1;
+ 
+auto lower = lower_bound(v.begin(), v.end(), 6); // iterator points to v.end() at index 5
+auto upper = upper_bound(v.begin(), v.end(), 5); // iterator points to v.end() at index 5
+
+if (lower != v.end()) {
+    val = *lower;
+}
+index = lower - v.begin();
+cout << val << " " << index; // -1 5
 ```
