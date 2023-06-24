@@ -2,7 +2,7 @@
 
 # `Create and fill vector`
 
-#### Create vector with no initiale size
+#### `Create vector with no initiale size`
 ```cpp
 vector<int>v;
 int n;
