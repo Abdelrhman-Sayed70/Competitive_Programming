@@ -4,7 +4,7 @@
 ## Approach
 - it's optimizing problem which can be solved using binary search
 - search space is from 0 up to maxb + maxk = 2*1e9
-- can function gives monotonic output .. 1 1 1 1 0 0 0 0 ...
+- can function gives monotonic output [.. 1 1 1 1 0 0 0 0 ...]
 
 ## Solution
 ```cpp
