@@ -3,11 +3,11 @@
 
 ## Approach
 - It is an optimization problem that can be solved using binary search.
-- Search space is from min to max sum. min-sum = 0, max-sum = 1e5 * 1e4 = 1e9
+- Search space is from min to max sum. min_sum = 0, max_sum = 1e5 * 1e4 = 1e9
 - Binary search in this space and check if we can divide the array into k blocks with sum <= mid for each block
 - If can? we should try a smaller mid. else we should try a bigger mid.
 - You must do a monotonic check, make sure that the search space will give a monotonic answer
-- CAN function is usually greedy
+- Take care. empty subarrays are allowed which makes this a valid solution. else we should design another one.
 
 ## Solution
 ```cpp
