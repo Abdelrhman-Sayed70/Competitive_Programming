@@ -1,0 +1,2 @@
+# Longest Sub-Array with Sum K [+VE&-VE]
+## [Longest Sub-Array with Sum K [+VE&-VE] | CODING NINJAS](https://www.codingninjas.com/codestudio/problems/longest-subarray-with-sum-k_5713505?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_Arrayproblems)
