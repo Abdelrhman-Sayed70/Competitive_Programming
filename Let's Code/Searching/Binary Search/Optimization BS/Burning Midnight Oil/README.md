@@ -1,6 +1,9 @@
 # Burning Midnight Oil
 ## [Burning Midnight Oil | Codeforces](https://codeforces.com/contest/165/problem/B)
 
+## Approach
+- Check monotonicity **`passed`**
+
 ## Solution
 ```cpp
 bool can(int v, int n, int k) {
