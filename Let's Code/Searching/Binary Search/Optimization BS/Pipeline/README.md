@@ -1,5 +1,6 @@
 # Pipeline
 ## [Pipeline | Codeforces](https://codeforces.com/group/T3p02rhrmb/contest/343396/problem/W)
+![image](https://github.com/Abdelrhman-Sayed70/Competitive_Programming/assets/99830416/bd216e30-c8f9-46d2-9402-d0bed086e0b3)
 
 ## Logic
 
