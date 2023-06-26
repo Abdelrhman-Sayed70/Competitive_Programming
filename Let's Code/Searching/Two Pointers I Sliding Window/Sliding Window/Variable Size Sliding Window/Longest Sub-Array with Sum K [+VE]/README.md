@@ -13,7 +13,7 @@ out: 6 [0 - 5]
 - keep summing and check if the sum = k then update the answer
 - if the sum > k. subtract from sum value a[start] and move start while sum > k
 - after breaking the while loop of subtracting, check if the sum became equal k and update the answer
-- 
+
 
 ## Solution
 ```cpp
