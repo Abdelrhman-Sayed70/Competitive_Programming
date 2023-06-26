@@ -1,6 +1,16 @@
 # Longest Sub-Array with Sum K [+VE]
 ## [Longest Sub-Array with Sum K [+VE] | Coding Ninjas](https://www.codingninjas.com/studio/problems/longest-subarray-with-sum-k_6682399?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_Arrayproblems)
 
+## Testcase
+```
+8 6
+0 0 1 2 3 0 1 0
+out: 6 [0 - 5]
+```
+
+## Approach
+
+
 ## Solution
 ```cpp
 void doIt() { 
