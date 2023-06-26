@@ -1,2 +1,36 @@
 # Longest Sub-Array with Sum K [+VE]
 ## [Longest Sub-Array with Sum K [+VE] | Coding Ninjas](https://www.codingninjas.com/studio/problems/longest-subarray-with-sum-k_6682399?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_Arrayproblems)
+
+## Solution
+```cpp
+void doIt() { 
+    int n;
+    cin >> n; 
+    vector<int>v(n);
+    for (auto& it : v)
+        cin >> it;
+
+    int k; 
+    cin >> k;
+    
+    int start = 0, end = 0, mx = 0;
+    ll sum = 0;
+    while (end < n) {
+        sum += v[end];
+        if (sum == k) 
+            mx = max(mx, end - start + 1);
+
+        if (sum > k) {
+            while (sum > k) {
+                sum -= v[start];
+                start++;
+            }
+
+            if (sum == k) 
+                mx = max(mx, end - start + 1);
+        }
+        end++;
+    }
+    cout << mx;
+}
+```
