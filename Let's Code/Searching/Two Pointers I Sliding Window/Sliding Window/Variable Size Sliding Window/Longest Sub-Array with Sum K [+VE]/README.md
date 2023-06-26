@@ -1,2 +1,2 @@
 # Longest Sub-Array with Sum K [+VE]
-## [Longest Sub-Array with Sum K [+VE] | GeeksforGeeks](https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
+## [Longest Sub-Array with Sum K [+VE] | Coding Ninjas](https://www.codingninjas.com/studio/problems/longest-subarray-with-sum-k_6682399?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_Arrayproblems)
