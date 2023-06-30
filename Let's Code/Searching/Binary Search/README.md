@@ -4,7 +4,6 @@
 - **Used in `Monotonic search space` [ascendingly/descendingly] in O(Log(n))**
 - **Used in optimization problems [max / min]**
   
-## 
 
 ## `Implementation`
 ```cpp
@@ -29,6 +28,11 @@ void doIt() {
     }
     cout << (found ? "Yes" : "No");
 }
+```
+
+## `Binary Search`
+```cpp
+
 ```
 
 ## `Lower & Upper bound`
