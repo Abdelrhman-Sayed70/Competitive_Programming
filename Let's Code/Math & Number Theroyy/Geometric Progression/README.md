@@ -10,9 +10,9 @@
 - a1 = 2
 - a2 = 2 * 3
 - a3 = 2 * 3^2
-- `an = a1 * r^n-1`
+- **`an = a1 * r^n-1`**
 
 ## `Sum of Geometric Sequence`
-`S = a1(1 - r^n) / (1 - r)` 
+**`S = a1(1 - r^n) / (1 - r)`**
 
 **Such that `a1: first number` `n: sequence size` `r: ratio`**
