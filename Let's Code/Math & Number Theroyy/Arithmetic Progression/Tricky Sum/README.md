@@ -2,7 +2,7 @@
 ## [Tricky Sum | Codeforces](https://codeforces.com/contest/598/problem/A)
 
 
-## Solution1
+## Solution
 ```cpp
 void doIt() {
     ll n;
