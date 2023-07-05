@@ -1,4 +1,6 @@
 # Tricky Sum
+## [Tricky Sum | Codeforces](https://codeforces.com/contest/598/problem/A)
+
 
 ## Solution1
 ```cpp
