@@ -3,9 +3,6 @@
 
 ## Solution
 ```cpp
-ll multiply(ll a, ll b, ll c){
-    return ((a % c) * (b % c)) % c;
-}
 bool exceed = false;
 ll fastPower(int base, int power, int m){
     if (power == 1){
