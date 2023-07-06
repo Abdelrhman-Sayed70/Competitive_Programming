@@ -1,6 +1,6 @@
 # Powering
 
-# `Fast Power`
+## `Fast Power`
 ```cpp
 ll fastPower(int base, int power){
     if (power == 1){
