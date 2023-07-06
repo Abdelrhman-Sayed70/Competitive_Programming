@@ -36,3 +36,7 @@ For the given list get the mod with 5
 **Helps a lot to avoid overflow**
 - `(a + b) % c = [ (a % c) + (b % c) ] % c`
 - `(a * b) % c = [ (a % c) * (b % c) ] % c`
+- `(a - b) % c  = [ (a % c) - (b % c) + c] % c`
+
+## Implementation
+
