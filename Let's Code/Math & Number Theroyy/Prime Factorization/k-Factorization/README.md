@@ -2,7 +2,7 @@
 ## [k-Factorization | Codeforces](https://codeforces.com/problemset/problem/797/A)
 
 ## Approach
-
+**Here we choose prime factorization not regular factorization as prime factorization gets more numbers that can be needed to fit k**
 
 ## Solution
 ```cpp
