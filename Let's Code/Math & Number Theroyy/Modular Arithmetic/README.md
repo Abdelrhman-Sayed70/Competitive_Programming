@@ -39,4 +39,14 @@ For the given list get the mod with 5
 - `(a - b) % c  = [ (a % c) - (b % c) + c] % c`
 
 ## Implementation
-
+```cpp
+ll add(ll a, ll b, ll c){
+    return ((a % c) + (b % c)) % c;
+}
+ll subtract(ll a, ll b, ll c){
+    return ((a % c) - (b % c) + c) % c;
+}
+ll multiply(ll a, ll b, ll c){
+    return ((a % c) * (b % c)) % c;
+}
+```
