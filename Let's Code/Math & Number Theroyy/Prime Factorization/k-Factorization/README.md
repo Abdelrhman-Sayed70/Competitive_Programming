@@ -33,3 +33,33 @@ void doIt() {
         cout << it << " ";
 }
 ```
+
+## Another Solution
+```cpp
+void doIt() {
+    int n, k;
+    cin >> n >> k;
+    vector<int>v;
+    for(int i = 2; i * i <= n; i++){
+        while(n % i == 0){
+            v.push_back(i);
+            n /= i;
+        }
+    }
+    if (n != 1)
+        v.push_back(n);
+
+    if (v.size() < k){
+        cout << -1;
+        return;
+    }
+    for(int i = 0; i < k - 1; i++){
+        cout << v[i] << " ";
+    }
+    int mul = 1;
+    for(int i = k - 1; i < v.size(); i++){
+        mul *= v[i];
+    }
+    cout << mul;
+}
+```
