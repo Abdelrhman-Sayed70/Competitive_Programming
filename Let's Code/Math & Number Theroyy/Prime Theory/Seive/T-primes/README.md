@@ -1,8 +1,16 @@
 # T-primes
 ## [T-primes | Codeforces](https://codeforces.com/contest/230/problem/B)
 
+## Approach
+
+
 ## Solution
 ```cpp
+//*************
+bool isPerfectSquare(ll n){
+    ll sq = sqrt(n);
+    return sq * sq == n;
+}
 const int N = 1e6; // max number
 vector<bool>isPrime(N + 5, true);
 void seive(){
@@ -24,7 +32,10 @@ void doIt() {
         cin >> v[i];
     }
     for(auto it : v){
-
+        if (isPerfectSquare(it))
+            cout << (isPrime[sqrt(it)] ? "YES\n" : "NO\n");
+        else
+            cout << "NO\n";
     }
 }
 //*************
