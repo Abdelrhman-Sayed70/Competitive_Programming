@@ -2,7 +2,8 @@
 ## [T-primes | Codeforces](https://codeforces.com/contest/230/problem/B)
 
 ## Approach
-
+- First, check if the number of divisors is odd -> `number is perfect square`
+- Then check if the sqrt(n) is prime. if prime so the numbers have only 3 divisors `1 n sqrt(n)`
 
 ## Solution
 ```cpp
