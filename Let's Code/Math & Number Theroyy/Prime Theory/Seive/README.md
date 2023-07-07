@@ -1,6 +1,8 @@
 # Seive
 **Pre-processing algorithm used in marking numbers in range as a prime or not prime**
 
+![EmbeddedImage](https://github.com/Abdelrhman-Sayed70/Competitive_Programming/assets/99830416/371935c9-f9a8-4b8f-b43c-45680af78eb1)
+
 ## Complexity
 **`O(n . log(log(n)))`**
 
