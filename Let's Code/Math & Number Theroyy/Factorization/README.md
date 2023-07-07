@@ -29,5 +29,8 @@ void doIt() {
 
 ## Perfect Square
 ```cpp
-
+bool isPerfectSquare(ll n){
+    ll sq = sqrt(n);
+    return sq * sq == n;
+}
 ```
