@@ -35,3 +35,25 @@ void doIt() {
 ```
 
 ## `2D Traversing Diagonal`
+**Square 2D `rows = columns`**
+```cpp
+void doIt() {
+    int n = 3, m = 3;
+    int arr[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    cout << "Diagonal 1\n";
+    for(int i = 0; i < n; i++){
+        cout << arr[i][i] << " ";
+    }
+
+    cout << "\nDiagonal 2\n";
+    for(int i = 0; i < n; i++){
+        cout << arr[i][n - 1 - i] << " ";
+    }
+}
+
+```
