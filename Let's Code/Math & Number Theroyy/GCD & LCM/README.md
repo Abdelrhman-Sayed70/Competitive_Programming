@@ -19,7 +19,7 @@
 - **gcd(n, n + 1) = 1**
 - **gcd(a!, b!) = min(a, b)!**
 
-## 'Implementation'
+## `Implementation`
 ```cpp
 int a, b;
 cin >> a >> b;
