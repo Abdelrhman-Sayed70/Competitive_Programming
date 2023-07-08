@@ -1,4 +1,6 @@
 # Factorization
+### [Factorization Calculator](https://www.mathsisfun.com/numbers/factors-all-tool.html#calc)
+
 **Get the factors of numbers. factors are numbers from 1 to n that are dividing n without remendires**
 
 ## Implementation
