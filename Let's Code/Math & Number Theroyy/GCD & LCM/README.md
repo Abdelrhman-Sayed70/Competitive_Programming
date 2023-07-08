@@ -17,3 +17,12 @@
 - **gcd(0, n) = n**
 - **gcd(1, n) = 1**
 - **gcd(n, n + 1) = 1**
+- **gcd(a!, b!) = min(a, b)!**
+
+## 'Implementation'
+```cpp
+int a, b;
+cin >> a >> b;
+cout << __gcd(a, b);
+```
+
