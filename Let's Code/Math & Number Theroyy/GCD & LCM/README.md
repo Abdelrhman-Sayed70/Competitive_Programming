@@ -1,4 +1,4 @@
-# GCD 
+# 👌 `GCD`
 **GCD of 2 numbers is the greatest number that divides a, b without remainders**
 - gcd(20, 15) = 5
 - gcd(6, 3) = 3
@@ -19,10 +19,12 @@
 - **gcd(n, n + 1) = 1**
 - **gcd(a!, b!) = min(a, b)!**
 
-## `Implementation`
+## `GCD Implementation`
 ```cpp
 int a, b;
 cin >> a >> b;
 cout << __gcd(a, b);
 ```
+
+# 👌 `LCM`
 
