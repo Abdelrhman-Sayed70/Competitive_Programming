@@ -14,5 +14,6 @@
 - Complexity: O(log(max(n)))
 
 ## `GCD Properties`
-- gcd(0, n) = n
-- gcd(1, n) = 1
+- **gcd(0, n) = n**
+- **gcd(1, n) = 1**
+- **gcd(n, n + 1) = 1**
