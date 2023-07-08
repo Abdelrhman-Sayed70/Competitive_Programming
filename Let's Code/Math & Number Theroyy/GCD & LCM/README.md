@@ -29,5 +29,8 @@ cout << __gcd(a, b);
 ```
 
 # 👌 `LCM`
+#### [`LCM Calculator`](https://www.mathsisfun.com/least-common-multiple-tool.html)
+
+
 **Least common multiple, the smallest number that is multiple of a, b *e.g divisible by a, b***
 - **lcm(3, 8) = 24** `multiples of 3: (3, 6, 9, 12, 15, 18, 21, 24, ..)` `multiples of 8: (8, 16, 24, ..)`
