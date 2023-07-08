@@ -1,4 +1,6 @@
 # 👌 `GCD`
+#### [`GCD calculator`](https://www.mathsisfun.com/greatest-common-factor-tool.html)
+
 **GCD of 2 numbers is the greatest number that divides a, b without remainders**
 - gcd(20, 15) = 5
 - gcd(6, 3) = 3
@@ -27,4 +29,5 @@ cout << __gcd(a, b);
 ```
 
 # 👌 `LCM`
-
+**Least common multiple, the smallest number that is multiple of a, b *e.g divisible by a, b***
+- **lcm(3, 8) = 24** `multiples of 3: (3, 6, 9, 12, 15, 18, 21, 24, ..)` `multiples of 8: (8, 16, 24, ..)`
