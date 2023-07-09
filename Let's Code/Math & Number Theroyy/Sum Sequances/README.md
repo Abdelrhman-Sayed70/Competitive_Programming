@@ -47,12 +47,22 @@ ll sumOdd(ll a, ll b){
 
 ### 
 
-# Geometric Sequance
+# Geometric Sequence
 
-### `Geometric Sequance Sum = [(First Number) * (1 - ratio ^ Number of Numbers)] / (1 - ratio)`
+### `Geometric Sequence Sum = [(First Number) * (1 - ratio ^ Number of Numbers)] / (1 - ratio)`
 ```cpp
 ll sumSequance(ll firstNumber, ll numberOfNumbers, ll ratio) {
     ll ans = (firstNumber * (1 - pow(ratio, numberOfNumbers))) / (1 - ratio);
     return ans;
+}
+```
+
+## `Sum of numbers from a to b that are divisible by c`
+```cpp
+ll sum(ll n) {
+    return n * (n + 1) / 2;
+}
+ll sumDivisible(ll a, ll b, ll c) {
+    return sum(max(a, b) / c) * c - sum((min(a, b) - 1) / c) * c;
 }
 ```
