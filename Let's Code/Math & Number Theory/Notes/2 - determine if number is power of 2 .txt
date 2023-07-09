@@ -1,5 +1,0 @@
-2^x = n ? 
-log2(2^x) = log2(n) 
-x log2(2) = log2(n) 
-x=log2(n) / log2(2) 
-if x is integer then this number is power of 2 
