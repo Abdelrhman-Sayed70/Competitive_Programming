@@ -9,10 +9,14 @@
 - Any number can be even or odd
 - I can start with any number and increase the constant value
 
-## `Sum of Arithmetic sequence`
-- n even `sum = (first number + last number) * (n / 2)`
-- n odd `sum = mid num * n`. such that `mid num = (first num + last num) / 2`
-- General rule `sum = [ (a1 + an) * n ] / 2`
+## `Arithmetic Sequence Sum`
+**[(First Number + Last Number) / 2] * Number of Numbers**
+```cpp
+ll sumSequance(ll firstNumber, ll lastNumber, ll numberOfNumbers){
+    ll ans = ((firstNumber + lastNumber) / 2) * numberOfNumbers;
+    return ans;
+}
+```
 
 ## `Get the number of given index`
 
