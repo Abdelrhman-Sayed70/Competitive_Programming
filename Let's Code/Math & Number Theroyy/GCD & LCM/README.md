@@ -53,8 +53,6 @@ LCM(a, b) = (a * b) / gcd(a, b)
 
 ## `LCM Implementation`
 ```cpp
-int a, b;
-cin >> a >> b;
-int LcM = a / gcd(a, b) * b;
-cout << LcM;
+ll lcm(ll a, ll b)
+    return  a / __gcd(a, b) * b;
 ```
