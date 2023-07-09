@@ -5,7 +5,7 @@
 ### `Arithmetic Sequence Sum = [(First Number + Last Number) / 2] * Number of Numbers`
 ```cpp
 ll sumSequance(ll firstNumber, ll lastNumber, ll numberOfNumbers){
-    ll ans = ((firstNumber + lastNumber) / 2) * numberOfNumbers;
+    ll ans = (firstNumber + lastNumber) * numberOfNumbers / 2 ;
     return ans;
 }
 ```
@@ -23,7 +23,7 @@ ll sumEven(ll a, ll b){
 
     // calculate
     ll numberOfNumbers = ((b - a) / 2) + 1;
-    ll ans = ((a + b) / 2) * numberOfNumbers;
+    ll ans = ((a + b) * numberOfNumbers) / 2;
     return ans;
 }
 ```
@@ -40,7 +40,7 @@ ll sumOdd(ll a, ll b){
 
     // calculate
     ll numberOfNumbers = ((b - a) / 2) + 1;
-    ll ans = ((a + b) / 2) * numberOfNumbers;
+    ll ans = ((a + b) * numberOfNumbers) / 2;
     return ans;
 }
 ```
