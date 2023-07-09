@@ -50,3 +50,11 @@ LCM(a, b) = (a * b) / gcd(a, b)
 
 ## `LCM Properties`
 - lcm between 2 numbers that are multiples of each other = max(a, b). lcm(6, 18) = 18
+
+## `LCM Implementation`
+```cpp
+int a, b;
+cin >> a >> b;
+int LcM = a / gcd(a, b) * b;
+cout << LcM;
+```
