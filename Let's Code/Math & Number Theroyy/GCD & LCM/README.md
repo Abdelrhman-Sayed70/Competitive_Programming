@@ -46,7 +46,7 @@ b = 2 * 3 * 5 * 5 * 7 * 7
 LCM(a, b) = (2 * 2) * (3 * 3) * (5 * 5) * (7 * 7)
 
 ## `LCM Rule`
-`LCM(a, b) = a*b / gcd(a, b)`
+LCM(a, b) = (a * b) / gcd(a, b)
 
 ## `LCM Properties`
 - lcm between 2 numbers that are multiples of each other = max(a, b). lcm(6, 18) = 18
