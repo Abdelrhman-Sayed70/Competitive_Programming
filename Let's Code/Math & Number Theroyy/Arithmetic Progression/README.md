@@ -30,3 +30,15 @@ ll sumSequance(ll firstNumber, ll lastNumber, ll numberOfNumbers){
 - a4 = 2 + (3 * 3)
 
 - **`an = a1 + (n - 1) * diff`**
+
+
+## `Check if a number exists in a range`
+**Given start, difference, and value to search for. check if the value is exist in this sequance**
+
+`searchFor = start + (k * diff)` we want to check if k is int
+```cpp
+bool exists(double start, double diff, double searchFor){
+    double check = (searchFor - start) / diff;
+    return check == int(check);
+}
+```
