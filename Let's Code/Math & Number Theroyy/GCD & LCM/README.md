@@ -20,6 +20,7 @@
 - **gcd(1, n) = 1**
 - **gcd(n, n + 1) = 1**
 - **gcd(a!, b!) = min(a, b)!**
+- **1 <= gcd(a, b) <= min(a, b)**
 
 ## `GCD Implementation`
 ```cpp
