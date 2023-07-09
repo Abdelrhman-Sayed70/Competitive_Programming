@@ -34,3 +34,16 @@ cout << __gcd(a, b);
 
 **Least common multiple, the smallest number that is multiple of a, b *e.g divisible by a, b***
 - **lcm(3, 8) = 24** `multiples of 3: (3, 6, 9, 12, 15, 18, 21, 24, ..)` `multiples of 8: (8, 16, 24, ..)`
+
+## `How LCM Works`
+**Get the prime factors of 2 numbers and for each repeated factor, choose the most frequent**
+
+a = 2 * 2 * 3 * 3 * 5 * 7
+
+b = 2 * 3 * 5 * 5 * 7 * 7
+
+LCM(a, b) = (2 * 2) * (3 * 3) * (5 * 5) * (7 * 7)
+
+
+## `LCM Properties`
+- lcm between 2 numbers that are multiples of each other = max(a, b). lcm(6, 18) = 18
