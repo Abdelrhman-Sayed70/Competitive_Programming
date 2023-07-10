@@ -24,6 +24,7 @@
 - **gcd(a!, b!) = min(a, b)!**
 - **`1 <= gcd(a, b) <= min(a, b)`**
 - **gcd of 2 even numbers always >= 2. 2 <= gcd(ev, ev) <= min(a, b)**
+- GCD(array elements after adding x) = **`gcd(a[0] + x, gcd(a[1] - a[0], ...., a[n - 1] - a[0])`** such that array is **sorted**
 
 ## `GCD Implementation`
 ```cpp
