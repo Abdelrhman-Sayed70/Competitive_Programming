@@ -76,6 +76,8 @@ LCM(a, b) = (a * b) / gcd(a, b)
 - lcm between 2 numbers that are multiples of each other = max(a, b). lcm(6, 18) = 18
 - lcm(1, n) = n
 - lcm(0, n) Error
+- gcd(a, b) * lcm(a, b) = a * b
+- gcd(a, b) + lcm(a, b) = x. when `a = 1` `b = x - 1`
 - to get the lcm of more than 2 numbers first set lcm = 1 as lcm (1, n) = n
 
 ## `LCM Implementation`
