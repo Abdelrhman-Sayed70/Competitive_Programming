@@ -80,6 +80,18 @@ LCM(a, b) = (a * b) / gcd(a, b)
 
 ## `LCM Implementation`
 ```cpp
+ll gcd(ll a, ll b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+ll lcm(ll a, ll b) {
+    // lcm(a,b) = (a*b) / gcd(a,b)
+    return a / gcd(a, b) * b;
+}
+```
+```cpp
 ll lcm(ll a, ll b)
     return  a / __gcd(a, b) * b;
 ```
