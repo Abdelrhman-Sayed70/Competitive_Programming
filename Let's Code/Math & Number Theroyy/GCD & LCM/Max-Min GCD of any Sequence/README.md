@@ -1,4 +1,4 @@
-# Max GCD of any Sequence
+# Max-Min GCD of any Sequence
 
 ## Description
 Given an array of size n, get the max and min gcd of any sub-sequence of the array
