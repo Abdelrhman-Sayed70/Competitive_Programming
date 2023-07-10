@@ -5,17 +5,17 @@
 
 ## Implementation
 ```cpp
-void doIt() {
-    int n;
-    cin >> n;
-    vector<int>factors;
-    for (int i = 1; i * i <= n; i++){
-        if (n % i == 0){
-            factors.push_back(i);
+vector<ll> getDivisors(ll n) {
+    vector<ll> v;
+    for (ll i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            v.push_back(i);
             if (n / i != i)
-                factors.push_back(n / i);
+                v.push_back(n / i);
         }
     }
+    sort(all(v));
+    return v;
 }
 ```
 
