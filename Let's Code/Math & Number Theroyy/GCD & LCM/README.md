@@ -1,7 +1,9 @@
 # 👌 `GCD`
-#### [`GCD calculator`](https://www.mathsisfun.com/greatest-common-factor-tool.html)
+## [GCD calculator](https://www.mathsisfun.com/greatest-common-factor-tool.html)
 
-**GCD of 2 numbers is the greatest number that divides a, b without remainders**
+**`GCD of 2 numbers is the greatest number that divides a, b without remainders`**
+
+**GCD of 2 numbers held the multiplication of common divisors between 2 numbers**
 - gcd(20, 15) = 5
 - gcd(6, 3) = 3
 - gcd(7, 5) = 1
