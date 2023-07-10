@@ -46,3 +46,9 @@ void doIt() {
     cout << suffix[a];
 }
 ```
+
+# `2D Prefix Sum`
+```cpp
+
+
+```
