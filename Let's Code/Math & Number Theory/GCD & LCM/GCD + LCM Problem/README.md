@@ -1,4 +1,6 @@
 # EhAb AnD gCd
+## [EhAb AnD gCd | Codeforces](https://codeforces.com/contest/1325/problem/A)
+
 
 ## Approach
 - gcd(1, n) = 1
