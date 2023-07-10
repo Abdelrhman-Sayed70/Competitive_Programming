@@ -31,9 +31,29 @@ int a, b;
 cin >> a >> b;
 cout << __gcd(a, b);
 ```
+```cpp
+ll gcd(ll a,  ll b) {
+    // recursive 
+    // gcd(a,b) =gcd(b,a%b)
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+ll gcd(ll a, ll b) {
+    // iterative 
+    // gcd(a,b) =gcd(b,a%b)
+    while (b != 0) {
+        ll a2 = a;
+        a = b;
+        b = a2 % b;
+    }
+    return a;
+}
+```
 
 # 👌 `LCM`
-#### [`LCM Calculator`](https://www.mathsisfun.com/least-common-multiple-tool.html)
+## [LCM Calculator](https://www.mathsisfun.com/least-common-multiple-tool.html)
 
 
 **Least common multiple, the smallest number that is multiple of a, b *e.g divisible by a, b***
