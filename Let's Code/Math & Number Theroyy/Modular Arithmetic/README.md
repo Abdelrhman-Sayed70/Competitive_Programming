@@ -49,4 +49,8 @@ ll subtract(ll a, ll b, ll c){
 ll multiply(ll a, ll b, ll c){
     return ((a % c) * (b % c)) % c;
 }
+ll modneg(ll n, ll mod){
+    // n is negative
+    return ((n % mod) + mod) % mod;
+}
 ```
