@@ -1,4 +1,5 @@
 # Taxes
+## [Taxes | Codeforces](https://codeforces.com/contest/735/problem/D)
 ## Solution
 ```cpp
 bool isPrime(ll n) {
