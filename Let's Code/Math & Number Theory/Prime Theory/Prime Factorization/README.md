@@ -1,5 +1,5 @@
 # Prime Factorization
-## [Prime Factorization Calculator] (https://www.calculatorsoup.com/calculators/math/prime-factors.php)
+## [Prime Factorization Calculator](https://www.calculatorsoup.com/calculators/math/prime-factors.php)
 ## `Prime Number`
 The number has only 2 divisors, 1 and itself.
 
