@@ -8,7 +8,9 @@ The number has only 2 divisors, 1 and itself.
 - n = 15. Prime Factors: 3 * 5
 - n = 8. Prime Factors: 2 * 2 * 2
 - n = 24. Prime Factors: 2 * 2 * 2 * 3
-  
+
+## Properties
+- Subtraction any prime divisor from n get even result alwayes
 
 ```cpp
 void doIt() {
