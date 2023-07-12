@@ -1,7 +1,7 @@
 # Thinking Techniques
 ## `Record time assumed during` 
 - Reading & understanding problem
-- Thinking & Verification [handle all cases]
+- Thinking **`[ON PAPER]`** & Verification [handle all cases]
 - Coding
 - Testing
 
