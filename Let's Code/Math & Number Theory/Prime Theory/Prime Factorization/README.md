@@ -12,6 +12,8 @@ The number has only 2 divisors, 1 and itself.
 ## Properties
 - Subtraction any prime divisor from n get even result alwayes
 
+
+## Implementation
 ```cpp
 void doIt() {
     int n;
