@@ -9,8 +9,17 @@
 - **ans >= max(a, b)**
 
 ## `XOR [^]`
-**Return 1 if 2 bits are different, else return 0**
+- **Return 1 if 2 bits are different, else return 0**
+- **ans is unpredicted**
 
+## `Not [~]`
+**Reverse the bit**
+```cpp
+vector<int> v = {1, 2, 3, 4};
+int n = v.size();
+for(int i = n - 1; ~i; i--)
+    cout << v[i] << " "; // 4 3 2 1
+```
 ## `Convert Decimal Number to Binary`
 - 6 = **110** = `(2^0)*0` + `(2^1)*1` + `(2^2)*1` 
 ```cpp
