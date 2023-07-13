@@ -1,5 +1,5 @@
 # Bit Manipulation
-
+## [Bit Manipulation Calculator](https://miniwebtool.com/bitwise-calculator/?data_type=10&number1=10&number2=5&operator=AND)
 ## `And [&]`
 - **Return 1 if 2 bits are 1, else return 0**
 - **ans <= min(a, b)**
