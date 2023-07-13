@@ -1,13 +1,15 @@
 # Bit Manipulation
 
 ## `And [&]`
-**Return 1 if 2 bits are 1, else return 0**
+- **Return 1 if 2 bits are 1, else return 0**
+- **ans <= min(a, b)**
 
 ## `Or [|]`
-**Return 1 if at least one bit is 1, else return 0**
+- **Return 1 if at least one bit is 1, else return 0**
+- **ans >= max(a, b)**
 
 ## `XOR [^]`
-
+**Return 1 if 2 bits are different, else return 0**
 
 ## `Convert Decimal Number to Binary`
 - 6 = **110** = `(2^0)*0` + `(2^1)*1` + `(2^2)*1` 
