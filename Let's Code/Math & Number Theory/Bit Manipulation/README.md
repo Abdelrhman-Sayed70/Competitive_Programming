@@ -40,6 +40,22 @@ for(int i = n - 1; ~i; i--)
 - n >> shifht_times = n / pow(2, shift_times)
 - 5 >> 1 = 5 / pow(2, 1)
 
+
+## `Power of 2`
+- N is the power of 2 when contains only `one bit = 1` at the leftmost
+- N is the power of 2, so N - 1 all bits are 1
+- Anding n with n - 1 will get 0
+- 4: 100, 3: 011. 4 & 3 = 0
+
+```cpp
+bool ispowerOf2(ll n){
+    return (n and !(n & (n - 1)));
+}
+```
+
+
+
+
 ## `Convert Decimal Number to Binary`
 - 6 = **110** = `(2^0)*0` + `(2^1)*1` + `(2^2)*1` 
 ```cpp
