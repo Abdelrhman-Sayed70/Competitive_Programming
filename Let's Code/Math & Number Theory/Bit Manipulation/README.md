@@ -1,4 +1,14 @@
 # Bit Manipulation
+
+## `And [&]`
+**Return 1 if 2 bits are 1, else return 0**
+
+## `Or [|]`
+**Return 1 if at least one bit is 1, else return 0**
+
+## `XOR [^]`
+
+
 ## `Convert Decimal Number to Binary`
 - 6 = **110** = `(2^0)*0` + `(2^1)*1` + `(2^2)*1` 
 ```cpp
