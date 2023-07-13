@@ -40,6 +40,12 @@ string s;
 s += ch;
 ```
 
+# `Convert 1 digit to char`
+```cpp
+int n = 5;
+char ch = n + '0';
+```
+
 # `Convert char to number`
 ```cpp
 char ch = '4';
