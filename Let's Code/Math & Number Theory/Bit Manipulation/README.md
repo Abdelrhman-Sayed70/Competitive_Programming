@@ -13,7 +13,8 @@
 - **ans is unpredicted**
 
 ## `Not [~]`
-**Reverse the bit**
+- **Reverse the bit**
+- ~(-1) = 0
 ```cpp
 vector<int> v = {1, 2, 3, 4};
 int n = v.size();
