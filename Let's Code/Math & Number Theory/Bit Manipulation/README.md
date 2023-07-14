@@ -56,7 +56,7 @@ bool ispowerOf2(ll n){
 ## `X % pow(2, n)`
 - (x: 1 0 1 0 1 1) % pow(2, 4)
 - (x: 2^5 + 2^3 + 2^1 + 2^0) % pow(2, 4)
-
+- we find that only 2^5 is divisible by 2^4 ehich 
 
 
 ## `Convert Decimal Number to Binary`
