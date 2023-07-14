@@ -92,6 +92,19 @@ int countBit0(int n){
 }
 ```
 
+## `getBit`
+```cpp
+bool getBit(int num, int index){
+    return (1 << index) & num;
+}
+```
+```cpp
+bool getBit(int num, int index) {
+    return (num >> index) & 1;
+}
+```
+
+
 
 ## `Convert Decimal Number to Binary`
 - 6 = **110** = `(2^0)*0` + `(2^1)*1` + `(2^2)*1` 
