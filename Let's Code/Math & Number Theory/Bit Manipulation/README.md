@@ -11,7 +11,7 @@
 ## `XOR [^]`
 - **Return 1 if 2 bits are different, else return 0**
 - **ans is unpredicted**
-  
+    
 ### Properties
 - 0 ^ n = n
 - n ^ n = 0
@@ -53,6 +53,9 @@ bool ispowerOf2(ll n){
 }
 ```
 
+## `X % pow(2, n)`
+- (x: 1 0 1 0 1 1) % pow(2, 4)
+- (x: 2^5 + 2^3 + 2^1 + 2^0) % pow(2, 4)
 
 
 
