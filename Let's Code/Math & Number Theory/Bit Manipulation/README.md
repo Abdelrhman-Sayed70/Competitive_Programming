@@ -158,7 +158,18 @@ int countBit1(ll n) {
     }
     return cnt;
 }
-``` 
+```
+
+
+## `lastBitValue`
+
+`1001100. last bit value: 100`
+
+```cpp
+int lastBitValue(int num){
+    return num & ~(num - 1);
+}
+```
 
 
 
