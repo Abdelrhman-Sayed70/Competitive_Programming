@@ -121,7 +121,9 @@ int resetBit(int num, int index){
 
 ## `flipBit`
 ```cpp
-
+int flipBit(int n, int index) {
+    return n ^ (1 << index);
+}
 ```
 
 
