@@ -126,6 +126,18 @@ int flipBit(int n, int index) {
 }
 ```
 
+## `n - 1`
+still iterating on bits and turn to 1 while bits are 0, and when bit is 1 turn to 0 and break
+```
+n = 101001000
+n - 1 = 101000111
+
+n = 1011
+n - 1 = 1010
+```
+
+
+
 
 
 
