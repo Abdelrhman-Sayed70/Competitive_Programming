@@ -68,6 +68,30 @@ int ans = x & (mod - 1);
 cout << decimalToBinary(ans);
 ```
 
+## `countBit1`
+```cpp
+int countBit1(int n){
+    int cnt = 0;
+    while(n){
+        cnt += n & 1;
+        n >>= 1;
+    }
+    return cnt;
+}
+```
+
+## `countBit0`
+```cpp
+int countBit0(int n){
+    int cnt = 0;
+    while(n){
+        cnt += !(n & 1);
+        n >>= 1;
+    }
+    return cnt;
+}
+```
+
 
 ## `Convert Decimal Number to Binary`
 - 6 = **110** = `(2^0)*0` + `(2^1)*1` + `(2^2)*1` 
