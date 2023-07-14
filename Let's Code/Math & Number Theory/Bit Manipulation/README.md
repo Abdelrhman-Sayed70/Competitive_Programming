@@ -27,14 +27,14 @@ for(int i = n - 1; ~i; i--)
     cout << v[i] << " "; // 4 3 2 1
 ```
 
-## `Left Shift`
+## `Left Shift <<`
 - Shift all bits to the left
 - add shift_times zeroes to most right
 - n << shift_times = n * pow(2, shift_times)
 - 5 << 3 = 5 * pow(2, 3)
 
   
-## `Right Shift`
+## `Right Shift >>`
 - Shift all bits to the right
 - Remove the most right bits
 - n >> shifht_times = n / pow(2, shift_times)
