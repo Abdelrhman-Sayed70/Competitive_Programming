@@ -103,6 +103,24 @@ bool getBit(int num, int index) {
     return (num >> index) & 1;
 }
 ```
+## `setBit`
+```cpp
+int setBit(int num, int index){
+    // make bit = 1
+    return (num | (1 << index));
+}
+```
+## `resetBit`
+```cpp
+int resetBit(int num, int index){
+    // make bit = 0
+    return num & ~(1 << index);
+}
+```
+
+
+
+
 
 
 
