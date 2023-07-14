@@ -119,7 +119,10 @@ int resetBit(int num, int index){
 ```
 
 
+## `flipBit`
+```cpp
 
+```
 
 
 
