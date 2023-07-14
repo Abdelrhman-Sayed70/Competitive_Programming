@@ -79,6 +79,17 @@ int countBit1(int n){
     return cnt;
 }
 ```
+**Echanced**
+```cpp
+int countBit1(ll n) {
+    int cnt = 0;
+    while (n) {
+        cnt++;
+        n &= (n - 1);
+    }
+    return cnt;
+}
+```
 
 ## `countBit0`
 ```cpp
@@ -135,6 +146,19 @@ n - 1 = 101000111
 n = 1011
 n - 1 = 1010
 ```
+- **so to remove first bit = 1 we can simply make `n & (n - 1)`**
+- can be used to enhance countBits1 function
+
+```cpp
+int countBit1(ll n) {
+    int cnt = 0;
+    while (n) {
+        cnt++;
+        n &= (n - 1);
+    }
+    return cnt;
+}
+``` 
 
 
 
