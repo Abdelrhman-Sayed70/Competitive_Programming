@@ -56,7 +56,17 @@ bool ispowerOf2(ll n){
 ## `X % pow(2, n)`
 - (x: 1 0 1 0 1 1) % pow(2, 4)
 - (x: 2^5 + 2^3 + 2^1 + 2^0) % pow(2, 4)
-- we find that only 2^5 is divisible by 2^4 ehich 
+- any powers more than or equal to 4 will be divisible on 2^4. else will be the answer
+- so we can say that the answer will be x & (pow(2, 4) - 1)
+  
+```cpp
+int x , n;
+cin >> x >> n ;
+cout << decimalToBinary(x) << "\n";
+int mod = 1 << n;
+int ans = x & (mod - 1);
+cout << decimalToBinary(ans);
+```
 
 
 ## `Convert Decimal Number to Binary`
