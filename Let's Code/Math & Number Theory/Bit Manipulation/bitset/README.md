@@ -49,6 +49,12 @@ for(int i = b.size() - 1; ~i and cout << b[i]; i--); // 000..1001
 cout << "\n" << b.to_ullong();
 ```
 
+## `Convert binary to decimal`
+```cpp
+string s = "101011";
+bitset<10>b(s);
+cout << b.to_ullong(); // 43
+```
 
 ## `Convert to decimal`
 ```cpp
