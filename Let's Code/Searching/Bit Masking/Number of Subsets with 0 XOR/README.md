@@ -28,6 +28,8 @@ void doIt() {
 
 ## Solution [Meet In The Middle]
 `For array size reaches 40`
+- Solve right half [max n = 20]. count number of subsequences with 0 xor and store also the frequency of XORs
+- Solve left half [max n = 20]. count number of subsequences with 0 xor and add to the answer the freq[XOR]
 ```cpp
 bool getBit(int num, int index){
     return (1 << index) & num;
