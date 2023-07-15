@@ -24,7 +24,7 @@ string s = "101011";
 bitset<10>b(s);
 cout << b.to_ullong(); // 43
 ```
-
+---
 ## Indexing
 ### `bitset`
 `Indexing in bitset is from right to left [2^0, 2^1, 2^2, ...]`
@@ -44,6 +44,10 @@ string s = b.to_string();
 cout << s << "\n"; // 01101 [same as representation of bitset]
 cout << s[0] << s[1] << s[2]; //011
 ```
+
+---
+
+
 ## `Update`
 ```cpp
 int n = 13;
@@ -52,6 +56,7 @@ cout << b << " : with value: " << b.to_ullong(); // 01101 with value 13
 b[1] = 1;
 cout << "\n" << b << " : with value: " << b.to_ullong() ; // 01111 : with value: 15
 ```
+---
 
 # Built in Functions
 
@@ -63,6 +68,7 @@ cin >> n;
 bitset<10>b(n);
 cout << b.any();
 ```
+---
 
 ## `count`
 **return numbers of 1 bits**
@@ -71,6 +77,7 @@ int n = 5;
 bitset<10>b(n);
 cout << b.count(); // 2
 ```
+---
 
 ## `set`
 **`make a number or specific bit to 1`**
@@ -78,8 +85,12 @@ cout << b.count(); // 2
 ```cpp
 
 ```
+---
 
 ## `reset`
 **`make number or specific bit to 0`**
 ```cpp
+
+
 ```
+---
