@@ -49,9 +49,39 @@ for(int i = b.size() - 1; ~i and cout << b[i]; i--); // 000..1001
 cout << "\n" << b.to_ullong();
 ```
 
+
 ## `Convert to decimal`
 ```cpp
 int n = 13; // 1101
 bitset<32>b(n);
 cout << b.to_ullong();
+```
+
+## `any`
+**returns if the binary representation contains bit = 1**
+```cpp
+int n;
+cin >> n;
+bitset<10>b(n);
+cout << b.any();
+```
+
+## `count`
+**return numbers of 1 bits**
+```cpp
+int n = 5;
+bitset<10>b(n);
+cout << b.count(); // 2
+```
+
+## `set`
+**`make a number or specific bit to 1`**
+****
+```cpp
+
+```
+
+## `reset`
+**`make number or specific bit to 0`**
+```cpp
 ```
