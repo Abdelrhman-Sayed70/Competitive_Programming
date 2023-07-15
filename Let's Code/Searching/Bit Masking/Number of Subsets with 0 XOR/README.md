@@ -27,6 +27,46 @@ void doIt() {
 ```
 
 ## Solution [Meet In The Middle]
+`For array size reaches 40`
 ```cpp
+bool getBit(int num, int index){
+    return (1 << index) & num;
+}
+void doIt() {
+    int n;
+    cin >> n;
+    vector<ll>v(n);
+    for(auto &it:v)
+        cin >> it;
 
+    int leftHalf = n / 2, rightHalf = n - leftHalf;
+    ll ans = 0;
+    map<ll, int>mp;
+    // solve right half
+    for(int i = 1; i < 1 << rightHalf; i++){
+        ll _xor = 0;
+        for(int j = 0; j < rightHalf; j++){
+            if (getBit(i, j)){
+                _xor ^= v[j + leftHalf];
+            }
+        }
+        mp[_xor]++;
+        if (!_xor)
+            ans++;
+    }
+
+    // solve left half
+    for(int i = 1; i < 1 << leftHalf; i++){
+        ll _xor = 0;
+        for(int j = 0; j < leftHalf; j++){
+            if (getBit(i, j)){
+                _xor ^= v[j];
+            }
+        }
+        ans += mp[_xor];
+        if (!_xor)
+            ans++;
+    }
+    cout << ans;
+}
 ```
