@@ -83,20 +83,25 @@ cout << b.count(); // 2
 **`make a number or specific bit to 1`**
 ****
 ```cpp
-
+string s = "1101101";
+bitset<8>b(s);
+b.set(1);
+cout << b; // 1101111
 ```
 
 ## `reset`
 **`make number or specific bit to 0`**
 ```cpp
-int n = 13;
-bitset<5> b(n); // 01101
-cout << b << "\n";
-b.reset(); // make all bits to 0
-cout << b; // 00000
+string s = "1101101";
+bitset<8>b(s);
+b.reset();
+cout << b; // 00000000
 ```
 ```cpp
-
+string s = "1101101";
+bitset<8>b(s);
+b.reset(0);
+cout << b; // 1101100
 ```
 
 
