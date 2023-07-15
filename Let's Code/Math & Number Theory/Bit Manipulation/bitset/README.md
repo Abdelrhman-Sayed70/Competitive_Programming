@@ -58,7 +58,7 @@ cout << "\n" << b << " : with value: " << b.to_ullong() ; // 01111 : with value:
 ```
 ---
 
-# Built in Functions
+# Built-in Functions
 
 ## `any`
 **returns if the binary representation contains bit = 1**
@@ -77,7 +77,7 @@ int n = 5;
 bitset<10>b(n);
 cout << b.count(); // 2
 ```
----
+
 
 ## `set`
 **`make a number or specific bit to 1`**
@@ -85,12 +85,26 @@ cout << b.count(); // 2
 ```cpp
 
 ```
----
 
 ## `reset`
 **`make number or specific bit to 0`**
 ```cpp
-
+int n = 13;
+bitset<5> b(n); // 01101
+cout << b << "\n";
+b.reset(); // make all bits to 0
+cout << b; // 00000
+```
+```cpp
 
 ```
----
+
+
+## `flip`
+```cpp
+int n = 13;
+bitset<5> b(n); // 01101
+cout << b << "\n";
+b.flip(1);
+cout << b; // 01111
+```
