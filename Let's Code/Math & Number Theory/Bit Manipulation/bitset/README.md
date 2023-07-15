@@ -45,15 +45,12 @@ cout << s << "\n"; // 01101 [same as representation of bitset]
 cout << s[0] << s[1] << s[2]; //011
 ```
 ## `Update`
-```
-n = 13 // 1101
-index:  3 2 1 0 
-binary: 1 1 0 1
-b[2] = 0
-1 0 0 1
-```
 ```cpp
-
+int n = 13;
+bitset<5> b(n); // 01101
+cout << b << " : with value: " << b.to_ullong(); // 01101 with value 13
+b[1] = 1;
+cout << "\n" << b << " : with value: " << b.to_ullong() ; // 01111 : with value: 15
 ```
 
 # Built in Functions
