@@ -1,19 +1,21 @@
 # bitset
 ## `Declaration`
-**Convert decimal binary using to array of bits**
+**Convert decimal binary using an array of bits**
 ```cpp
-int n;
-cin >> n;
-cout << decimalToBinary(n) << "\n";
-bitset<32>b(n);
+int n = 13;
+bitset<5>b(n);
+cout << b; // 01101
+cout << "\n" << b[0] << b[1] << b[2]; // 101
 ```
 
 ## `Convert to string`
 ```cpp
-int n;
-cin >> n;
-bitset<32>b(n);
+int n = 13;
+bitset<5> b(n); // 01101
+cout << b << "\n"; // 01101
 string s = b.to_string();
+cout << s << "\n"; // 01101 [same as representation of bitset]
+cout << s[0] << s[1] << s[2]; //011
 ```
 
 ## `Convert binary to decimal`
@@ -24,10 +26,24 @@ cout << b.to_ullong(); // 43
 ```
 
 ## Indexing
+### `bitset`
+`Indexing in bitset is from right to left [2^0, 2^1, 2^2, ...]`
 ```cpp
-
+int n = 13;
+bitset<5>b(n);
+cout << b; // 01101
+cout << "\n" << b[0] << b[1] << b[2]; // 101
 ```
-
+### `string`
+`Indexing in a string from left to right [from last bit to first bit]`
+```cpp
+int n = 13;
+bitset<5> b(n); // 01101
+cout << b << "\n"; // 01101
+string s = b.to_string();
+cout << s << "\n"; // 01101 [same as representation of bitset]
+cout << s[0] << s[1] << s[2]; //011
+```
 ## `Update`
 ```
 n = 13 // 1101
