@@ -65,6 +65,19 @@ bool ispowerOf2(ll n){
 - PM1 - Power of 2
 - 7 - 2 = 5 `101`
 
+```cpp
+vector<ll>one0Bit;
+void pre(){
+    for(ll i = 2; i < 64; i++){
+        ll pm1 = (1LL << i) - 1;
+        for(int j = 0; j <= i - 2; j++){
+            one0Bit.push_back(pm1 - (1LL << j));
+        }
+    }
+    sort(all(one0Bit));
+}
+```
+
 
 ## `X % pow(2, n)`
 - (x: 1 0 1 0 1 1) % pow(2, 4)
