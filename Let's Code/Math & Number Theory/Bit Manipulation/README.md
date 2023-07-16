@@ -55,6 +55,17 @@ bool ispowerOf2(ll n){
 }
 ```
 
+## `Number with all bits = 1` `PM1`
+- (Power of 2) - 1
+- `4: 100` `3: 11`
+- `8: 1000` `7: 111`
+
+
+## `Number with exactly one bit = 0`
+
+
+
+
 ## `X % pow(2, n)`
 - (x: 1 0 1 0 1 1) % pow(2, 4)
 - (x: 2^5 + 2^3 + 2^1 + 2^0) % pow(2, 4)
