@@ -11,7 +11,8 @@
 ## `XOR [^]`
 - **Return 1 if 2 bits are different, else return 0**
 - **ans is unpredicted**
-- **the res contains numbers of bits = 1 representing that binary rep was different at this position**
+- **the res contains numbers of bits = 1 representing that binary rep was different at those positions**
+
     
 ### Properties
 - 0 ^ n = n
