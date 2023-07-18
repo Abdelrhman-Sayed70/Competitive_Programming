@@ -55,6 +55,17 @@ bool ispowerOf2(ll n){
 }
 ```
 
+## `Nearest [smaller or equal] Power of 2 of the Number`
+**return the nearest [smaller of equal] power of 2 from the number**
+```cpp
+int thePowerOf(ll n) {
+    // return the nearest [smaller of equal] power of 2 from the number
+    return log(n) / log(2);
+}
+```
+
+
+
 ## `Number with all bits = 1` `PM1`
 - (Power of 2) - 1
 - `4: 100` `3: 11`
