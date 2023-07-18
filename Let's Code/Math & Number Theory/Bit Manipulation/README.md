@@ -10,14 +10,21 @@
 
 ## `XOR [^]`
 - **Return 1 if 2 bits are different, else return 0**
-- **ans is unpredicted**
 - **the res contains numbers of bits = 1 representing that binary rep was different at those positions**
+- **ans is unpredicted**
+- `a + b = ( a ^ b ) + 2 ( a & b )` 
 
-    
+
 ### Properties
 - 0 ^ n = n
 - n ^ n = 0
 - (A ^ B ^ C ^ D ^ E) ^ (A ^ B ^ C) = D ^ E
+
+**The next roles are the same for multiplication**
+
+- odd ^ odd = odd
+- even ^ even = even
+- odd ^ even = odd 
 
 ## `Not [~]`
 - **Reverse the bit**
