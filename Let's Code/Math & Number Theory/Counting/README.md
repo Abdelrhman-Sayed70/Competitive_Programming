@@ -27,7 +27,7 @@ number of non-zero subsequence = `(2^n) - 1`
 `n * (n + 1) / 2`
 
 # Permutation
-### Definetion
+### Definition
 - **number of ways to arrange r different objects from n objects**
 - `order is matter`. `ab != ba`
 ```
@@ -50,18 +50,35 @@ ll nPr(ll n, ll r){
 ```
 ### Modular nPr
 ```cpp
-
+ll multiply(ll a, ll b, ll c){
+    return ((a % c) * (b % c)) % c;
+}
+ll nPr(ll n, ll r){
+    ll res = 1;
+    for(ll i = n - r + 1; i <= n; i++){
+        res = multiply(res, i, mod);
+    }
+    return res;
+}
 ```
 
 # Combination
+- number of different ways to generate r different elements from n elements
+- order does not matter. `ab = ba` `abc = bca = acb`
+
 ```
-nCr
+nCr = nPr / r! = n! / [(n - r)! * (r)!]
 ```
 
 ```cpp
-
-```
-
-```cpp
-
+ll nCr(ll n, ll r){
+    ll ans = 1;
+    ll div = 1; // held r!
+    for(ll i = r + 1; i <= n; i++){
+        ans *= i;
+        ans /= div;
+        div++;
+    }
+    return ans;
+}
 ```
