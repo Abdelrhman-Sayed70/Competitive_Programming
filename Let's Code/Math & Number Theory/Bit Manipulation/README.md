@@ -3,6 +3,7 @@
 ## `And [&]`
 - **Return 1 if 2 bits are 1, else return 0**
 - **ans <= min(a, b)**
+- initial value for and all elements can be any element of the array or can be the greatest element with all ones (1 << 30) - 1
 
 ## `Or [|]`
 - **Return 1 if at least one bit is 1, else return 0**
