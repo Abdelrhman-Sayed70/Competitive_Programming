@@ -64,6 +64,8 @@ ll nPr(ll n, ll r){
 ```
 
 # Combination
+## [Combination Calculator](https://www.calculatorsoup.com/calculators/discretemathematics/combinations.php)
+
 - number of different ways to generate r different elements from n elements
 - order does not matter. `ab = ba` `abc = bca = acb`
 
