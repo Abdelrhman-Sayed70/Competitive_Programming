@@ -14,7 +14,8 @@ Someone wants to travel from A to B. he can travel by sea, road, and air
 
 
 # Number of subsequences
+number of non-zero subsequence = `(2^n) - 1`
 
-
-# Number of subarrayes
+# Number of subarrays
+`n * (n + 1) / 2`
 
