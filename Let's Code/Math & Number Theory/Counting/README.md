@@ -27,6 +27,7 @@ number of non-zero subsequence = `(2^n) - 1`
 `n * (n + 1) / 2`
 
 # Permutation
+## [Permutation Calculator](https://www.calculatorsoup.com/calculators/discretemathematics/permutations.php)
 ### Definition
 - **number of ways to arrange r different objects from n objects**
 - `order is matter`. `ab != ba`
