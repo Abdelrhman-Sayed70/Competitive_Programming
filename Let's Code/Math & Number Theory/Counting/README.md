@@ -27,7 +27,8 @@ number of non-zero subsequence = `(2^n) - 1`
 `n * (n + 1) / 2`
 
 # Permutation
-**number of ways to arrange r different objects from n objects [without order consideration]**
+- **number of ways to arrange r different objects from n objects**
+- `order is matter`. `ab != ba`
 ```
 A = {a, b, c}
 generate all 2 permutations ab ba ac ca bc cb
@@ -37,7 +38,13 @@ generate all 2 permutations ab ba ac ca bc cb
 nPr = n! / (n - r)!
 ```
 ```cpp
-
+ll nPr(ll n, ll r){
+    ll res = 1;
+    for(ll i = n - r + 1; i <= n; i++){
+        res *= i;
+    }
+    return res;
+}
 ```
 
 ```cpp
