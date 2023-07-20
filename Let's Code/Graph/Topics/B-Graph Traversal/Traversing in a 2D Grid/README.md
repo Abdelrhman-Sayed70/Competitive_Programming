@@ -30,10 +30,11 @@ bool inMap(pair<int,int>point, pair<int, int>grid, int mapBase) {
 ```
 
 ## More 1 Entry Point
-**visit before enter dfs**
+**`Visit` Those Points `before` `entering traversal algorithm`**
 ```cpp
+int numOfEntryPoints;
 queue<pair<int, int>>q;
-while (k--){
+while (numOfEntryPoints--){
     int a, b;
     cin >> a >> b;
     q.push({a, b});
