@@ -30,7 +30,7 @@ bool inMap(pair<int,int>point, pair<int, int>grid, int mapBase) {
 ```
 
 ## More 1 Entry Point
-**`Visit` Those Points `before` `entering traversal algorithm`**
+**`Visit those points` `before` `entering traversal algorithm`**
 ```cpp
 int numOfEntryPoints;
 queue<pair<int, int>>q;
