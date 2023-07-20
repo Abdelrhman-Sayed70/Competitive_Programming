@@ -4,6 +4,22 @@
 - Let’s take the above grid as an example, if you are standing on point (3,2) you can move to the following four points, (3,1), (3,3), (2,2), (4,2).
 - So, if you are on point (i,j), you can move to (i - 1, j), (i + 1, j), (i, j + 1), (i, j - 1), but first you need to check if the point you are traversing to is in _**borders**_.
 
+## Traversing
+```cpp
+
+```
+## Validate Point
+```cpp
+bool inMap(pair<int,int>point, pair<int, int>grid, int mapBase) {
+    int pf = point.first, ps = point.second;
+    int gf = grid.first, gs = grid.second;
+    if (mapBase)
+        return (pf > 0 and pf <= gf and ps > 0 and ps <= gs);
+    else
+        return (pf >= 0 and pf < gf and ps >= 0 and ps < gs);
+}
+```
+
 # Problems
 ### [Fire Again | CodeForces](https://codeforces.com/contest/35/problem/C)
 
