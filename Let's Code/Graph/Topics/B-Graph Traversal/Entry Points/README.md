@@ -8,6 +8,6 @@ while (k--){
     int a, b;
     cin >> a >> b;
     q.push({a, b});
-    visited[a][b] = 1;
+    visited[a][b] = 1; //  <-------------------
 }
 ```
