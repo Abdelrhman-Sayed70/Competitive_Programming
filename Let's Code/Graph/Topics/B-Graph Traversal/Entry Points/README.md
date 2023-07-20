@@ -1,13 +1,13 @@
-# Entry Points
-**For more than one entry point make sure to make them `visited` `before entering` dfs**
-
+## More Than 1 Entry Point
+**`Visit those points` `before` `entering traversal algorithm`**
 ```cpp
-cin >> k;
+int numOfEntryPoints;
 queue<pair<int, int>>q;
-while (k--){
+while (numOfEntryPoints--){
     int a, b;
     cin >> a >> b;
     q.push({a, b});
     visited[a][b] = 1; //  <-------------------
 }
+bfs(q, {n, m});
 ```
