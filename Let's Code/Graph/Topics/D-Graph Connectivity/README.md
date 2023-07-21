@@ -60,38 +60,35 @@ int main() {
 }
 ```
 ```cpp
-vector<char>color(100, 'w');
-bool bfs(int node, int target, vector<vector<int>>& graph) {
+bool visited[200005];
+bool checkConnection(vector<vector<int>>&graph, int source, int destination){
     queue<int>nextToVisit;
-    nextToVisit.push(node);
-    color[node] = 'g';
+    nextToVisit.push(source);
     while (nextToVisit.size()) {
         int current = nextToVisit.front();
-        //cout << current << "\n";
+        if (current == destination)
+            return true;
+
+        visited[current] = 1;
         nextToVisit.pop();
         for (auto child : graph[current]) {
-            if (color[child] == 'w') {
-                if (child == target) { return true; }
-                nextToVisit.push(child);
-                color[child] = 'g';
-            }
+            if (!visited[child])
+                nextToVisit.push(child), visited[child] = 1;
         }
-        color[current] = 'b';
     }
     return false;
 }
 void doIt() {
     int vertices, edges; cin >> vertices >> edges;
-    vector<vector<int>>graph(vertices + 1);
+    vector<vector<int>>graph(vertices);
     for (int i = 0; i < edges; i++) {
         int u, v, c;
         cin >> u >> v;
         graph[u].push_back(v);
         graph[v].push_back(u);
     }
-    int start, target;
-    cin >> start >> target; 
-    bool valid = bfs(start, target, graph) || (start == target);
-    valid ? yes : no;
+    int source, destination;
+    cin >> source >> destination;
+    cout << (checkConnection(graph, source, destination) ? "YES" : "NO");
 }
 ```
