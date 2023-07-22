@@ -3,7 +3,10 @@
 # Approach 
 `DFS Approach` **To detect an undirected graph cycle, we should mark any node we visit till now, if the current node is already visited and not its parent, then its cycle. We implement it using dfs**
 
-# DFS Approach 
+# DFS Approach
+- We do not need to reset the parent and color vectors array in case of an unconnected graph
+
+
 ```cpp
 bool dfs(int node, vector<vector<int>>&graph, vector<int>&parent, vector<char>&color) {
     color[node] = 'g';
