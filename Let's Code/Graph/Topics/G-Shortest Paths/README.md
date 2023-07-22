@@ -41,4 +41,4 @@ void doIt() {
 }
 ```
 ## Shortest Path [Min Cost]
-**It can be implemented using Dijstra**
+**It can be implemented using `Dijstra`**
