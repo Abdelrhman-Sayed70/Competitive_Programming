@@ -4,32 +4,68 @@
 **The only difference between this this approach and the approach if undirected graph is the check if the child not equal to the parent of this child**
 ## `Solution`
 ```cpp
-bool ok = false;
-void dfs(int node, vector<int>graph [], vector<char>& color, vector<int>& parent) {
+vector<int> getPath(int node, int endNode, vector<int>&parent) {
+    vector<int> path;
+    while (node != endNode) {
+        path.push_back(node);
+        node = parent[node];
+    }
+    path.push_back(endNode);
+    path.push_back(path.front());
+    reverse(all(path));
+    return path;
+}
+vector<int>path;
+bool dfs(int node, vector<vector<int>>&graph, vector<int>&parent, vector<char>&color) {
     color[node] = 'g';
-    for (auto child : graph[node]) {
-        // node is the source and child is the destination 
+    for (auto child: graph[node]) {
         if (color[child] == 'w') {
             parent[child] = node;
-            dfs(child, graph, color, parent);
+            if (dfs(child, graph, parent, color)) {
+                return true;
+            }
         }
         else if (color[child] == 'g') {
-            ok = true;
-            return;
+            path = getPath(node, child,parent);
+            return true;
         }
     }
     color[node] = 'b';
+    return false;
 }
-// Function to detect cycle in a directed graph.
-bool isCyclic(int V, vector<int> adj[]) {
-    ok = false;
-    vector<char> color(V + 1, 'w');
-    vector<int> parent(V + 1, -1);
-    for (int i = 0; i < V; i++) {
-        if (color[i] == 'w') {
-            dfs(i, adj, color, parent);
+void doIt() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> graph(n + 1);
+    vector<char> color(n + 1, 'w');
+    vector<int> parent(n + 1, -1);
+    for (int i = 0; i < m; i++) {
+        int a, b;
+        cin >> a >> b;
+        graph[a].push_back(b);
+    }
+
+    // scan for cycles
+    bool cyclic = false;
+    for (int node = 0; node < n; node++) {
+        if (color[node] == 'w') {
+            if (dfs(node, graph, parent, color)) {
+                cyclic = true;
+                break;
+            }
         }
     }
-    return ok;
+
+    // answer
+    if (cyclic) {
+        cout << "Cyclic Graph\n";
+        cout << path.size() << "\n";
+        for(auto it : path)
+            cout << it << " ";
+        cout << "\n";
+    }
+    else {
+        cout << "No Cycles\n";
+    }
 }
 ```
