@@ -1,6 +1,9 @@
 # Shortest Path From Entry Node To All Nodes
 ## [Shortest Path From Entry Node To All Nodes | CS Academy](https://csacademy.com/lesson/breadth_first_search)
 
+## 💭 Approach 
+**BFS by nature get the shortest path from the entry node to all other nodes**
+
 ## Solution
 ```cpp
 void bfs(int node, vector<vector<int>>& graph, vector<char>&color, vector<int>&level) {
