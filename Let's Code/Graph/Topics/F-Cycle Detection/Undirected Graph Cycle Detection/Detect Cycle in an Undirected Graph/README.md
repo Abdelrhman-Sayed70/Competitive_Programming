@@ -17,14 +17,14 @@ bool dfs(int node, vector<int> graph[], vector<int>&parent, vector<char>&color) 
       }
       color[node] = 'b';
       return false;
-  }
-  bool isCycle(int n, vector<int> graph[]) {
+}
+bool isCycle(int n, vector<int> graph[]) {
       vector<char> color(n, 'w');
       vector<int> parent(n, -1);
       
       // scan for cycles
       bool cyclic = false;
-      for(int node = 0; node < n; node++){
+      for(int node = 0; node < n; node++){s
           if (color[node] == 'w'){
               if (dfs(node, graph, parent, color)) {
                   cyclic = true;
@@ -33,5 +33,5 @@ bool dfs(int node, vector<int> graph[], vector<int>&parent, vector<char>&color) 
           }
       }
       return cyclic;
-  }
+}
 ```
