@@ -1,7 +1,8 @@
 # Shortest Paths
 ## Shortest Path [Min Traversed Nodes / Edges]
 **It can be implemented using `BFS` as it traverses the graph level by level. The counter will be incremented when traversing all level nodes**
-`Shortest Path From Entry Node to All Nodes`
+
+### **`Shortest Path From Entry Node to All Nodes`**
 ```cpp
 void bfs(int node, vector<vector<int>>& graph, vector<char>&color, vector<int>&level) {
     queue<int>nextToVisit;
@@ -33,7 +34,7 @@ void doIt() {
         graph[a].push_back(b);
     }
     bfs(entry, graph, color, level);
-    // destination of each node
+
     for(int i = 1; i <= n; i++){
         cout << level[i] << " ";
     }
