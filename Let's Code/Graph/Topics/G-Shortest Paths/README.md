@@ -1,53 +1,43 @@
 # Shortest Paths
 ## Shortest Path [Min Traversed Nodes / Edges]
-**It can be implemented using `BFS` as it traverse graph level by level. The counter will be incremented when traverse all level nodes**
+**It can be implemented using `BFS` as it traverses the graph level by level. The counter will be incremented when traversing all level nodes**
+`Shortest Path From Entry Node to All Nodes`
 ```cpp
-map<int,bool>visited;
-int shortestPath(int node1, int node2, vector<vector<int>>& graph) {
-    // assum that graph level start from level 1
+void bfs(int node, vector<vector<int>>& graph, vector<char>&color, vector<int>&level) {
     queue<int>nextToVisit;
-    nextToVisit.push(node1);
-    int lvl = 1;
+    nextToVisit.push(node);
+    level[node] = 0;
+    color[node] = 'g';
     while (nextToVisit.size()) {
-        int sz = nextToVisit.size();
-        lvl++;
-        for (int i = 0; i < sz; i++) {
-            int current = nextToVisit.front();
-            visited[current] = 1;
-            nextToVisit.pop();
-            for (auto child : graph[current]) {
-                if (!visited[child]) {
-                    nextToVisit.push(child);
-                    visited[child] = 1;
-                    if (child == node2) { return lvl; }
-                }
+        int current = nextToVisit.front();
+        nextToVisit.pop();
+        for (auto child : graph[current]) {
+            if (color[child] == 'w') {
+                nextToVisit.push(child);
+                color[child] = 'g';
+                level[child] = level[current] + 1;
             }
         }
+        color[current] = 'b';
     }
-    return -1;
 }
-void do_it() {
-    int vertices, edges; cin >> vertices >> edges;
-    vector<vector<int>>graph(vertices + 1);
-    for (int i = 0; i < edges; i++) {
-        int u, v, c;
-        cin >> u >> v;
-        graph[u].push_back(v);
-        graph[v].push_back(u); // for undirected graph
-    }
-    while (true) {
+void doIt() {
+    int n, m, entry;
+    cin >> n >> m >> entry;
+    vector<vector<int>> graph(n + 1);
+    vector<char>color(n + 1, 'w');
+    vector<int>level(n + 1, -1);
+    for (int i = 0; i < m; i++) {
         int a, b;
-        cout << "enter 2 nodes: "; cin >> a >> b;
-        int path = shortestPath(a, b, graph);
-        cout << "level of node2 from node1 is: " << path << "\n";
-        if (path == -1) { cout << "\n"; continue; }
-        // min number of traversed nodes to reach b from a (excluding node1 and node2)
-        cout << "shortest path (min number of nodes): " << path - 2 << "\n";
-        // min number of traversed edges to reach b from a
-        cout << "shortest path (min number of edges): " << path - 1 << "\n\n";
-        visited.clear();
+        cin >> a >> b;
+        graph[a].push_back(b);
+    }
+    bfs(entry, graph, color, level);
+    // destination of each node
+    for(int i = 1; i <= n; i++){
+        cout << level[i] << " ";
     }
 }
 ```
 ## Shortest Path [Min Cost]
-- It can be implemented using dijstra
+**It can be implemented using Dijstra**
