@@ -36,7 +36,7 @@ void doIt() {
         graph[a].push_back(b);
     }
     bfs(entry, graph, color, level);
-    // destination of each node
+
     for(int i = 1; i <= n; i++){
         cout << level[i] << " ";
     }
