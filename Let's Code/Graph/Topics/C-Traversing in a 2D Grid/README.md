@@ -21,6 +21,10 @@ bool inMap(pair<int,int>point, pair<int, int>grid, int mapBase) {
 int dx[] = { 1, -1, 0, 0, -1, -1, 1, 1 };
 int dy[] = { 0, 0, 1, -1, -1, 1, 1, -1 };
 ```
+For **Backtracking** The Path
+```cpp
+char dir[] = {'U', 'D', 'L', 'R'};
+```
 
 ## BFS
 ```cpp
