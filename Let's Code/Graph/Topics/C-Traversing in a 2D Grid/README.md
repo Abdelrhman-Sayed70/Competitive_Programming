@@ -10,7 +10,7 @@ bool inMap(pair<int,int>point, pair<int, int>grid, int mapBase) {
     int pf = point.first, ps = point.second;
     int gf = grid.first, gs = grid.second;
     if (mapBase)
-        return (pf > 0 and pf <= gf and ps > 0 and ps <= gs);
+        return (pf >= 1 and pf <= gf and ps >= 1 and ps <= gs);
     else
         return (pf >= 0 and pf < gf and ps >= 0 and ps < gs);
 }
