@@ -4,15 +4,14 @@
 - [DFS  Tutorial | CS Academy](https://csacademy.com/lesson/depth_first_search)
 ## Traverse
 ```cpp
-bool visited[1000];
-void dfs(int node, vector<vector<int>>&graph) {
+void dfs(int node, vector<vector<int>>&graph, vector<int>&visited) {
     cout << node << "\n";
     visited[node] = 1;
     for (auto child : graph[node]) {
         if (!visited[child])
-            dfs(child, graph);
+            dfs(child, graph, visited);
     }
-} 
+}
 ``` 
 DFS be like 🤣
 
