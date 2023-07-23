@@ -1,4 +1,4 @@
-# Represent Multiplication of Divisors as a power b
+# Represent Multiplication of Divisors as `a power b`
 - **As the multiplication of bigger numbers can not fit in data type so we want to represent it in `a power b` form**
 - Given integer n, represent the multiplication of its divisors as a power b form
 ## [Is It A Math Problem? | Codeforces](https://codeforces.com/group/ARb1vgiFev/contest/454000/problem/A)
