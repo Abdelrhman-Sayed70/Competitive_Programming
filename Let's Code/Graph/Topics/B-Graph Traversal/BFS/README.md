@@ -1,23 +1,38 @@
 # BFS
 **`Breadth First Search` Traverse the graph level by level**
-# Tutorials
-- [BFS Toutorial | CS Academy](https://csacademy.com/lesson/breadth_first_search)
+## [BFS Toutorial | CS Academy](https://csacademy.com/lesson/breadth_first_search)
 # Traverse
 ```cpp
-bool visited[1000];
-void bfs(int node, vector<vector<int>>& graph) {
+void bfs(int node, vector<vector<int>>& graph, vector<int>&visited, vector<int>&parent) {
     queue<int>nextToVisit;
     nextToVisit.push(node);
+    parent[node] = -1;
     while (nextToVisit.size()) {
         int current = nextToVisit.front();
         cout << current << "\n";
-        visited[current] = 1; 
+        visited[current] = 1;
         nextToVisit.pop();
         for (auto child : graph[current]) {
-            if (!visited[child])
-                nextToVisit.push(child), visited[child] = 1;
+            if (!visited[child]) {
+                visited[child] = 1;
+                parent[child] = current;
+                nextToVisit.push(child);
+            }
         }
     }
+}
+void doIt() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>>graph(n + 1);
+    for(int i = 0; i < m; i++){
+        int a, b;
+        cin >> a >> b;
+        graph[a].push_back(b);
+        graph[b].push_back(a);
+    }
+    vector<int>visited(n + 1, 0), parent(n + 1);
+    bfs(1, graph, visited, parent);
 }
 ```
 
