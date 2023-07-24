@@ -1,6 +1,19 @@
 # BFS
 **`Breadth First Search` Traverse the graph level by level**
 ## [BFS Toutorial | CS Academy](https://csacademy.com/lesson/breadth_first_search)
+
+## Entering Graph
+```cpp
+int n, m; cin >> n >> m;
+vector<vector<int>>graph(n + 1);
+for (int i = 0; i < m; i++) {
+    int a, b;
+    cin >> a >> b;
+    graph[a].push_back(b);
+    graph[b].push_back(a);
+}
+```
+
 # Traverse
 ```cpp
 void bfs(int node, vector<vector<int>>& graph, vector<bool>&visited, vector<int>&parent, vector<int>&level) {
