@@ -41,4 +41,5 @@ void doIt() {
 }
 ```
 ## Shortest Path [Min Cost]
-**It can be implemented using `Dijstra`**
+- **It can be implemented using `Dijstra`**
+- From a single source it gets the min cost to reach all nodes in graph
