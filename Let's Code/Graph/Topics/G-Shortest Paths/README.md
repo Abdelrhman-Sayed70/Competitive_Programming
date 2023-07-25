@@ -58,7 +58,7 @@ vector<int>getPath(int node, vector<int>&predecessor){
     }
     return path;
 }
-void dijkstra(int node, vector<vector<pair<int, int>>>&graph, vector<bool>&visited, vector<int>&cost, vector<int>&predecessor){
+void dijkstra(int node, vector<vector<pair<int, ll>>>&graph, vector<bool>&visited, vector<int>&cost, vector<int>&predecessor){
     int n = graph.size();
 
     // cost of source node
@@ -92,7 +92,7 @@ void doIt() {
     int n, m;
     cin >> n >> m;
 
-    vector<vector<pair<int, int>>>graph(n + 1); // endNode, cost
+    vector<vector<pair<int, ll>>>graph(n + 1); // endNode, cost
     vector<bool>visited(n + 1, false);
     vector<int>cost(n + 1, 100);
     vector<int>predecessor(n + 1, -1);
