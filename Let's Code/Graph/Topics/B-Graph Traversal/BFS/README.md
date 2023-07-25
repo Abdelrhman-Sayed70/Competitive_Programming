@@ -42,15 +42,19 @@ void bfs(int node, vector<vector<int>>& graph, vector<bool>&visited, vector<int>
 }
 ``` 
 
-# ☢ Generate Path of node
+# ☢ Generate the Path of the node
 ```cpp
-vector<int> getPath(int node, vector<int>&parent) {
-    vector<int>path;
-    while (node != -1) {
-        path.push_back(node);
-        node = parent[node];
+vector<int>getPath(int node, vector<int>&predecessor){
+    stack<int>st;
+    while(node != -1){
+        st.push(node);
+        node = predecessor[node];
     }
-    reverse(all(path));
+    vector<int>path;
+    while(st.size()){
+        path.push_back(st.top());
+        st.pop();
+    }
     return path;
 }
 ```
