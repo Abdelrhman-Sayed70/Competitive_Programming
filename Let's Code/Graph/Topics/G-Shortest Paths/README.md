@@ -1,5 +1,5 @@
 # Shortest Paths
-## Shortest Path [Min Traversed Nodes / Edges]
+# `Shortest Path [Min Traversed Nodes / Edges]`
 **It can be implemented using `BFS` as it traverses the graph level by level. The counter will be incremented when traversing all level nodes**
 
 ### **`Shortest Path From Entry Node to All Nodes`**
@@ -40,9 +40,9 @@ void doIt() {
     }
 }
 ```
-## Shortest Path [Min Cost]
+# `Shortest Path [Min Cost]`
 - **It can be implemented using `Dijstra`**
-- From a single source it gets the min cost to reach all nodes in graph
+- From a single source it gets the min cost to reach all nodes in a graph
 
 ```cpp
 vector<int>getPath(int node, vector<int>&predecessor){
