@@ -114,7 +114,7 @@ void doIt() {
         graph[endNode].push_back({startNode, pathCost});
     }
 
-    unordered_map<int, vector<ll>>mp;
+    vector<vector<ll>>mp(n + 1);
     for(int i = 1; i <= n; i++){
         vector<bool>visited(n + 1, false);
         vector<ll>cost(n + 1, LONG_LONG_MAX);
@@ -126,8 +126,7 @@ void doIt() {
     while(q--){
         int a, b;
         cin >> a >> b;
-        vector<ll>curCost = mp[a];
-        cout << (curCost[b] != LONG_LONG_MAX ? curCost[b] : -1);
+        cout << (mp[a][b] != LONG_LONG_MAX ? mp[a][b] : -1);
         cout << "\n";
     }
 }
