@@ -1,8 +1,7 @@
 # Permutations
 
 ```cpp
-bool isPermutation(vector<ll>v){
-    int n = v.size();
+bool isPermutation(vector<ll>v, int n){
     for(auto it : v){
         if (it < 1 or it > n)
             return false;
