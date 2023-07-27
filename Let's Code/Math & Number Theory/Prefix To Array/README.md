@@ -1,8 +1,7 @@
 # Prefix To Array
 
 ```cpp
-vector<ll>prefixToArray(vector<ll>prefix){
-    int n = prefix.size();
+vector<ll>prefixToArray(vector<ll>prefix, int n){
     vector<ll>v(n);
     v[0] = prefix[0];
     for(int i = n - 1; i > 0; i--){
