@@ -11,4 +11,6 @@
 
 
 ## Minimus Spanning Tree
-- A spanning tree with minimum cost in weighted graph
+![image](https://github.com/Abdelrhman-Sayed70/Competitive_Programming/assets/99830416/ff58b6b7-9c55-4b68-83dd-683ad07f7003)
+
+- A spanning tree with minimum cost in a weighted graph
