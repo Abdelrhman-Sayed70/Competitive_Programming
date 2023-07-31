@@ -1,7 +1,5 @@
 # MST
 
-## Algorithm
-
 ## MST Implementation
 ```cpp
 ll MST(int node, vector<vector<pair<int, ll>>>& graph, vector<bool>& visited, vector<ll>& cost, vector<int>& predecessor) {
