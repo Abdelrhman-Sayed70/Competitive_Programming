@@ -93,8 +93,10 @@ DRRDRD
 
 
 # `Problem 2`
-**From 2D Integer array print all paths from (0, 0) to (n - 1, m - 1)**
 [Generating the paths | Codeforces](https://codeforces.com/group/gA8A93jony/contest/270592/problem/N)
+
+**From 2D Integer array print all paths from (0, 0) to (n - 1, m - 1)**
+
 ```cpp
 vector<int>path;
 set<vector<int>>ans;
@@ -140,8 +142,10 @@ void doIt() {
 
 
 # `Problem 3`
-**Count all valid paths from start to end**
 [The number of paths in grid | Codeforces](https://codeforces.com/group/gA8A93jony/contest/270592/problem/O)
+
+**Count all valid paths from start to end**
+
 
 ```cpp
 int traverse(int i, int j, int n, int m, vector<vector<char>>& grid, string path) {
