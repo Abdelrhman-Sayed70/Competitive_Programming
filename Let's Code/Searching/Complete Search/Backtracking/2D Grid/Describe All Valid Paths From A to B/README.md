@@ -92,9 +92,57 @@ DRRDRD
 
 
 
+# `Problem 2`
+**From 2D Integer array print all paths from (0, 0) to (n - 1, m - 1)**
+[Generating the paths | Codeforces](https://codeforces.com/group/gA8A93jony/contest/270592/problem/N)
+```cpp
+vector<int>path;
+set<vector<int>>ans;
+void traverse(int i, int j, int n, int m, vector<vector<int>>& grid) {
+    path.push_back(grid[i][j]);
+    if (i == n - 1 and j == m - 1) {
+        ans.insert(path);
+        return;
+    }
+ 
+    // Down
+    if (i + 1 < n) {
+        traverse(i + 1, j, n, m, grid);
+        path.pop_back();
+    }
+ 
+    // Right
+    if (j + 1 < m) {
+        traverse(i, j + 1, n, m, grid);
+        path.pop_back();
+    }
+}
+void doIt() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>>grid(n, vector<int>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> grid[i][j];
+        }
+    }
+ 
+    traverse(0, 0, n, m, grid);
+    for (auto it : ans) {
+        for (auto i : it) {
+            cout << i << " ";
+        }
+        cout << "\n";
+    }
+}
+```
 
 
-# Solution 3
+
+# `Problem 3`
+**Count all valid paths from start to end**
+[The number of paths in grid | Codeforces](https://codeforces.com/group/gA8A93jony/contest/270592/problem/O)
+
 ```cpp
 int traverse(int i, int j, int n, int m, vector<vector<char>>& grid, string path) {
     if (i == n - 1 and j == m - 1) {
@@ -127,9 +175,3 @@ void doIt() {
     cout << cnt;
 }
 ```
-
-
-
-
-## Conclusion
-**The path alwayes will contains `m - 1` R and `n - 1` D**
