@@ -1,10 +1,8 @@
 # Describe All Valid Paths From A to B
 ![image](https://user-images.githubusercontent.com/99830416/236564105-bc55224e-5067-45ba-a5ee-6d8aefc298b5.png)
 
-# Problem Statement 
-**Given 2D grid with free and blocked cells. Print all possible paths to reach from top left point to bottom right point in the grid. You can move only right or down**
-
-# Solution 1
+# `Problem 1`
+**Print all valid paths from the start to the end of the grid**
 ```cpp
 void traverse(int i, int j, int n, int m, vector<vector<char>>& grid, string path) {
     if (i == n - 1 and j == m - 1) {
@@ -32,8 +30,7 @@ void doIt() {
     traverse(0, 0, n, m, grid, "");
 }
 ```
-
-# Solution 2
+`Another Solution of Backtrack`
 ```cpp
 int n, m; 
 string path;
@@ -65,6 +62,37 @@ int main() {
     generatePaths(0, 0, V);
 }
 ```
+
+### Test Cases
+```
+4 4
+. . # .
+. . . .
+. . # .
+. . # .
+```
+```
+RDRRDD
+DRRRDD
+```
+
+```
+4 4
+. . # .
+. . . .
+. # . .
+. . # .
+```
+```
+RDRRDD
+RDRDRD
+DRRRDD
+DRRDRD
+```
+
+
+
+
 
 # Solution 3
 ```cpp
@@ -99,32 +127,9 @@ void doIt() {
     cout << cnt;
 }
 ```
-### Test Cases
-```
-4 4
-. . # .
-. . . .
-. . # .
-. . # .
-```
-```
-RDRRDD
-DRRRDD
-```
 
-```
-4 4
-. . # .
-. . . .
-. # . .
-. . # .
-```
-```
-RDRRDD
-RDRDRD
-DRRRDD
-DRRDRD
-```
+
+
 
 ## Conclusion
 **The path alwayes will contains `m - 1` R and `n - 1` D**
