@@ -4,7 +4,7 @@
 # Problem Statement 
 **Given 2D grid with free and blocked cells. Print all possible paths to reach from top left point to bottom right point in the grid. You can move only right or down**
 
-# Solution 
+# Solution 1
 ```cpp
 void traverse(int i, int j, int n, int m, vector<vector<char>>& grid, string path) {
     if (i == n - 1 and j == m - 1) {
@@ -33,7 +33,7 @@ void doIt() {
 }
 ```
 
-# Solution2
+# Solution 2
 ```cpp
 int n, m; 
 string path;
@@ -66,7 +66,7 @@ int main() {
 }
 ```
 
-## Solution 3
+# Solution 3
 ```cpp
 int traverse(int i, int j, int n, int m, vector<vector<char>>& grid, string path) {
     if (i == n - 1 and j == m - 1) {
