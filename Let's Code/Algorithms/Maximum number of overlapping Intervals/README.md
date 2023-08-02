@@ -1,9 +1,9 @@
 # Maximum number of overlapping Intervals
 
-## 1st Version [1 2][2 3] not overlapped
+## 1st Version [1 2][2 3] overlapped
 ```cpp
 int maxOverlappingIntervals(vector<pair<int, int>>intervals) {
-    // [1 2][2 3] not overlapping
+    // [1 2][2 3] overlapping
     int n = intervals.size();
 
     vector<pair<int, char>>v;
@@ -32,7 +32,41 @@ void doIt() {
 }
 ```
 
-## 2nd version [1 2][2 3] ovelapped
+## 2nd version [1 2][2 3] not overlapped
+```cpp
+int maxOverlappingIntervals(vector<pair<int, int>>intervals) {
+    // [1 2][2 3] not overlap
+    int n = intervals.size();
+
+    vector<pair<int, int>>v;
+    for (int i = 0; i < n; i++) {
+        int a = intervals[i].first, b = intervals[i].second;
+        v.push_back({ a, 1 });
+        v.push_back({ b, -1 });
+    }
+
+    sort(v.begin(), v.end());
+    int mx = 1, cur = 0;
+    for(auto it : v){
+        cur += it.second;
+        mx = max(mx, cur);
+    }
+
+    return mx;
+}
+void doIt() {
+    int n; cin >> n;
+    vector<pair<int, int>>v(n);
+    for (auto& it : v)
+        cin >> it.first >> it.second;
+
+    int mx = maxOverlappingIntervals(v);
+    cout << mx;
+}
+```
+
+
+## General Form
 ```cpp
 
 ```
