@@ -21,15 +21,28 @@ vector<ll>NGE(vector<ll>v) {
     }
     return nge;
 }
-void doIt() {
-    int n;
-    cin >> n;
-    vector<ll>v(n);
-    for (auto& it : v)
-        cin >> it;
+```
 
-    vector<ll>nge = NGE(v);
-    for (auto it : nge)
-        cout << it << " ";
+# PGE
+```cpp
+vector<ll>PGE(vector<ll>v) {
+    int n = v.size();
+    reverse(v.begin(), v.end());
+    vector<ll>pge(n, -1);
+    stack<ll>st; // will contains indecies
+    st.push(0);
+    for (int i = 1; i < n; i++) {
+        if (v[i] <= v[st.top()]){
+            st.push(i); 
+            continue;
+        }
+        while (st.size() and v[i] > v[st.top()]) {
+            pge[st.top()] = v[i];
+            st.pop();
+        }
+        st.push(i);
+    }
+    reverse(pge.begin(), pge.end());
+    return pge;
 }
 ```
