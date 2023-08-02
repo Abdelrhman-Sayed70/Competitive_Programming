@@ -1,4 +1,6 @@
 # Matrix Multiplication
+![image](https://github.com/Abdelrhman-Sayed70/Competitive_Programming/assets/99830416/feb9c03f-781f-4fdb-83cc-c355aa88d4dc)
+
 ```cpp
 for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
