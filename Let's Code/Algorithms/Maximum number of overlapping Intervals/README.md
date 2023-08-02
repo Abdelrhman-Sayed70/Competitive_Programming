@@ -2,27 +2,15 @@
 
 ## General Form
 ```cpp
-bool cmp1(pair<int, int>p1, pair<int, int>p2) {
-    // smallest is first. [1 2][2 3] not overlapped
-
-    if (p1.first == p2.first) {
-        return p1.second < p2.second;
-    }
+bool overlapSign = 0; // 0 if [1 2][2 3] -> non overlap , 1 else
+bool cmp(pair<int, int>p1, pair<int, int>p2) {
+    if (p1.first == p2.first) 
+        return  (overlapSign ? p1.second > p2.second : p1.second < p2.second);
 
     return p1.first < p2.first;
 }
 
-bool cmp2(pair<int, int>p1, pair<int, int>p2) {
-    // bigger is first. [1 2][2 3] overlapped
-
-    if (p1.first == p2.first) {
-        return p1.second > p2.second;
-    }
-
-    return p1.first < p2.first;
-}
-
-int maxOverlappingIntervals(vector<pair<int, int>>intervals, bool overlappSign) {
+int maxOverlappingIntervals(vector<pair<int, int>>intervals) {
     int n = intervals.size();
 
     vector<pair<int, int>>v;
@@ -32,15 +20,8 @@ int maxOverlappingIntervals(vector<pair<int, int>>intervals, bool overlappSign) 
         v.push_back({ b, -1 });
     }
 
-    if (overlappSign == 0) {
-        // [1 2][2 3] -> not overlapping
-        sort(v.begin(), v.end(), cmp1);   
-    }
-    else {
-        // [1 2][2 3] -> overlapping
-        sort(v.begin(), v.end(), cmp2);
-    }
-    
+    sort(v.begin(), v.end(), cmp);
+   
     int cur = 0, mx = 1;
     for (auto it : v) {
         cur += it.second;
@@ -55,7 +36,7 @@ void doIt() {
     for (auto& it : v)
         cin >> it.first >> it.second;
 
-    int mx = maxOverlappingIntervals(v, 1);
+    int mx = maxOverlappingIntervals(v);
     cout << mx;
 }
 ```
