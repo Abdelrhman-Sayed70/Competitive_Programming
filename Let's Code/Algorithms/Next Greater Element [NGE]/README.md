@@ -1,4 +1,5 @@
 # NGE
+## [NGE | Codeforces](https://codeforces.com/group/T3p02rhrmb/contest/339641/problem/Q)
 ## [NGE | Codeforces](https://codeforces.com/group/c3FDl9EUi9/contest/263096/problem/J)
 
 ```cpp
