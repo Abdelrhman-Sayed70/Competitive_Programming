@@ -10,6 +10,6 @@ ll maxSubArraySum(vector<ll>& v) {
         if (sum < 0)
             sum = 0;
     }
-    return sum;
+    return mx;
 }
 ```
