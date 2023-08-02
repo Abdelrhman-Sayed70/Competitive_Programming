@@ -1,6 +1,6 @@
 # Maximum number of overlapping Intervals
 
-## 1st Version [1 2][2 3] overlapped
+## 1st version [1 2][2 3] overlapped [POPULAR]
 ```cpp
 int maxOverlappingIntervals(vector<pair<int, int>>intervals) {
     // [1 2][2 3] overlapping
@@ -63,10 +63,4 @@ void doIt() {
     int mx = maxOverlappingIntervals(v);
     cout << mx;
 }
-```
-
-
-## General Form
-```cpp
-
 ```
