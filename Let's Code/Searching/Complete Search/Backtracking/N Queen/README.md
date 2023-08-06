@@ -1,4 +1,6 @@
 # N Queen
+## [N Queen | Codeforces](https://codeforces.com/group/gA8A93jony/contest/270592/problem/M)
+## [N Queen | Leetcode](https://leetcode.com/problems/n-queens/description/)
 ![image](https://github.com/Abdelrhman-Sayed70/Competitive_Programming/assets/99830416/55dacbf1-1996-435b-9062-fb0075062fa7)
 
 
