@@ -18,6 +18,7 @@ The number has only 2 divisors, 1 and itself.
 void doIt() {
     int n;
     cin >> n;
+
     map<int,int>mp;
     for(int i = 2; i * i <= n; i++){
         while(n % i == 0){
@@ -28,6 +29,7 @@ void doIt() {
     if (n != 1)
         mp[n]++;
 
+    // print prime factors
     for(auto it: mp){
         cout << "factor: " << it.first << ", count: " << it.second << "\n";
     }
