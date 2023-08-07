@@ -1,6 +1,9 @@
 # Count the Dividing Pairs
 ## [Count the Dividing Pairs | Codeforces](https://codeforces.com/gym/102317/problem/H)
 
+## Problem
+Count number of pairs such that one of 2 elements divide the other
+
 ## Solution
 ```cpp
 const int N = 1e7 + 5;
