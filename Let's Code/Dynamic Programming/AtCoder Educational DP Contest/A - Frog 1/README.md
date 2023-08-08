@@ -9,28 +9,32 @@
 
 ## Solution
 ```cpp
-ll solve(int i, int n, vector<int>& v, vector<int>&dp) {
-    // i make sure that this is only the base case as i move alwayes 1 move and move 2 under check
-    if (i == n - 1) { return 0; } 
+int solve(int i, vector<int>& v, vector<int>& dp) {
+    if (i == v.size() - 1)
+        return 0;
 
-    if (dp[i] != -1) { return dp[i]; } // check dp
+    if (dp[i] != -1)
+        return dp[i];
 
-    ll ans1 = abs(v[i] - v[i + 1]) + solve(i + 1, n, v,dp);
+    int sol1 = INT_MAX, sol2 = INT_MAX;
 
-    // set answer big number as if i can't move 2 steps so this path will be unavailable
-    ll ans2 = 1e5; 
-    if (i + 2 < n) {
-        ans2 = abs(v[i] - v[i + 2]) + solve(i + 2, n, v,dp);
-    }
+    sol1 = abs(v[i] - v[i + 1]) + solve(i + 1, v, dp);
 
-    dp[i] = min(ans1, ans2);
+    if (i + 2 < v.size())
+        sol2 = abs(v[i] - v[i + 2]) + solve(i + 2, v, dp);
+
+    dp[i] = min(sol1, sol2);
     return dp[i];
 }
-int main() {
-    int n; cin >> n; 
-    vector<int>v(n), dp(n+5,-1);
-    for (int i = 0; i < n; i++) { cin >> v[i]; }
-    cout << solve(0, n, v, dp);
+void doIt(int tc) {
+    int n;
+    cin >> n;
+    vector<int>v(n);
+    for (auto& it : v)
+        cin >> it;
+
+    vector<int>dp(n + 1, -1);
+    cout << solve(0, v, dp);
 }
 ```
 
