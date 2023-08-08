@@ -24,25 +24,30 @@ int main {
 
 ## dp Recursive Solution 
 ```cpp
-int n;
-ll solve(int i, vector<int>&v, vector<ll>&dp) {
-    if (i >= n) { return 0; }
+ll solve(int i, vector<ll>& v, vector<ll>& dp) {
+    if (i >= v.size())
+        return 0;
 
-    if (dp[i] != -1) { return dp[i]; }
+    if (dp[i] != -1)
+        return dp[i];
 
-    ll a = solve(i + 1, v, dp); // leave the current monester 
-    ll b = v[i] + solve(i + 2, v, dp); // take the current monester and jump 2 steps 
+    ll take = v[i] + solve(i + 2, v, dp); 
+    ll leave = solve(i + 1, v, dp);
 
-    dp[i] = max(a, b);
+    dp[i] = max(take, leave);
     return dp[i];
 }
-int main() {
+void doIt(int tc) {
+    int n;
     cin >> n; 
-    vector<ll>dp(1004, -1);
-    vector<int>v(n); 
-    for (auto& it : v) { cin >> it; } 
-    ll ans = solve(0, v, dp);
-    cout << ans << "\n"; 
+    vector<ll>v(n);
+    for (auto& it : v)
+        cin >> it;
+
+    vector<ll>dp(n + 1, -1);
+    ll mxCoins = solve(0, v, dp);
+
+    cout << "Case " << tc << ": " << mxCoins << "\n";
 }
 ```
 
