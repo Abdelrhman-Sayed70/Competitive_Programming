@@ -1,5 +1,6 @@
 # Merge Intervals
 ## [Merge Intervals | Leetcode](https://leetcode.com/problems/merge-intervals/description/)
+## [Merge Intervals | Codeforces](https://codeforces.com/group/c3FDl9EUi9/contest/262795/problem/N)
 
 ```cpp
 vector<pair<int, int>> mergeIntervals(vector<pair<int, int>>&v) {
