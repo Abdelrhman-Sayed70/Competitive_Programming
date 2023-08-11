@@ -96,7 +96,7 @@ void doIt() {
 }
 ```
 
-# `Searchin`
+# `Searching`
 
 ## `Binary Search`
 ```cpp
@@ -347,3 +347,5 @@ void solve(int i, int r, vector<string>& v) {
     solve(i + 1, r, v);
 }
 ```
+
+# STLs
