@@ -1398,3 +1398,114 @@ void doIt(int tc) {
 }
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Algorithms
+
+## `max subarray sum`
+```cpp
+ll maxSubArraySum(vector<ll>& v) {
+    ll mx = -1e9, sum = 0;
+    
+    for (auto it : v) {
+        sum += it;
+        mx = max(mx, sum);
+        if (sum < 0)
+            sum = 0;
+    }
+    return mx;
+}
+```
+
+## `Maximum number of overlapping Intervals`
+```cpp
+bool overlapSign = 0; // 0 if [1 2][2 3] -> non overlap , 1 else
+bool cmp(pair<int, int>p1, pair<int, int>p2) {
+    if (p1.first == p2.first) 
+        return  (overlapSign ? p1.second > p2.second : p1.second < p2.second);
+
+    return p1.first < p2.first;
+}
+
+int maxOverlappingIntervals(vector<pair<int, int>>intervals) {
+    int n = intervals.size();
+
+    vector<pair<int, int>>v;
+    for (int i = 0; i < n; i++) {
+        int a = intervals[i].first, b = intervals[i].second;
+        v.push_back({ a, 1 });
+        v.push_back({ b, -1 });
+    }
+
+    sort(v.begin(), v.end(), cmp);
+   
+    int cur = 0, mx = 1;
+    for (auto it : v) {
+        cur += it.second;
+        mx = max(mx, cur);
+    }
+
+    return mx;
+}
+```
+
+## `Merge Intervals`
+```c++
+vector<pair<int, int>> mergeIntervals(vector<pair<int, int>>&v) {
+    int n = v.size();
+    sort(all(v));
+    
+    vector<pair<int, int>>mergedIntervals;
+    int a = v[0].first, b = v[0].second;
+    for (int i = 1; i < n; i++) {
+        if (v[i].first <= b) {
+            b = max(b, v[i].second);
+        }
+        else {
+            mergedIntervals.push_back({ a,b });
+            a = v[i].first, b = v[i].second;
+        }
+    }
+    mergedIntervals.push_back({ a,b });
+    
+    return mergedIntervals;
+}
+```
+
+## `NGE`
+```cpp
+vector<ll>NGE(vector<ll>v) {
+    int n = v.size();
+    vector<ll>nge(n, -1);
+    stack<ll>st; // will contain indecies
+    st.push(0);
+    for (int i = 1; i < n; i++) {
+        if (v[i] <= v[st.top()]) {
+            st.push(i);
+            continue;
+        }
+
+        while (st.size() and v[i] > v[st.top()]) {
+            nge[st.top()] = v[i];
+            st.pop();
+        }
+        st.push(i);
+    }
+    return nge;
+}
+```
