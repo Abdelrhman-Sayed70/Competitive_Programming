@@ -1531,6 +1531,93 @@ bool canBePalindrom(string s){
     return 1;
 }
 ```
+## `Matrix Multiplication`
+```cpp
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        for (int k = 0; k < n; k++) {
+            ans[i][j] += v1[i][k] * v2[k][j];
+        }
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Functions
+
+## `Built-in Functions`
+
+## `Permutations`
+#### Get all permutations
+```cpp
+vector<int>v = { 1,2,3 };
+sort(v.begin(), v.end()); // array must be sorted
+do {
+    for (auto i : v) { cout << i << " "; }
+    cout << "\n";
+} while (next_permutation(v.begin(), v.end()));
+```
+
+#### Get next permutation
+```cpp
+string s = "abc";
+next_permutation(s.begin(), s.end());
+cout << s; // acb
+```
+
+## `Unique`
+#### Get unique elements in a **`Sorted`** array in O(N)
+```cpp
+vector<int>v = { 4,2,4,1,2,3 };
+int n = v.size();
+sort(v.begin(), v.end());
+n = unique(v.begin(), v.end()) - v.begin();
+cout << n; // 4
+```
+#### Remove duplicates in a **`Sorted`** array in O(N)
+```cpp
+vector<int>v = { 4,2,4,1,2,3 };
+sort(v.begin(), v.end());
+v.erase(unique(v.begin(), v.end()), v.end());
+```
+
+## `Compare Function`
+```cpp
+bool cmp(pair<int, int>p1, pair<int, int>p2){
+    if (p1.first == p2.first){
+        return p1.second < p2.second;
+    }
+    return p1.first > p2.first;
+}
+
+sort(all(v), cmp);
+```
+
+
+
+
+
+
+
+
+
 
 
 
