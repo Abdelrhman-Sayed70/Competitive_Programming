@@ -124,14 +124,14 @@ int val, index;
 
 auto low = lower_bound(v.begin(), v.end(), 3); // low is iterator points to 3
 if (low != v.end()){
-  val = *low; // 3
-  index = low - v.begin(); // 2
+    val = *low; // 3
+    index = low - v.begin(); // 2
 }
 
 auto upper = upper_bound(v.begin(), v.end(), 3); // low is iterator points to 4
 if (upper != v.end()){
-  val = *upper; // 4
-  index = upper - v.begin(); // 3
+    val = *upper; // 4
+    index = upper - v.begin(); // 3
 }
 
 cout << val << " " << index;
