@@ -348,4 +348,77 @@ void solve(int i, int r, vector<string>& v) {
 }
 ```
 
+
+
+
+
+
+
+
+
+
+
 # STLs
+## `Map`
+#### `erase`
+```cpp
+map<char, int>mp;
+mp['a'] = 20;
+mp['b'] = 40;
+mp['c'] = 60;
+auto it = mp.find('a');
+if (it!=mp.end()) 
+  mp.erase(it); // or mp.erase('a') key 
+```
+
+## `Priority Queue`
+#### `Priority Queue Min`
+```cpp
+priority_queue<int, vector<int>, greater<int>> pq;
+pq.push(5);
+pq.push(1);
+pq.push(4);
+cout << pq.top(); //1
+```
+## `Set`
+#### `Traverse descending`
+```cpp
+vector<int>v = {1,5,2,4};
+set<int>st(v.begin(), v.end());
+set<int>::reverse_iterator it = st.rbegin();
+for (it; it != st.rend(); it++) {
+    cout << *it << " "; // 5 4 2 1
+}
+```
+
+
+### `erase`
+**`st.erase(it)` erase only value at this iterator [how to get the iterator? using find]**
+```cpp
+vector<int>v = { 1,1,2,2,3,3,3,4 };
+multiset<int>ms;
+for (auto it : v) { ms.insert(it); }
+ms.erase(1); // erase all ones
+for (auto it : ms) { cout << it << " "; } // 2 2 3 3 3 4
+cout << "\n";
+```
+
+**`st.erase(val)` erase all elements has this val [In case of multiset]**
+```cpp
+vector<int>v = { 1,1,2,2,3,3,3,4 };
+multiset<int>ms;
+for (auto it : v) { ms.insert(it); }
+ms.erase(ms.find(2)); // erase the first 2
+for (auto it : ms) { cout << it << " "; } // 1 1 2 3 3 3 4
+cout << "\n";
+```
+
+**`Erase range`**
+```cpp
+vector<int>v = { 0,1,2,3,4,5,6,7,8 };
+set<int>st(v.begin(), v.end());
+auto it1 = st.find(1), it2 = st.find(5);
+st.erase(it1, it2); // erase form it1 to it2-1
+for (auto it : st) { cout << it << " "; } //0 5 6 7 8
+```
+
