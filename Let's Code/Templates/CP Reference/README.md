@@ -23,6 +23,8 @@ int main() {
 }
 ```
 
+# `Techniques`
+
 ## `Prefix Sum`
 
 - Gets sum from the start of the array to the position I
@@ -94,6 +96,8 @@ void doIt() {
 }
 ```
 
+# `Searchin`
+
 ## `Binary Search`
 ```cpp
 void doIt() {
@@ -118,6 +122,7 @@ void doIt() {
     cout << (found ? "Yes" : "No");
 }
 ```
+### Lower & Upper bound
 ```cpp
 vector<int>v = { 1,2,3,4,5 };
 int val, index;
@@ -133,6 +138,212 @@ if (upper != v.end()){
     val = *upper; // 4
     index = upper - v.begin(); // 3
 }
+```
+### Optimization BS
+```cpp
+int start = 0, end = 1e5, mid, ans = 0; 
+while (start <= end) {
+    mid = (start + end) / 2;
+    if (can(mid, params)) {
+        ans = mid;
+        start = mid + 1;
+    }
+    else {
+        end = mid - 1;
+    }
+}
+```
 
-cout << val << " " << index;
+## `2 Pointers - Sliding Window`
+### Longest k-Good Segment [Contain no more than k different values]
+- insert in the set and update the max distance till the set size become > k
+- when the set size exceeds k, still remove from it till the size becomes <= k
+```cpp
+void doIt() {
+    int n, k;
+    cin >> n >> k; 
+    vector<int>v(n);
+    for (auto& it : v)
+        cin >> it;
+ 
+    // variable size sliding window
+    set<int>st;
+    vector<int>mp(1e6 + 5, 0);
+    int start = 0, end = 0, mx = -1, sz, a = -1, b = -1;
+    while (end < n) {   
+        // insert
+        st.insert(v[end]);
+        mp[v[end]]++;
+        sz = end - start + 1;
+        if (st.size() <= k) {
+            if (sz > mx) {
+                mx = sz;
+                a = start + 1, b = end + 1;
+            }
+        }
+        // remove
+        while (st.size() > k) {
+            mp[v[start]]--;
+            if (!mp[v[start]]) {
+                st.erase(v[start]);
+            }
+            start++;
+        }
+        end++;
+    }
+    cout << a << " " << b;
+}
+```
+### smallest sub-arr A contains all arr B elements
+```cpp
+void doIt() {
+    int n, k;
+    cin >> n >> k;
+    
+    vector<int>A(n), B(k);
+    
+    for (auto& it : A)
+        cin >> it;
+    
+    map<int, bool>found;
+    for (auto& it : B)
+        cin >> it, found[it] = 1;
+    
+    // variable size sliding window
+    int start = 0, end = 0, a = -1, b = -1, mn = INT_MAX, sz;
+    map<int, int>mp;
+    while (end < n) {
+        // insert
+        if (found[A[end]])
+            mp[A[end]]++;
+
+        // check and remove
+        while (mp.size() == k) {
+            sz = end - start + 1;
+            if (sz < mn)
+                mn = sz, a = start + 1, b = end + 1;
+             
+            if (mp.count(A[start])) {
+                mp[A[start]]--;
+                if (mp[A[start]] == 0)
+                    mp.erase(A[start]);
+            }
+            start++;
+        }
+        end++;
+    }
+    cout << mn << "\n";
+    cout << a << " " << b << "\n";
+}
+```
+
+# `Complete Search`
+
+## `Bitmask`
+```cpp
+void doIt() {
+    int n;
+    cin >> n ;
+    vector<int>v(n);
+    for(auto &it:v)
+        cin >> it;
+
+    for(int i = 0; i < 1 << n; i++){
+        bitset<20>b(i);
+        for(int j = 0; j < n; j++){
+            if (b[j])
+                cout << v[j] << " ";
+        }
+        cout << "\n";
+    }
+}
+```
+
+## `Backtracking`
+### Maze Solver
+```cpp
+void traverse(int i, int j, int n, int m, vector<vector<char>>& grid, string path) {
+    if (i == n - 1 and j == m - 1) {
+        cout << path << "\n";
+        return;
+    }
+    
+    // go right R
+    if (j + 1 < m and grid[i][j + 1] != '#')
+        traverse(i, j + 1, n, m, grid, path + 'R');
+
+    // go down D
+    if (i + 1 < n and grid[i + 1][j] != '#')
+        traverse(i + 1, j, n, m, grid, path + 'D');
+}
+```
+```cpp
+string path;
+void generatePaths(int i, int j, int n, int m, vector<vector<char>>grid) {
+    if (i == n - 1 and j == m - 1) {
+        cout << path << "\n";
+        return;
+    }
+        
+    if (j + 1 < m and grid[i][j + 1] != '#') {
+        path += 'R';
+        generatePaths(i, j + 1, n, m, grid);
+        path.pop_back();
+    }
+    if (i + 1 < n and grid[i + 1][j] != '#') {
+        path += 'D';
+        generatePaths(i + 1, j, n, m, grid);
+        path.pop_back();
+    }
+}
+```
+
+### Create nPr
+```cpp
+vector<int>perm;
+vector<bool>visited(10, false);
+void solve(int i, int r, vector<int>& v) {
+    if (perm.size() == r) {
+        for (auto it : perm)
+            cout << it << " ";
+
+        cout << "\n";
+        return;
+    }
+
+    for (auto it : v) {
+        if (!visited[it]) {
+            visited[it] = 1;
+
+            perm.push_back(it);
+            solve(i + 1, r, v);
+            perm.pop_back();
+
+            visited[it] = 0;
+        }
+    }
+}
+```
+
+### Create nCr
+```cpp
+multiset<vector<string>>ms;
+vector<string>tmp;
+void solve(int i, int r, vector<string>& v) {
+    if (tmp.size() == r) {
+        vector<string>finalSorted = tmp;
+        sort(all(finalSorted));
+        ms.insert(finalSorted);
+        return;
+    }
+    if (i == v.size()) {
+        return;
+    }
+ 
+    tmp.push_back(v[i]);
+    solve(i + 1, r, v);
+    tmp.pop_back();
+ 
+    solve(i + 1, r, v);
+}
 ```
