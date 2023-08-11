@@ -116,482 +116,7 @@ void doIt() {
 
 
 
-# Graph
 
-### `Enter Graph`
-```cpp
-int main() {
-    int vertices, edges; cin >> vertices >> edges;
-    vector<vector<int>>graph(vertices + 1);
-    for (int i = 0; i < edges; i++) {
-        int u, v, c;
-        cin >> u >> v;
-        graph[u].push_back(v);
-        graph[v].push_back(u); // for undirected graph
-    }
-}
-```
-
-### `dfs`
-```cpp
-void dfs(int node, vector<vector<int>>&graph, vector<int>&visited) {
-    cout << node << "\n";
-    visited[node] = 1;
-    for (auto child : graph[node]) {
-        if (!visited[child])
-            dfs(child, graph, visited);
-    }
-}
-```
-
-### `bfs`
-```cpp
-void bfs(int node, vector<vector<int>>& graph, vector<bool>&visited, vector<int>&parent, vector<int>&level) {
-    queue<int>nextToVisit;
-    nextToVisit.push(node);
-
-    level[node] = 0;
-    parent[node] = -1;
-
-    while (nextToVisit.size()) {
-        int current = nextToVisit.front();
-        cout << current << "\n";
-        nextToVisit.pop();
-
-        visited[current] = 1;
-        for (auto child : graph[current]) {
-            if (!visited[child]) {
-                visited[child] = 1;
-                parent[child] = current;
-                level[child] = level[current] + 1;
-
-                nextToVisit.push(child);
-            }
-        }
-    }
-}
-```
-
-### `generate path of node`
-```cpp
-vector<int>getPath(int node, vector<int>&predecessor){
-    stack<int>st;
-    while(node != -1){
-        st.push(node);
-        node = predecessor[node];
-    }
-    vector<int>path;
-    while(st.size()){
-        path.push_back(st.top());
-        st.pop();
-    }
-    return path;
-}
-```
-
-#### `More Than 1 Entry Point`
-**Visit those points` `before` `entering traversal algorithm**
-```cpp
-int numOfEntryPoints;
-queue<pair<int, int>>q;
-while (numOfEntryPoints--){
-    int a, b;
-    cin >> a >> b;
-    q.push({a, b});
-    visited[a][b] = 1; //  <-------------------
-}
-bfs(q, {n, m});
-```
-
-## `Traversing in a 2D Grid`
-```cpp
-bool inMap(pair<int,int>point, pair<int, int>grid, int mapBase) {
-    int pf = point.first, ps = point.second;
-    int gf = grid.first, gs = grid.second;
-    if (mapBase)
-        return (pf >= 1 and pf <= gf and ps >= 1 and ps <= gs);
-    else
-        return (pf >= 0 and pf < gf and ps >= 0 and ps < gs);
-}
-```
-```cpp
-int dx[] = { 1, -1, 0, 0, -1, -1, 1, 1 };
-int dy[] = { 0, 0, 1, -1, -1, 1, 1, -1 };
-```
-```cpp
-char dir[] = {'U', 'D', 'L', 'R'};
-```
-```cpp
-bool visited[1005][1005];
-vector<char>path;
-bool bfs(pair<int, int>source, pair<int, int> destination, vector<vector<char>>&graph,vector<vector<pair<int, int>>>&parent ,pair<int, int> gridSize) {
-    queue<pair<int, int>> nextToVisit;
-    nextToVisit.push(source);
-    parent[source.first][source.second] = {-1, -1};
-    pair<int, int> currentPoint;
-    while (nextToVisit.size()) {
-        currentPoint = nextToVisit.front();
-        nextToVisit.pop();
-        if (currentPoint == destination){
-            path = getPath(destination, source, parent);
-            return true;
-        }
-        visited[currentPoint.first][currentPoint.second] = true;
-        for (int i = 0; i < 4; i++) {
-            pair<int, int> child = {currentPoint.first + dx[i], currentPoint.second + dy[i]};
-            if (inMap(child, gridSize, 0) and graph[child.first][child.second] != '#' and !visited[child.first][child.second]) {
-                visited[child.first][child.second] = 1;
-                parent[child.first][child.second] = currentPoint;
-                nextToVisit.push(child);
-            }
-        }
-    }
-    return false;
-}
-void doIt() {
-    int n, m;
-    cin >> n >> m;
-    vector<vector<char>>grid(n, vector<char>(m));
-    pair<int, int>source, destinations;
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < m; j++){
-            cin >> grid[i][j];
-            if (grid[i][j] == 'A')
-                source = {i, j};
-            if (grid[i][j] == 'B')
-                destinations = {i, j};
-        }
-    }
-    vector<vector<pair<int, int>>>parent(n, vector<pair<int, int>>(m));
-    bool reachable = bfs(source, destinations, grid, parent, {n, m});
-    cout << (reachable ? "YES\n" : "NO\n");
-    if (path.size()){
-        cout << path.size() << "\n";
-        for(auto it : path){
-            cout << it;
-        }
-    }
-}
-```
-**Get the path**
-```cpp
-int dx[] = { 1, -1, 0, 0, -1, -1, 1, 1 };
-int dy[] = { 0, 0, 1, -1, -1, 1, 1, -1 };
-char dir[] = {'U', 'D', 'L', 'R'}; // For backtracking the Path
-vector<char> getPath(pair<int, int> destination ,pair<int, int>source ,vector<vector<pair<int, int>>>&parent) {
-    vector<char> path;
-    while(destination != source){
-        char direction;
-        pair<int, int>checkPoint;
-        for(int i = 0; i < 4; i++){
-            checkPoint = {destination.first + dx[i], destination.second + dy[i]};
-            if (checkPoint == parent[destination.first][destination.second]){
-                direction = dir[i];
-                break;
-            }
-        }
-        path.push_back(direction);
-        destination = parent[destination.first][destination.second];
-    }
-    reverse(all(path));
-    return path;
-}
-```
-## `Graph Connectivity`
-```cpp
-int dfs(int node, vector<vector<int>>&graph, vector<int>&visited) {
-    visited[node] = 1;
-    int cnt = 1;
-    for (auto child : graph[node]) {
-        if (!visited[child]) {
-            cnt += dfs(child, graph, visited);
-        }
-    }
-    return cnt;
-}
-void doIt() {
-    int n, m;
-    cin >> n >> m;
-    vector<vector<int>> graph(n + 1);
-    vector<int> visited(n + 1);
-    for (int i = 0; i < m; i++) {
-        int a, b;
-        cin >> a >> b;
-        graph[a].push_back(b);
-        graph[b].push_back(a);
-    }
-    cout << (n == dfs(1, graph, visited) ? "YES" : "NO"); 
-}
-```
-
-## `Edge Classification`
-```cpp
-int backword, forwardd, cross, Time;
-vector<char> color(100, 'w');
-vector<int> parent(100, -1), discovery(100), delivery(100);
-//map<int, char>color;
-//map<int, int>parent, discovery, delivery;
-void dfs(int node, vector<vector<int>>& graph) {
-    Time++;
-    color[node] = 'g';
-    discovery[node] = Time;
-    for (auto child : graph[node]) {
-        // node is the source and child is the destination 
-        if (color[child] == 'w') {
-            cout << "tree edge: " << node << " -> " << child << "\n";
-            parent[child] = node;
-            dfs(child, graph);
-        }
-        else if (color[child] == 'g' and child != parent[node]) {
-            cout << "backword edge: " << node << " -> " << child << "\n";
-            backword++;
-        }
-        else if (color[child] == 'b' and discovery[node] < discovery[child]) {
-            cout << "forward edge: " << node << " -> " << child << "\n";
-            forwardd++;
-        }
-        else if (color[child] == 'b' and discovery[node] > discovery[child]) {
-            cout << "cross edge: " << node << " -> " << child << "\n";
-            cross++;
-        }
-    }
-    color[node] = 'b';
-    delivery[node] = Time + 1;
-}
-```
-
-
-
-## `Cycle Detection`
-### `Directed`
-```cpp
-vector<int> getPath(int node, int endNode, vector<int>&parent) {
-    vector<int> path;
-    while (node != endNode) {
-        path.push_back(node);
-        node = parent[node];
-    }
-    path.push_back(endNode);
-    path.push_back(path.front());
-    reverse(all(path));
-    return path;
-}
-vector<int>path;
-bool dfs(int node, vector<vector<int>>&graph, vector<int>&parent, vector<char>&color) {
-    color[node] = 'g';
-    for (auto child: graph[node]) {
-        if (color[child] == 'w') {
-            parent[child] = node;
-            if (dfs(child, graph, parent, color)) {
-                return true;
-            }
-        }
-        else if (color[child] == 'g') {
-            path = getPath(node, child,parent);
-            return true;
-        }
-    }
-    color[node] = 'b';
-    return false;
-}
-void doIt() {
-    int n, m;
-    cin >> n >> m;
-    vector<vector<int>> graph(n + 1);
-    vector<char> color(n + 1, 'w');
-    vector<int> parent(n + 1, -1);
-    for (int i = 0; i < m; i++) {
-        int a, b;
-        cin >> a >> b;
-        graph[a].push_back(b);
-    }
-
-    // scan for cycles
-    bool cyclic = false;
-    for (int node = 0; node < n; node++) {
-        if (color[node] == 'w') {
-            if (dfs(node, graph, parent, color)) {
-                cyclic = true;
-                break;
-            }
-        }
-    }
-
-    // answer
-    if (cyclic) {
-        cout << "Cyclic Graph\n";
-        cout << path.size() << "\n";
-        for(auto it : path)
-            cout << it << " ";
-        cout << "\n";
-    }
-    else {
-        cout << "No Cycles\n";
-    }
-}
-```
-
-### `Undirected`
-```cpp
-vector<int> getPath(int node, int endNode, vector<int>&parent) {
-    vector<int> path;
-    while (node != endNode) {
-        path.push_back(node);
-        node = parent[node];
-    }
-    path.push_back(endNode);
-    path.push_back(path.front());
-    return path;
-}
-vector<int>path;
-bool dfs(int node, vector<vector<int>>&graph, vector<int>&parent, vector<char>&color) {
-    color[node] = 'g';
-    for (auto child: graph[node]) {
-        if (color[child] == 'w') {
-            parent[child] = node;
-            if (dfs(child, graph, parent, color)) {
-                return true;
-            }
-        }
-        else if (color[child] == 'g' and child != parent[node]) {
-            path = getPath(node, child,parent);
-            return true;
-        }
-    }
-    color[node] = 'b';
-    return false;
-}
-void doIt() {
-    int n, m;
-    cin >> n >> m;
-    vector<vector<int>> graph(n + 1);
-    vector<char> color(n + 1, 'w');
-    vector<int> parent(n + 1, -1);
-    for (int i = 0; i < m; i++) {
-        int a, b;
-        cin >> a >> b;
-        graph[a].push_back(b);
-        graph[b].push_back(a);
-    }
-
-    // scan for cycles
-    bool cyclic = false;
-    for (int node = 0; node < n; node++) {
-        if (color[node] == 'w') {
-            if (dfs(node, graph, parent, color)) {
-                cyclic = true;
-                break;
-            }
-        }
-    }
-
-    // answer
-    if (cyclic) {
-        cout << "Cyclic Graph\n";
-        cout << path.size() << "\n";
-        for(auto it : path)
-            cout << it << " ";
-        cout << "\n";
-    }
-    else {
-        cout << "No Cycles\n";
-    }
-}
-```
-
-
-## Shortest path
-```cpp
-void dijkstra(int node, vector<vector<pair<int, ll>>>&graph, vector<bool>&visited, vector<ll>&cost, vector<int>&predecessor){
-    int n = graph.size();
-
-    // cost of source node
-    cost[node] = 0;
-
-    // priority_queue hold node and its best cost [cost, node]. it should sort [ascendingly] from min to max
-    priority_queue<pair<ll, int>>pq;
-    pq.push({cost[node], node});
-
-    while(pq.size()){
-        int source = pq.top().second;
-        ll sourceCost = -pq.top().first;
-        pq.pop();
-        if (visited[source])
-            continue;
-
-        visited[source] = 1;
-        for(auto it : graph[source]){
-            int target = it.first;
-            ll edgeCost = it.second;
-            if (sourceCost + edgeCost < cost[target]){
-                // it is min cost than old cost
-                cost[target] = sourceCost + edgeCost;
-                predecessor[target] = source;
-                pq.push({-cost[target], target});
-            }
-        }
-    }
-}
-```
-
-## `Minimum spanning tree`
-```cpp
-ll MST(int node, vector<vector<pair<int, ll>>>& graph, vector<bool>& visited, vector<ll>& cost, vector<int>& predecessor) {
-    ll MSTCost = 0;
-    int n = graph.size();
-    
-    cost[node] = 0;
-    
-    priority_queue<pair<ll, int>>pq; 
-    pq.push({ cost[node], node });
-
-    while (pq.size()) {
-        int source = pq.top().second;
-        ll sourceCost = -pq.top().first;
-        pq.pop();
-        if (visited[source])
-            continue;
-
-        visited[source] = 1;
-        MSTCost += sourceCost;
-        for (auto it : graph[source]) {
-            int target = it.first;
-            ll edgeCost = it.second;
-
-            if (edgeCost < cost[target]) {
-                cost[target] = edgeCost;
-                predecessor[target] = source;
-                pq.push({ -cost[target], target });
-            }
-
-        }
-    }
-    return MSTCost;
-}
-void doIt() {
-    int n, m;
-    cin >> n >> m;
-
-    vector<vector<pair<int, ll>>>graph(n + 1); // endNode, cost
-    vector<bool>visited(n + 1, false);
-    vector<ll>cost(n + 1, LLONG_MAX);
-    vector<int>predecessor(n + 1, -1);
-
-    for (int i = 0; i < m; i++) {
-        int startNode, endNode, pathCost;
-        cin >> startNode >> endNode >> pathCost;
-        graph[startNode].push_back({ endNode, pathCost });
-        graph[endNode].push_back({ startNode, pathCost });
-    }
-
-    ll MSTCost = MST(0, graph, visited, cost, predecessor);
-
-    for (int i = 0; i < n; i++) {
-        cout << "node " << i << " ,cost: " << cost[i] << ", predecessor: " << predecessor[i] << "\n";
-    }
-    cout << "MST Cost: " << MSTCost << "\n";
-}
-```
 
 
 
@@ -2113,6 +1638,482 @@ sort(all(v), cmp);
 
 
 
+# Graph
+
+### `Enter Graph`
+```cpp
+int main() {
+    int vertices, edges; cin >> vertices >> edges;
+    vector<vector<int>>graph(vertices + 1);
+    for (int i = 0; i < edges; i++) {
+        int u, v, c;
+        cin >> u >> v;
+        graph[u].push_back(v);
+        graph[v].push_back(u); // for undirected graph
+    }
+}
+```
+
+### `dfs`
+```cpp
+void dfs(int node, vector<vector<int>>&graph, vector<int>&visited) {
+    cout << node << "\n";
+    visited[node] = 1;
+    for (auto child : graph[node]) {
+        if (!visited[child])
+            dfs(child, graph, visited);
+    }
+}
+```
+
+### `bfs`
+```cpp
+void bfs(int node, vector<vector<int>>& graph, vector<bool>&visited, vector<int>&parent, vector<int>&level) {
+    queue<int>nextToVisit;
+    nextToVisit.push(node);
+
+    level[node] = 0;
+    parent[node] = -1;
+
+    while (nextToVisit.size()) {
+        int current = nextToVisit.front();
+        cout << current << "\n";
+        nextToVisit.pop();
+
+        visited[current] = 1;
+        for (auto child : graph[current]) {
+            if (!visited[child]) {
+                visited[child] = 1;
+                parent[child] = current;
+                level[child] = level[current] + 1;
+
+                nextToVisit.push(child);
+            }
+        }
+    }
+}
+```
+
+### `generate path of node`
+```cpp
+vector<int>getPath(int node, vector<int>&predecessor){
+    stack<int>st;
+    while(node != -1){
+        st.push(node);
+        node = predecessor[node];
+    }
+    vector<int>path;
+    while(st.size()){
+        path.push_back(st.top());
+        st.pop();
+    }
+    return path;
+}
+```
+
+#### `More Than 1 Entry Point`
+**Visit those points` `before` `entering traversal algorithm**
+```cpp
+int numOfEntryPoints;
+queue<pair<int, int>>q;
+while (numOfEntryPoints--){
+    int a, b;
+    cin >> a >> b;
+    q.push({a, b});
+    visited[a][b] = 1; //  <-------------------
+}
+bfs(q, {n, m});
+```
+
+## `Traversing in a 2D Grid`
+```cpp
+bool inMap(pair<int,int>point, pair<int, int>grid, int mapBase) {
+    int pf = point.first, ps = point.second;
+    int gf = grid.first, gs = grid.second;
+    if (mapBase)
+        return (pf >= 1 and pf <= gf and ps >= 1 and ps <= gs);
+    else
+        return (pf >= 0 and pf < gf and ps >= 0 and ps < gs);
+}
+```
+```cpp
+int dx[] = { 1, -1, 0, 0, -1, -1, 1, 1 };
+int dy[] = { 0, 0, 1, -1, -1, 1, 1, -1 };
+```
+```cpp
+char dir[] = {'U', 'D', 'L', 'R'};
+```
+```cpp
+bool visited[1005][1005];
+vector<char>path;
+bool bfs(pair<int, int>source, pair<int, int> destination, vector<vector<char>>&graph,vector<vector<pair<int, int>>>&parent ,pair<int, int> gridSize) {
+    queue<pair<int, int>> nextToVisit;
+    nextToVisit.push(source);
+    parent[source.first][source.second] = {-1, -1};
+    pair<int, int> currentPoint;
+    while (nextToVisit.size()) {
+        currentPoint = nextToVisit.front();
+        nextToVisit.pop();
+        if (currentPoint == destination){
+            path = getPath(destination, source, parent);
+            return true;
+        }
+        visited[currentPoint.first][currentPoint.second] = true;
+        for (int i = 0; i < 4; i++) {
+            pair<int, int> child = {currentPoint.first + dx[i], currentPoint.second + dy[i]};
+            if (inMap(child, gridSize, 0) and graph[child.first][child.second] != '#' and !visited[child.first][child.second]) {
+                visited[child.first][child.second] = 1;
+                parent[child.first][child.second] = currentPoint;
+                nextToVisit.push(child);
+            }
+        }
+    }
+    return false;
+}
+void doIt() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<char>>grid(n, vector<char>(m));
+    pair<int, int>source, destinations;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cin >> grid[i][j];
+            if (grid[i][j] == 'A')
+                source = {i, j};
+            if (grid[i][j] == 'B')
+                destinations = {i, j};
+        }
+    }
+    vector<vector<pair<int, int>>>parent(n, vector<pair<int, int>>(m));
+    bool reachable = bfs(source, destinations, grid, parent, {n, m});
+    cout << (reachable ? "YES\n" : "NO\n");
+    if (path.size()){
+        cout << path.size() << "\n";
+        for(auto it : path){
+            cout << it;
+        }
+    }
+}
+```
+**Get the path**
+```cpp
+int dx[] = { 1, -1, 0, 0, -1, -1, 1, 1 };
+int dy[] = { 0, 0, 1, -1, -1, 1, 1, -1 };
+char dir[] = {'U', 'D', 'L', 'R'}; // For backtracking the Path
+vector<char> getPath(pair<int, int> destination ,pair<int, int>source ,vector<vector<pair<int, int>>>&parent) {
+    vector<char> path;
+    while(destination != source){
+        char direction;
+        pair<int, int>checkPoint;
+        for(int i = 0; i < 4; i++){
+            checkPoint = {destination.first + dx[i], destination.second + dy[i]};
+            if (checkPoint == parent[destination.first][destination.second]){
+                direction = dir[i];
+                break;
+            }
+        }
+        path.push_back(direction);
+        destination = parent[destination.first][destination.second];
+    }
+    reverse(all(path));
+    return path;
+}
+```
+## `Graph Connectivity`
+```cpp
+int dfs(int node, vector<vector<int>>&graph, vector<int>&visited) {
+    visited[node] = 1;
+    int cnt = 1;
+    for (auto child : graph[node]) {
+        if (!visited[child]) {
+            cnt += dfs(child, graph, visited);
+        }
+    }
+    return cnt;
+}
+void doIt() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> graph(n + 1);
+    vector<int> visited(n + 1);
+    for (int i = 0; i < m; i++) {
+        int a, b;
+        cin >> a >> b;
+        graph[a].push_back(b);
+        graph[b].push_back(a);
+    }
+    cout << (n == dfs(1, graph, visited) ? "YES" : "NO"); 
+}
+```
+
+## `Edge Classification`
+```cpp
+int backword, forwardd, cross, Time;
+vector<char> color(100, 'w');
+vector<int> parent(100, -1), discovery(100), delivery(100);
+//map<int, char>color;
+//map<int, int>parent, discovery, delivery;
+void dfs(int node, vector<vector<int>>& graph) {
+    Time++;
+    color[node] = 'g';
+    discovery[node] = Time;
+    for (auto child : graph[node]) {
+        // node is the source and child is the destination 
+        if (color[child] == 'w') {
+            cout << "tree edge: " << node << " -> " << child << "\n";
+            parent[child] = node;
+            dfs(child, graph);
+        }
+        else if (color[child] == 'g' and child != parent[node]) {
+            cout << "backword edge: " << node << " -> " << child << "\n";
+            backword++;
+        }
+        else if (color[child] == 'b' and discovery[node] < discovery[child]) {
+            cout << "forward edge: " << node << " -> " << child << "\n";
+            forwardd++;
+        }
+        else if (color[child] == 'b' and discovery[node] > discovery[child]) {
+            cout << "cross edge: " << node << " -> " << child << "\n";
+            cross++;
+        }
+    }
+    color[node] = 'b';
+    delivery[node] = Time + 1;
+}
+```
+
+
+
+## `Cycle Detection`
+### `Directed`
+```cpp
+vector<int> getPath(int node, int endNode, vector<int>&parent) {
+    vector<int> path;
+    while (node != endNode) {
+        path.push_back(node);
+        node = parent[node];
+    }
+    path.push_back(endNode);
+    path.push_back(path.front());
+    reverse(all(path));
+    return path;
+}
+vector<int>path;
+bool dfs(int node, vector<vector<int>>&graph, vector<int>&parent, vector<char>&color) {
+    color[node] = 'g';
+    for (auto child: graph[node]) {
+        if (color[child] == 'w') {
+            parent[child] = node;
+            if (dfs(child, graph, parent, color)) {
+                return true;
+            }
+        }
+        else if (color[child] == 'g') {
+            path = getPath(node, child,parent);
+            return true;
+        }
+    }
+    color[node] = 'b';
+    return false;
+}
+void doIt() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> graph(n + 1);
+    vector<char> color(n + 1, 'w');
+    vector<int> parent(n + 1, -1);
+    for (int i = 0; i < m; i++) {
+        int a, b;
+        cin >> a >> b;
+        graph[a].push_back(b);
+    }
+
+    // scan for cycles
+    bool cyclic = false;
+    for (int node = 0; node < n; node++) {
+        if (color[node] == 'w') {
+            if (dfs(node, graph, parent, color)) {
+                cyclic = true;
+                break;
+            }
+        }
+    }
+
+    // answer
+    if (cyclic) {
+        cout << "Cyclic Graph\n";
+        cout << path.size() << "\n";
+        for(auto it : path)
+            cout << it << " ";
+        cout << "\n";
+    }
+    else {
+        cout << "No Cycles\n";
+    }
+}
+```
+
+### `Undirected`
+```cpp
+vector<int> getPath(int node, int endNode, vector<int>&parent) {
+    vector<int> path;
+    while (node != endNode) {
+        path.push_back(node);
+        node = parent[node];
+    }
+    path.push_back(endNode);
+    path.push_back(path.front());
+    return path;
+}
+vector<int>path;
+bool dfs(int node, vector<vector<int>>&graph, vector<int>&parent, vector<char>&color) {
+    color[node] = 'g';
+    for (auto child: graph[node]) {
+        if (color[child] == 'w') {
+            parent[child] = node;
+            if (dfs(child, graph, parent, color)) {
+                return true;
+            }
+        }
+        else if (color[child] == 'g' and child != parent[node]) {
+            path = getPath(node, child,parent);
+            return true;
+        }
+    }
+    color[node] = 'b';
+    return false;
+}
+void doIt() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> graph(n + 1);
+    vector<char> color(n + 1, 'w');
+    vector<int> parent(n + 1, -1);
+    for (int i = 0; i < m; i++) {
+        int a, b;
+        cin >> a >> b;
+        graph[a].push_back(b);
+        graph[b].push_back(a);
+    }
+
+    // scan for cycles
+    bool cyclic = false;
+    for (int node = 0; node < n; node++) {
+        if (color[node] == 'w') {
+            if (dfs(node, graph, parent, color)) {
+                cyclic = true;
+                break;
+            }
+        }
+    }
+
+    // answer
+    if (cyclic) {
+        cout << "Cyclic Graph\n";
+        cout << path.size() << "\n";
+        for(auto it : path)
+            cout << it << " ";
+        cout << "\n";
+    }
+    else {
+        cout << "No Cycles\n";
+    }
+}
+```
+
+
+## Shortest path
+```cpp
+void dijkstra(int node, vector<vector<pair<int, ll>>>&graph, vector<bool>&visited, vector<ll>&cost, vector<int>&predecessor){
+    int n = graph.size();
+
+    // cost of source node
+    cost[node] = 0;
+
+    // priority_queue hold node and its best cost [cost, node]. it should sort [ascendingly] from min to max
+    priority_queue<pair<ll, int>>pq;
+    pq.push({cost[node], node});
+
+    while(pq.size()){
+        int source = pq.top().second;
+        ll sourceCost = -pq.top().first;
+        pq.pop();
+        if (visited[source])
+            continue;
+
+        visited[source] = 1;
+        for(auto it : graph[source]){
+            int target = it.first;
+            ll edgeCost = it.second;
+            if (sourceCost + edgeCost < cost[target]){
+                // it is min cost than old cost
+                cost[target] = sourceCost + edgeCost;
+                predecessor[target] = source;
+                pq.push({-cost[target], target});
+            }
+        }
+    }
+}
+```
+
+## `Minimum spanning tree`
+```cpp
+ll MST(int node, vector<vector<pair<int, ll>>>& graph, vector<bool>& visited, vector<ll>& cost, vector<int>& predecessor) {
+    ll MSTCost = 0;
+    int n = graph.size();
+    
+    cost[node] = 0;
+    
+    priority_queue<pair<ll, int>>pq; 
+    pq.push({ cost[node], node });
+
+    while (pq.size()) {
+        int source = pq.top().second;
+        ll sourceCost = -pq.top().first;
+        pq.pop();
+        if (visited[source])
+            continue;
+
+        visited[source] = 1;
+        MSTCost += sourceCost;
+        for (auto it : graph[source]) {
+            int target = it.first;
+            ll edgeCost = it.second;
+
+            if (edgeCost < cost[target]) {
+                cost[target] = edgeCost;
+                predecessor[target] = source;
+                pq.push({ -cost[target], target });
+            }
+
+        }
+    }
+    return MSTCost;
+}
+void doIt() {
+    int n, m;
+    cin >> n >> m;
+
+    vector<vector<pair<int, ll>>>graph(n + 1); // endNode, cost
+    vector<bool>visited(n + 1, false);
+    vector<ll>cost(n + 1, LLONG_MAX);
+    vector<int>predecessor(n + 1, -1);
+
+    for (int i = 0; i < m; i++) {
+        int startNode, endNode, pathCost;
+        cin >> startNode >> endNode >> pathCost;
+        graph[startNode].push_back({ endNode, pathCost });
+        graph[endNode].push_back({ startNode, pathCost });
+    }
+
+    ll MSTCost = MST(0, graph, visited, cost, predecessor);
+
+    for (int i = 0; i < n; i++) {
+        cout << "node " << i << " ,cost: " << cost[i] << ", predecessor: " << predecessor[i] << "\n";
+    }
+    cout << "MST Cost: " << MSTCost << "\n";
+}
+```
 
 
 
