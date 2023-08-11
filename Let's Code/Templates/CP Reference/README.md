@@ -686,5 +686,715 @@ for(int i = 0; i < n; i++){
 
 
 
+# Math & Number Theory
 
+## `Arithmetic Progression`
+`ak = a1 + (k - 1) * diff`
+
+```cpp
+ll sumSequance(ll firstNumber, ll lastNumber, ll numberOfNumbers){
+    ll ans = ((firstNumber + lastNumber) / 2) * numberOfNumbers;
+    return ans;
+}
+```
+**Check if a number exists in a range**
+```cpp
+bool exists(double start, double diff, double searchFor){
+    double check = (searchFor - start) / diff;
+    return check == int(check);
+}
+```
+
+
+
+## `Geometric Progression`
+`ak = a1 * r^(k-1)` <br>
+`sum = a1(1 - r^n) / (1 - r)`
+
+
+## `Bit manipulation`
+### `XOR [^]`
+- **Return 1 if 2 bits are different, else return 0**
+- **the res contains numbers of bits = 1 representing that binary rep was different at those positions**
+- **ans is unpredicted**
+- `a + b = ( a ^ b ) + 2 ( a & b )` 
+
+**Properties**
+- 0 ^ n = n
+- n ^ n = 0
+- (A ^ B ^ C ^ D ^ E) ^ (A ^ B ^ C) = D ^ E
+
+**The next roles are the same for multiplication**
+
+- odd ^ odd = odd
+- even ^ even = even
+- odd ^ even = odd 
+
+## `is power of 2`
+```cpp
+bool ispowerOf2(ll n){
+    return (n and !(n & (n - 1)));
+}
+```
+
+
+**n = pow(2, ?)**
+
+```cpp
+int thePowerOf(ll n) {
+    // return the nearest [smaller of equal] power of 2 from the number
+    return log(n) / log(2);
+}
+```
+
+**Number with all bits = 1 `PM1`**
+- (Power of 2) - 1
+- `4: 100` `3: 11`
+- `8: 1000` `7: 111`
+
+**Number with exactly one bit = 0**
+- PM1 - Power of 2
+- 7 - 2 = 5 `101`
+
+```cpp
+vector<ll>one0Bit;
+void pre(){
+    for(ll i = 2; i < 64; i++){
+        ll pm1 = (1LL << i) - 1;
+        for(int j = 0; j <= i - 2; j++){
+            one0Bit.push_back(pm1 - (1LL << j));
+        }
+    }
+    sort(all(one0Bit));
+}
+```
+
+
+## `countBit0`
+```cpp
+int countBit0(int n){
+    int cnt = 0;
+    while(n){
+        cnt += !(n & 1);
+        n >>= 1;
+    }
+    return cnt;
+}
+```
+
+## `decimal to binary`
+```cpp
+string decimalToBinary(ll n){
+    string s;
+    while(n){
+        s += (n % 2) + '0';
+        n /= 2;
+    }
+    reverse(all(s));
+    return s;
+}
+```
+
+
+
+## `bitset`
+### `Declaration`
+**Convert decimal binary using an array of bits**
+```cpp
+int n = 13;
+bitset<5>b(n);
+cout << b; // 01101
+cout << "\n" << b[0] << b[1] << b[2]; // 101
+```
+
+### `Convert to string`
+```cpp
+int n = 13;
+bitset<5> b(n); // 01101
+cout << b << "\n"; // 01101
+string s = b.to_string();
+cout << s << "\n"; // 01101 [same as representation of bitset]
+cout << s[0] << s[1] << s[2]; //011
+```
+
+### `Convert binary to decimal`
+```cpp
+string s = "101011";
+bitset<10>b(s);
+cout << b.to_ullong(); // 43
+```
+
+### `Indexing`
+#### `bitset`
+`Indexing in bitset is from right to left [2^0, 2^1, 2^2, ...]`
+```cpp
+int n = 13;
+bitset<5>b(n);
+cout << b; // 01101
+cout << "\n" << b[0] << b[1] << b[2]; // 101
+```
+#### `string`
+`Indexing in a string from left to right [from last bit to first bit]`
+```cpp
+int n = 13;
+bitset<5> b(n); // 01101
+cout << b << "\n"; // 01101
+string s = b.to_string();
+cout << s << "\n"; // 01101 [same as representation of bitset]
+cout << s[0] << s[1] << s[2]; //011
+```
+
+
+### `Update`
+```cpp
+int n = 13;
+bitset<5> b(n); // 01101
+cout << b << " : with value: " << b.to_ullong(); // 01101 with value 13
+b[1] = 1;
+cout << "\n" << b << " : with value: " << b.to_ullong() ; // 01111 : with value: 15
+```
+
+### `any`
+**returns if the binary representation contains bit = 1**
+```cpp
+int n;
+cin >> n;
+bitset<10>b(n);
+cout << b.any();
+```
+---
+
+### `count`
+**return numbers of 1 bits**
+```cpp
+int n = 5;
+bitset<10>b(n);
+cout << b.count(); // 2
+```
+
+
+### `set`
+**`make a number or specific bit to 1`**
+```cpp
+string s = "1101101";
+bitset<8>b(s);
+b.set(1);
+cout << b; // 1101111
+```
+
+### `reset`
+**`make number or specific bit to 0`**
+```cpp
+string s = "1101101";
+bitset<8>b(s);
+b.reset();
+cout << b; // 00000000
+```
+```cpp
+string s = "1101101";
+bitset<8>b(s);
+b.reset(0);
+cout << b; // 1101100
+```
+
+
+### `flip`
+```cpp
+int n = 13;
+bitset<5> b(n); // 01101
+cout << b << "\n";
+b.flip(1);
+cout << b; // 01111
+```
+
+
+
+
+
+
+
+
+# 👌 `GCD`
+
+**GCD of 2 numbers is the greatest number that divides a, b without remainders**
+
+**`GCD of 2 numbers held the multiplication of common divisors between 2 numbers`**
+- gcd(20, 15) = 5
+- gcd(6, 3) = 3
+- gcd(7, 5) = 1
+- gcd(0, 5) = 5
+
+## `GCD with Prime Factorization` 
+- **Get prime factors of each number, the gcd will be the multiplication of the common numbers**
+- Complexity: O(sqrt(max n))
+
+## `GCD with Euclidian Algorithm`
+- `gcd(a, b) = gcd(b, a % b)`
+
+
+## `GCD Properties`
+- **gcd(0, n) = n**
+- **gcd(1, n) = 1**
+- **gcd(n, n + 1) = 1**
+- **gcd(a!, b!) = min(a, b)!**
+- **`1 <= gcd(a, b) <= min(a, b)`**
+- **gcd of 2 even numbers always >= 2. 2 <= gcd(ev, ev) <= min(a, b)**
+- GCD(array elements after adding x) = **`gcd(a[0] + x, gcd(a[1] - a[0], ...., a[n - 1] - a[0])`** such that array is **sorted**
+
+## `GCD Implementation`
+```cpp
+int a, b;
+cin >> a >> b;
+cout << __gcd(a, b);
+```
+```cpp
+ll gcd(ll a,  ll b) {
+    // recursive 
+    // gcd(a,b) =gcd(b,a%b)
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+ll gcd(ll a, ll b) {
+    // iterative 
+    // gcd(a,b) =gcd(b,a%b)
+    while (b != 0) {
+        ll a2 = a;
+        a = b;
+        b = a2 % b;
+    }
+    return a;
+}
+```
+
+# 👌 `LCM`
+
+**Least common multiple, the smallest number that is multiple of a, b *e.g divisible by a, b***
+
+**lcm(3, 8) = 24** `multiples of 3: (3, 6, 9, 12, 15, 18, 21, 24, ..)` `multiples of 8: (8, 16, 24, ..)`
+
+### `How LCM Works`
+**Get the prime factors of 2 numbers and for each repeated factor, choose the most frequent**
+
+a = 2 * 2 * 3 * 3 * 5 * 7
+
+b = 2 * 3 * 5 * 5 * 7 * 7
+
+LCM(a, b) = (2 * 2) * (3 * 3) * (5 * 5) * (7 * 7)
+
+### `LCM Rule`
+LCM(a, b) = (a * b) / gcd(a, b)
+
+### `LCM Properties`
+- lcm between 2 numbers that are multiples of each other = max(a, b). lcm(6, 18) = 18
+- lcm(1, n) = n
+- lcm(0, n) Error
+- gcd(a, b) * lcm(a, b) = a * b
+- gcd(a, b) + lcm(a, b) = x. when `a = 1` `b = x - 1`
+- to get the lcm of more than 2 numbers first set lcm = 1 as lcm (1, n) = n
+
+### `LCM Implementation`
+```cpp
+ll gcd(ll a, ll b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+ll lcm(ll a, ll b) {
+    // lcm(a,b) = (a*b) / gcd(a,b)
+    return a / gcd(a, b) * b;
+}
+```
+```cpp
+ll lcm(ll a, ll b)
+    return  a / __gcd(a, b) * b;
+```
+
+
+
+## `Factorization`
+```cpp
+vector<ll> getDivisors(ll n) {
+    vector<ll> v;
+    for (ll i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            v.push_back(i);
+            if (n / i != i)
+                v.push_back(n / i);
+        }
+    }
+    sort(all(v));
+    return v;
+}
+```
+
+
+**How to check if a number has 3 divisors?**
+- First, check if the number of divisors is odd -> `number is perfect square`
+- Then check if the sqrt(n) is prime. if prime so the numbers have only 3 divisors `1 n sqrt(n)`
+
+
+#### `Perfect Square`
+```cpp
+bool isPerfectSquare(ll n){
+    ll sq = sqrt(n);
+    return sq * sq == n;
+}
+```
+
+
+
+## `Prime Factorization`
+```cpp
+void doIt() {
+    int n;
+    cin >> n;
+
+    map<int,int>mp;
+    for(int i = 2; i * i <= n; i++){
+        while(n % i == 0){
+            mp[i]++;
+            n /= i;
+        }
+    }   
+    if (n != 1)
+        mp[n]++;
+
+    // print prime factors
+    for(auto it: mp){
+        cout << "factor: " << it.first << ", count: " << it.second << "\n";
+    }
+}
+```
+
+
+## `Common factors of 2 numbers`
+```cpp
+vector<int> commonDivisors(int a, int b){
+    ll gcd = __gcd(a, b); // held multiplication of common divisors
+
+    // fatorization of gcd
+    vector<int>divisors;
+    for (int i = 1; i * i <= gcd; i++) {
+        if (gcd % i == 0) {
+            divisors.push_back(i);
+
+            if (gcd / i != i)
+                divisors.push_back(gcd / i);
+        }
+    }
+    return divisors;
+}
+```
+
+## `Multiples`
+```cpp
+void doIt(){
+    int n, mx;
+    cin >> n >> mx;
+    // generate multiples of n till mx
+    for(int i = n; i <= mx; i += n){
+        cout << i << " ";
+    }
+}
+```
+
+## `Modular arithmetic`
+```cpp
+ll add(ll a, ll b, ll c){
+    return ((a % c) + (b % c)) % c;
+}
+ll subtract(ll a, ll b, ll c){
+    return ((a % c) - (b % c) + c) % c;
+}
+ll multiply(ll a, ll b, ll c){
+    return ((a % c) * (b % c)) % c;
+}
+ll modneg(ll n, ll mod){
+    // n is negative
+    return ((n % mod) + mod) % mod;
+}
+```
+
+
+## `Fast Power`
+ll fastPower(int base, int power){
+    if (power == 1){
+        return base;
+    }
+    ll a = fastPower(base, power / 2);
+
+    if (power & 1)
+        return base * a * a;
+    else
+        return a * a;
+}
+
+## `Modular Exponentiation`
+**Calculate `(base ^ power) % m`**
+```cpp
+ll multiply(ll a, ll b, ll c){
+    return ((a % c) * (b % c)) % c;
+}
+ll fastPowerModular(int base, int power, int m){
+    if (power == 1)
+        return base;
+
+    ll a = fastPowerModular(base, power / 2, m);
+    ll result = multiply(a, a, m);
+
+    if (power & 1)
+        result = multiply(result, base, m);
+
+    return result;
+}
+```
+
+
+## `Prefix To Array`
+
+```cpp
+vector<ll>prefixToArray(vector<ll>prefix, int n){
+    vector<ll>v(n);
+    v[0] = prefix[0];
+    for(int i = n - 1; i > 0; i--){
+        v[i] = prefix[i] - prefix[i - 1];
+    }
+    return v;
+}
+```
+
+# `Prime Theory`
+
+## `Seive`
+
+```cpp
+const int N = 1e6; // max number
+vector<bool>isPrime(N + 5, true);
+void seive(){
+    isPrime[0] = isPrime[1] = false;
+    for(int i = 2; i * i <= N; i++){
+        if (isPrime[i]){
+            // mark all multiples of i as not prime
+            for(int j = i * i; j <= N; j += i){
+                isPrime[j] = false;
+            }
+        }
+    }
+}
+```
+
+## `is prime`
+```cpp
+bool isPrime(ll n){
+    if (n < 2)
+        return false;
+
+    for(ll i = 2; i * i <= n; i++){
+        if (n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+
+## `Decompose Number to Sum of Primes`
+**Any number can be summation of 1, 2 or 3 primes (or more of course)**
+
+### Number is a summation of `1 prime`
+- the number is prime
+
+### Number is a summation of `2 primes`
+- the number is even
+- the number is odd and n - 2 is prime. first number = n - 2, second number = 2
+
+### Number is a summation of `3 primes`
+- the number is odd and the above condition is not satisfied ^_^
+- you can get those 3 numbers using the Bruteforce algorithm. Don't worry it will pass 😂
+```cpp
+for (int i = 3;; i += 2) {
+    if (isPrime(i)) {
+        for (int j = 3; j < n; j += 2) {
+            if (isPrime(j) and isPrime(n - (i + j))) {
+                cout << i << " " << j << " " << n - (i + j);
+                return;
+            }
+        }
+    }
+}
+```
+
+## `Geometry`
+
+### `Triangle Area`
+**Using base, height**
+```cpp
+double triangleArea(double base, double height){
+    return 0.5 * base * height;
+}
+```
+**Using 3 sides**
+```cpp
+double triangleArea(double a, double b, double c){
+    double s = (a + b + c) / 2;
+    double ans = sqrt(s * (s - a) * (s - b) * (s - c));
+    return ans;
+}
+```
+
+## `Counting`
+`Number of subsequences`
+number of non-zero subsequence = `(2^n) - 1`
+
+`Number of subarrays` = 
+`n * (n + 1) / 2`
+
+
+### `nPr`
+A = {a, b, c}
+generate all 2 permutations `ab ba ac ca bc cb`
+
+```cpp
+ll nPr(ll n, ll r){
+    ll res = 1;
+    for(ll i = n - r + 1; i <= n; i++){
+        res *= i;
+    }
+    return res;
+}
+```
+**Modular nPr**
+```cpp
+ll multiply(ll a, ll b, ll c){
+    return ((a % c) * (b % c)) % c;
+}
+ll nPr(ll n, ll r){
+    ll res = 1;
+    for(ll i = n - r + 1; i <= n; i++){
+        res = multiply(res, i, mod);
+    }
+    return res;
+}
+```
+
+### `nCr`
+order does not matter. `ab = ba` `abc = bca = acb`
+```cpp
+ll nCr(ll n, ll r){
+    ll ans = 1;
+    ll div = 1; // held r!
+    for(ll i = r + 1; i <= n; i++){
+        ans *= i;
+        ans /= div;
+        div++;
+    }
+    return ans;
+}
+```
+
+## `Sum Sequences`
+### Arithmatic Sequance
+
+`Arithmetic Sequence Sum = [(First Number + Last Number) / 2] * Number of Numbers`
+```cpp
+ll sumSequance(ll firstNumber, ll lastNumber, ll numberOfNumbers){
+    ll ans = (firstNumber + lastNumber) * numberOfNumbers / 2 ;
+    return ans;
+}
+```
+
+`Sum of even numbers`
+```cpp
+ll sumEven(ll a, ll b){
+    // validate start & end
+    if (a & 1)
+        a++;
+    if(b & 1)
+        b--;
+    if (a > b)
+        return 0;
+
+    // calculate
+    ll numberOfNumbers = ((b - a) / 2) + 1;
+    ll ans = ((a + b) * numberOfNumbers) / 2;
+    return ans;
+}
+```
+`Sum of odd numbers`
+```cpp
+ll sumOdd(ll a, ll b){
+    // validate start & end
+    if (a % 2 == 0)
+        a++;
+    if(b % 2 == 0)
+        b--;
+    if (a > b)
+        return 0;
+
+    // calculate
+    ll numberOfNumbers = ((b - a) / 2) + 1;
+    ll ans = ((a + b) * numberOfNumbers) / 2;
+    return ans;
+}
+```
+
+### 
+
+### Geometric Sequence
+
+`Geometric Sequence Sum = [(First Number) * (1 - ratio ^ Number of Numbers)] / (1 - ratio)`
+```cpp
+ll sumSequance(ll firstNumber, ll numberOfNumbers, ll ratio) {
+    ll ans = (firstNumber * (1 - pow(ratio, numberOfNumbers))) / (1 - ratio);
+    return ans;
+}
+```
+
+`Sum of numbers from a to b that are divisible by c`
+```cpp
+ll sum(ll n) {
+    return n * (n + 1) / 2;
+}
+ll sumDivisible(ll a, ll b, ll c) {
+    return sum(max(a, b) / c) * c - sum((min(a, b) - 1) / c) * c;
+}
+```
+
+## `Count dividing pairs`
+```cpp
+const int N = 1e7 + 5;
+vector<int>freq(N);
+void doIt(int tc) {
+    int n;
+    cin >> n;
+    int mx = -1;
+    for (int i = 0; i < n; i++) {
+        int in;
+        cin >> in;
+        mx = max(mx, in);
+        freq[in]++;
+    }
+ 
+    ll ans = 0;
+    ans += 1LL * freq[0] * (n - freq[0]);
+    freq[0] = 0;
+ 
+    for (int i = 1; i <= mx; i++) {
+        if (!freq[i])
+            continue;
+ 
+        for (int j = i + i; j <= mx; j += i) {
+            ans += 1LL * freq[i] * freq[j];
+        }
+ 
+        freq[i] = 0;
+    }
+ 
+    cout << "Test case #" << tc << ": " << ans << "\n";
+}
+```
 
