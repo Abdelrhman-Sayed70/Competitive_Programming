@@ -7,5 +7,29 @@
 
 ## Solution
 ```cpp
+long solve(vector<long>&v){
+    for(int i = 0; i < v.size(); i++){
+        if (v[i] & 1){
+            if (i + 1 < v.size() and v[i + 1]) {
+                v[i]++;
+                v[i + 1]--;
+            }
+        }
+    }
 
+    long ans = 0;
+    for(auto it : v){
+        ans += it / 2;
+    }
+    return ans;
+}
+void doIt(int tc) {
+    int n;
+    cin >> n;
+    vector<long>v(n);
+    for(auto &it : v)
+        cin >> it;
+
+    cout << solve(v);
+}
 ```
